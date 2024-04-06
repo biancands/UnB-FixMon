@@ -1,4 +1,6 @@
 #include <iostream>
+#include "entities.h"
+#include "tests.h"
 
 using namespace std;
 
