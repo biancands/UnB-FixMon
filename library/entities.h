@@ -1,8 +1,10 @@
 #ifndef ENTITIES_H_INCLUDED
 #define ENTITIES_H_INCLUDED
 
-#include <string>
 #include "domains.h"
+#include <string>
+
+using namespace std;
 
 
 #endif // ENTITIES_H_INCLUDED
