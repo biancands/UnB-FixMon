@@ -11,6 +11,9 @@ void Codigo::setCodigo(string codigo){
 
 //Code Methods: Código Pagamento - Parra 211020956
 void CodigoPagamento::validar(string codigo) const{
+
+    if (codigo.size()!=8){throw length_error("Valor não está no tamanho de caracteres permitidos!");}
+    
     int count = 0;
     for (char c : codigo)
     {
@@ -20,8 +23,6 @@ void CodigoPagamento::validar(string codigo) const{
         }
         count++;
     }
-
-    if (count != 8){throw invalid_argument("Valor utrapassou o limite de caracteres!");}
 }
 
 void CodigoTitulo::validar (string codigo) const{
