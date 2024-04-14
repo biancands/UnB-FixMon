@@ -2,9 +2,9 @@
 using namespace std;
 #include <iostream>
 
-//Declaração metodos Codigo:
 
-void Codigo::setCodigo(string codigo){
+//Declaração metodos Codigo:
+void Codigo::setCodigo(string codigo){   
     validar(codigo);
     this->codigo=codigo;
 }
@@ -24,32 +24,34 @@ void CodigoPagamento::validar(string codigo) const{
     if (count != 8){throw invalid_argument("Valor utrapassou o limite de caracteres!");}
 }
 
-
 void CodigoTitulo::validar (string codigo) const{
+    string codCheck = codigo.substr(0, 3);
+    bool verificador = true;
+    auto it = find(listaTitulos.begin(), listaTitulos.end(), codCheck);
 
-    int count = 0;
-    string codCheck;
+    //Primeira verificação: Tamanho do código, tem que ser 11 de acordo com as regras de negócios.
+    if(!(codigo.size()
+     ==  11)){ throw length_error("Valor do campo (CodigoTitulo) não está no tamanho permitido!");} 
 
-    for (char c : codigo)
-    {
-        if (count == 11 or !isdigit(c)){throw invalid_argument("Valor não está de acordo com as regras de negocio!");}
-        count++;
-        codCheck += c;
+    //Segunda verificação: 3 primeiras letras tem que está dentro da listaTitulos.
+     else if(it == listaTitulos.end()) {
+        throw invalid_argument("Valor inválido! Código Titulo invalido. Lista válidos: CDB , CRA, CRI, LCA, LCI e DEB.");
     }
 
+    //Terceira validação: Valores no lugar de x tem que ser letras maísuculas e 0-9. 
+    else{
+        for (char c : codigo)
+    {
+        if (isupper(c)){
+            verificador = true;
+        }
+        
+        else if (isdigit(c)){
+            verificador = true;
+        }
+        else{
+            throw invalid_argument("Valor inválido! Contém letras minusculas ou algum simbólo.");
+        }
+    }
+    }
 }
-
-
-//Teste
-// int main(){
-//      string t;
-//      cin >> t;
-//      CodigoPagamento teste;
-//      teste.setCodigo(t);
-
-//      cout << teste.getCodigo() << endl;
-
-//      teste.setCodigo("23456789");
-//      cout << teste.getCodigo() << endl;
-
-//      }

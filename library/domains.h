@@ -1,6 +1,7 @@
 
 //bibliotecas
 #include <iostream>
+#include <algorithm>
 
 //macros
 using namespace std; 
@@ -36,4 +37,7 @@ class CodigoPagamento : public Codigo{
 class CodigoTitulo : public Codigo{
     protected:
         void validar(string) const override;
+    public:
+        const vector<string> listaTitulos = {"CDB","CRA","CRI",
+"LCA","LCI","DEB"};
 };
