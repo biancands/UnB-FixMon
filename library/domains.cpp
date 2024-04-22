@@ -13,7 +13,7 @@ void Codigo::setCodigo(string codigo){
 void CodigoPagamento::validar(string codigo) const{
 
     if (codigo.size()!=8){throw length_error("Valor não está no tamanho de caracteres permitidos!");}
-    
+
     int count = 0;
     for (char c : codigo)
     {
@@ -51,7 +51,7 @@ void CodigoTitulo::validar (string codigo) const{
             verificador = true;
         }
         else{
-            throw invalid_argument("Valor inválido! Contém letras minusculas ou algum simbólo.");
+            throw invalid_argument("Valor inválido! Contém letras minusculas ou simbólo.");
         }
     }
     }
