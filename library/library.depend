@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1713815281 source:c:\users\danilo\documents\github\unb-fixmon\library\domains.cpp
+	"domains.h"
+
+1713815320 c:\users\danilo\documents\github\unb-fixmon\library\domains.h
+	<stdexcept>
+	<string>
+
+1712703343 source:c:\users\danilo\documents\github\unb-fixmon\library\entities.cpp
+	"entities.h"
+
+1712703343 c:\users\danilo\documents\github\unb-fixmon\library\entities.h
+	<string>
+	"domains.h"
+
+1713819008 source:c:\users\danilo\documents\github\unb-fixmon\library\main.cpp
+	<iostream>
+	"entities.h"
+	"domains.h"
+	"tests.h"
+
+1713819010 c:\users\danilo\documents\github\unb-fixmon\library\tests.h
+	"domains.h"
+

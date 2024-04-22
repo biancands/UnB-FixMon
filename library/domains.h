@@ -1,30 +1,37 @@
-//bibliotecas
-#include <iostream>
-#include <algorithm>
-
-//macros
-using namespace std;
 #ifndef DOMAINS_H_INCLUDED
 #define DOMAINS_H_INCLUDED
 
-#endif // DOMAINS_H_INCLUDED
+#include <stdexcept>
+#include <string>
 
-//Class Estado por Danilo Silveira da Silva - 222014142
-class Estado {
+using namespace std;
+
+//222014142
+class Estado{
 private:
-    string estado;
-    virtual bool validar(string estado);
+    string valor;
+    void validar(string);
 public:
     void setEstado(string);
-    inline string getEstado(){return estado;};
+    string getEstado() const;
 };
 
-//Class CPF por Danilo Silveira da Silva - 222014142
+inline string Estado::getEstado() const{
+    return valor;
+}
+
+//222014142
 class CPF{
 private:
-    string cpf;
-    virtual bool validar(string cpf);
+    string valor;
+    void validar(string);
 public:
     void setCPF(string);
-    inline string getCPF(){return cpf;};
+    string getCPF() const;
 };
+
+inline string CPF::getCPF() const{
+    return valor;
+}
+
+#endif // DOMAINS_H_INCLUDED
