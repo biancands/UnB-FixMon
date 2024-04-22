@@ -9,7 +9,7 @@ using namespace std;
 //231013583
 class Dinheiro {
 private:
-    static const double LIMITE = 1000000.00;
+    static constexpr double LIMITE = 1000000.00;
     double valor;
     void validar(double);
 public:
