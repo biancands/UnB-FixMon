@@ -3,6 +3,7 @@
 
 #include <string>
 #include "domains.h"
+#include "tests.h"
 
 
 #endif // ENTITIES_H_INCLUDED

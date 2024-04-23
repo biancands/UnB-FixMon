@@ -1,5 +1,5 @@
 #include "tests.h"
-#include "entities.h"
+
 
 void TUCodigoPagamento::setUp(){
     codigo = new CodigoPagamento();

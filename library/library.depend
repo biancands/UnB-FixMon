@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1713814740 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/domains.cpp
+	"domains.h"
+	<iostream>
+
+1713829379 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/domains.h
+	<iostream>
+	<algorithm>
+	"tests.h"
+	"entities.h"
+
+1712849957 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/entities.cpp
+	"entities.h"
+
+1712849957 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/entities.h
+	<string>
+	"domains.h"
+
+1713816793 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/tests.h
+	"domains.h"
+	<iostream>
+
+1713816269 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/tests.cpp
+	"tests.h"
+	"entities.h"
+

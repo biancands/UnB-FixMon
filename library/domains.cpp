@@ -1,6 +1,8 @@
-#include "domains.h"
-using namespace std;
 #include <iostream>
+
+#include "domains.h"
+
+using namespace std;
 
 
 //Declaração metodos Codigo:
