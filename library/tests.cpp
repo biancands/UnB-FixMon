@@ -25,7 +25,9 @@ void TUCodigoPagamento::testCenarioCodValido(){
         estado = FALHA;   
     }
 }
+
 void TUCodigoPagamento::testCenarioCodInvalidoPrimeiroDigito(){
+    
     try
     {
         codigo->setCodigo(CODIGO_INVALIDO_PRIMEIRO_DIGITO);
