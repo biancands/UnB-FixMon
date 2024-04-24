@@ -1,15 +1,20 @@
 # depslib dependency file v1.0
-1713920226 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
+140718577734058 <<<<<<< HEAD
+
+1713920831 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
+	<iostream>
 	"domains.h"
 
-1713920226 c:\users\bianc\documents\unb-fixmon\library\domains.h
+1713920486 c:\users\bianc\documents\unb-fixmon\library\domains.h
 	<stdexcept>
 	<string>
+	<vector>
+	<algorithm>
 
 1712437433 source:c:\users\bianc\documents\unb-fixmon\library\entities.cpp
 	"entities.h"
 
-1713920226 c:\users\bianc\documents\unb-fixmon\library\entities.h
+1713920535 c:\users\bianc\documents\unb-fixmon\library\entities.h
 	"domains.h"
 	<string>
 
@@ -19,10 +24,37 @@
 	"domains.h"
 	"tests.h"
 
-1713920226 c:\users\bianc\documents\unb-fixmon\library\tests.h
+1713920565 c:\users\bianc\documents\unb-fixmon\library\tests.h
 	"domains.h"
 
-1713920226 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
+1713920681 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
+	"tests.h"
+	"entities.h"
+
+1713814740 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/domains.cpp
+	"domains.h"
+	<iostream>
+
+1713829379 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/domains.h
+	<iostream>
+	<algorithm>
+	"tests.h"
+	"entities.h"
+
+1712849957 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/entities.cpp
+	"entities.h"
+
+1712849957 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/entities.h
+	<string>
+	"domains.h"
+
+1713816793 /home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/tests.h
+	"domains.h"
+	<iostream>
+
+1713816269 source:/home/parra/Documents/UNB/TP1/projeto/UnB-FixMon/library/tests.cpp
+
+1713816269 5202aa70e131cafe5024a64456efa27dcc298
 	"tests.h"
 	"entities.h"
 

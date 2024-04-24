@@ -2,6 +2,7 @@
 #define ENTITIES_H_INCLUDED
 
 #include "domains.h"
+
 #include <string>
 
 using namespace std;
