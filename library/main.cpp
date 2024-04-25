@@ -44,5 +44,21 @@ int main()
 
     }
 
+    TUEstado testeEstado;
+    switch(testeEstado.run()){
+        case TUEstado::SUCESSO: cout << "SUCESSO - ESTADO" << endl;
+                                  break;
+        case TUEstado::FALHA  : cout << "FALHA - ESTADO" << endl;
+                                  break;
+    }
+
+    TUCPF testeCPF;
+    switch(testeCPF.run()){
+        case TUCPF::SUCESSO: cout << "SUCESSO - CPF" << endl;
+                                  break;
+        case TUCPF::FALHA  : cout << "FALHA - CPF" << endl;
+                                  break;
+    }
+
     return 0;
 }

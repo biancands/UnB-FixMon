@@ -43,15 +43,6 @@ void TUDinheiro::testarCenarioNegativo(){
     }
 }
 
-int TUDinheiro::run(){
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    testarCenarioNegativo();
-    tearDown();
-    return estado;
-}
-
 void TUSenha::setUp(){
     senha = new Senha();
     estado = SUCESSO;
@@ -116,17 +107,6 @@ void TUSenha::testarCenarioDecrescente(){
     }
 }
 
-int TUSenha::run(){
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioDuplicado();
-    testarCenarioZeroInicio();
-    testarCenarioCrescente();
-    testarCenarioDecrescente();
-    tearDown();
-    return estado;
-}
-
 void TUCodigoPagamento::setUp(){
     codigo = new CodigoPagamento();
     estado = SUCESSO;
@@ -182,14 +162,6 @@ void TUCodigoPagamento::testCenarioCodTamanhoInvalido(){
         }
     }
 
-}
-
-int TUCodigoPagamento::run(){
-    setUp();
-    testCenarioCodValido();
-    testCenarioCodInvalidoPrimeiroDigito();
-    testCenarioCodTamanhoInvalido();
-    return estado;
 }
 
 void TUCodigoTitulo::setUp(){
@@ -283,6 +255,107 @@ void TUCodigoTitulo::testCodInvalidoTitulo(){
 
 }
 
+void TUEstado::setUp(){
+    status = new Estado();
+    estado = SUCESSO;
+}
+
+void TUEstado::tearDown(){
+    delete status;
+}
+
+void TUEstado::testarCenarioSucesso(){
+    try{
+        status-> setEstado(VALOR_VALIDO);
+        if(status->getEstado() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+    }
+}
+
+void TUEstado::testarCenarioFalha(){
+    try{
+        status-> setEstado(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (status->getEstado() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+void TUCPF::setUp(){
+    cpf = new CPF();
+    estado = SUCESSO;
+}
+
+void TUCPF::tearDown(){
+    delete cpf;
+}
+
+void TUCPF::testarCenarioSucesso(){
+    try{
+        cpf->setCPF(VALOR_VALIDO);
+        if(cpf->getCPF() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+    }
+}
+
+void TUCPF::testarCenarioFalha1(){
+    try{
+        cpf->setCPF(VALOR_INVALIDO1);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (cpf->getCPF() == VALOR_INVALIDO1)
+            estado = FALHA;
+    }
+}
+
+void TUCPF::testarCenarioFalha2(){
+    try{
+        cpf->setCPF(VALOR_INVALIDO2);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (cpf->getCPF() == VALOR_INVALIDO2)
+            estado = FALHA;
+    }
+}
+
+int TUDinheiro::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    testarCenarioNegativo();
+    tearDown();
+    return estado;
+}
+
+int TUSenha::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioDuplicado();
+    testarCenarioZeroInicio();
+    testarCenarioCrescente();
+    testarCenarioDecrescente();
+    tearDown();
+    return estado;
+}
+
+int TUCodigoPagamento::run(){
+    setUp();
+    testCenarioCodValido();
+    testCenarioCodInvalidoPrimeiroDigito();
+    testCenarioCodTamanhoInvalido();
+    return estado;
+}
+
 int TUCodigoTitulo::run(){
 
     setUp();
@@ -295,3 +368,19 @@ int TUCodigoTitulo::run(){
     return estado;
 }
 
+int TUEstado::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+int TUCPF::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha1();
+    testarCenarioFalha2();
+    tearDown();
+    return estado;
+}

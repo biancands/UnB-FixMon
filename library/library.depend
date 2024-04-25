@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
 140718577734058 <<<<<<< HEAD
 
-1713920831 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
+1714016718 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
 	<iostream>
 	"domains.h"
 
-1713920486 c:\users\bianc\documents\unb-fixmon\library\domains.h
+1713921244 c:\users\bianc\documents\unb-fixmon\library\domains.h
 	<stdexcept>
 	<string>
 	<vector>
@@ -18,16 +18,16 @@
 	"domains.h"
 	<string>
 
-1713920226 source:c:\users\bianc\documents\unb-fixmon\library\main.cpp
+1714017120 source:c:\users\bianc\documents\unb-fixmon\library\main.cpp
 	<iostream>
 	"entities.h"
 	"domains.h"
 	"tests.h"
 
-1713920565 c:\users\bianc\documents\unb-fixmon\library\tests.h
+1714016469 c:\users\bianc\documents\unb-fixmon\library\tests.h
 	"domains.h"
 
-1713920681 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
+1714017128 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
 	"tests.h"
 	"entities.h"
 
@@ -57,4 +57,31 @@
 1713816269 5202aa70e131cafe5024a64456efa27dcc298
 	"tests.h"
 	"entities.h"
+
+1713816269 h"
+
+1713815281 source:c:\users\danilo\documents\github\unb-fixmon\library\domains.cpp
+	"domains.h"
+
+1713815320 c:\users\danilo\documents\github\unb-fixmon\library\domains.h
+	<stdexcept>
+	<string>
+
+1712703343 source:c:\users\danilo\documents\github\unb-fixmon\library\entities.cpp
+	"entities.h"
+
+1712703343 c:\users\danilo\documents\github\unb-fixmon\library\entities.h
+	<string>
+	"domains.h"
+
+1713819008 source:c:\users\danilo\documents\github\unb-fixmon\library\main.cpp
+	<iostream>
+	"entities.h"
+	"domains.h"
+	"tests.h"
+
+1713819010 c:\users\danilo\documents\github\unb-fixmon\library\tests.h
+	"domains.h"
+
+1713819010 1f2f4c0e284d2eaac3e14582dfa395c129932
 
