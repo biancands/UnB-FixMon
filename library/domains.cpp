@@ -16,7 +16,7 @@ std::string Nome::getSobreNome() const{
 }
 
 bool Nome::validarNome()const{
-    std::regex padrao("^([A-Z][a-z]{2,10})\\s([A-Z][a-z]{2,10})?$");
+    std::regex padrao("^([A-Z][a-z]{2,9})\\s([A-Z][a-z]{2,9})?$");
     return std::regex_match(primeiro_nome + ' ' + sobrenome, padrao);
 
 };
@@ -70,4 +70,9 @@ void Setor::validarSetor() const{
     if (setoresValidos.count(setorNome) == 0){
         throw std::invalid_argument("invalido");
     }
+}
+
+void Setor::setSetorNome(const std::string& setor){
+    setorNome = setor;
+    validarSetor();
 }

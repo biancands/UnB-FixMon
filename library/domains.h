@@ -32,6 +32,7 @@ private:
 public:
     Setor(const std::string& setor); 
     std::string getSetorNome() const;
+    void setSetorNome(const std::string& setor);
     void validarSetor() const;
 };
 
