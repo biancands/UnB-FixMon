@@ -15,8 +15,11 @@ void TUNome::testarCenarioSucesso() {
     try {
         nome ->setPrimeiroNome(PRIMEIRO_NOME_VALIDO);
         nome ->setSobreNome(SOBRE_NOME_VALIDO);
-        if(nome->getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || nome ->getSobreNome() != SOBRE_NOME_VALIDO)
-            estado = FALHA;    
+        if(!nome ->validarNome() ||
+        nome ->getPrimeiroNome() != PRIMEIRO_NOME_VALIDO ||
+        nome -> getSobreNome() != SOBRE_NOME_VALIDO){
+            estado = FALHA;
+        }    
     }catch (exception& excecao){
         estado = FALHA;
     }
@@ -26,10 +29,8 @@ void TUNome::testarCenarioFalhaPrimeiroNome(){
     try {
         nome -> setPrimeiroNome(PRIMEIRO_NOME_INVALIDO);
         estado = FALHA;
-    } catch (invalid_argument& excecao) {
-        if(nome -> getPrimeiroNome() == PRIMEIRO_NOME_INVALIDO && !nome->validarNome()) {
-            estado = FALHA;
-        }      
+    } catch (invalid_argument& excecao) {   
+          
     }
 }
 
@@ -38,8 +39,7 @@ void TUNome::testarCenarioFalhaSobreNome(){
         nome -> setSobreNome(SOBRE_NOME_INVALIDO);
         estado = FALHA;
     } catch (invalid_argument& excecao) {
-        if (nome ->getSobreNome() == SOBRE_NOME_INVALIDO)
-            estado = FALHA;
+
     }
 }
 

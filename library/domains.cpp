@@ -1,6 +1,7 @@
 #include "domains.h"
 #include <regex>
 #include <unordered_set>
+#include <cctype>
 
 Nome::Nome(const std::string& primeiro, const std::string& segundo) : primeiro_nome(primeiro), sobrenome(segundo){
     validarTermo(primeiro);
@@ -16,7 +17,7 @@ std::string Nome::getSobreNome() const{
 }
 
 bool Nome::validarNome()const{
-    std::regex padrao("^([A-Z][a-z]{2,9})\\s([A-Z][a-z]{2,9})?$");
+    std::regex padrao("^([A-Z][a-z]{2,9})(\\s([A-Z][a-z]{2,9}))?$");
     return std::regex_match(primeiro_nome + ' ' + sobrenome, padrao);
 
 };
@@ -36,12 +37,12 @@ void Nome::validarTermo(const std::string& termo) const{
         throw std::invalid_argument("Não pode ser vazio");
     }
 
-    if (termo.size() > 10){
-        throw std::invalid_argument("Ultrapassou os caracteres");
+    if (termo.size() < 3 || termo.size() > 10){
+        throw std::invalid_argument("O termo deve ter entre 3 e 10 caracteres");
     }
 
-    if (std::count(termo.begin(), termo.end(), ' ')> 1 ){
-        throw std::invalid_argument("Não pode conter mais de dois nomes!");
+    if (!isupper(termo[0])) {
+        throw std::invalid_argument("Todos os caracteres devem ser letras.");
     }
 }
 
