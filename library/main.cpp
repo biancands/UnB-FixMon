@@ -60,5 +60,24 @@ int main()
                                   break;
     }
 
+    TUData testeA;
+    TUPercentual testeB;
+
+    switch(testeA.run()){
+        case TUData::SUCESSO: cout << "SUCESSO - DATA" << endl ;
+                                break;
+
+        case TUData::FALHA  : cout << "FALHA   - DATA" << endl;
+                               break;
+    }
+
+    switch(testeB.run()){
+        case TUPercentual::SUCESSO: cout << "SUCESSO - PERCENTUAL" << endl ;
+                                break;
+
+        case TUPercentual::FALHA  : cout << "FALHA   - PERCENTUAL" << endl;
+                               break;
+    }
+
     return 0;
 }
