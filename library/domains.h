@@ -5,6 +5,10 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <unordered_set>
+#include <sstream>
+#include <cctype>
+#include <regex>
 
 using namespace std;
 
@@ -91,6 +95,7 @@ inline string CPF::getCPF() const{
     return valor;
 }
 
+//200040979
 class Data {
 private:
     int dia, mes, ano;
@@ -98,11 +103,11 @@ private:
     void validarDia(int, int);
     void validarMes(int);
     void validarAno(int);
-    void validarFormatoData(const std::string&);
+    void validarFormatoData(const string&);
 public:
     Data();
-    Data(const std::string&);
-    void validarData(const std::string&);
+    Data(const string&);
+    void validarData(const string&);
 
 
     void setDia(int, int);
@@ -114,6 +119,7 @@ public:
     int getAno() const;
 };
 
+//200040979
 class Percentual {
 private:
     int valor;
@@ -123,5 +129,36 @@ public:
     int getValor() const;
 };
 
-#endif // DOMAINS_H_INCLUDED
+//231035105
+class Nome{
+private:
+    string primeiro_nome;
+    string sobrenome;
 
+    void validarTermo(const string& termo) const;
+
+public:
+    Nome(const string & primeiro, const string& segundo = "");
+    string getPrimeiroNome()const;
+    string getSobreNome()const;
+    bool validarNome() const;
+
+    void setPrimeiroNome(const string& primeiro);
+    void setSobreNome(const string& segundo);
+};
+
+
+
+//231035105
+class Setor{
+private:
+    string setorNome;
+    const static unordered_set<string> setoresValidos;
+public:
+    Setor(const string& setor);
+    string getSetorNome() const;
+    void setSetorNome(const string& setor);
+    void validarSetor() const;
+};
+
+#endif // DOMAINS_H_INCLUDED

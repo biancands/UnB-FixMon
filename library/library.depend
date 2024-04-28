@@ -1,16 +1,19 @@
 # depslib dependency file v1.0
 140718577734058 <<<<<<< HEAD
 
-1714256624 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
+1714262175 source:c:\users\bianc\documents\unb-fixmon\library\domains.cpp
 	<iostream>
-	<sstream>
 	"domains.h"
 
-1714256548 c:\users\bianc\documents\unb-fixmon\library\domains.h
+1714262369 c:\users\bianc\documents\unb-fixmon\library\domains.h
 	<stdexcept>
 	<string>
 	<vector>
 	<algorithm>
+	<unordered_set>
+	<sstream>
+	<cctype>
+	<regex>
 
 1712437433 source:c:\users\bianc\documents\unb-fixmon\library\entities.cpp
 	"entities.h"
@@ -19,16 +22,16 @@
 	"domains.h"
 	<string>
 
-1714017120 source:c:\users\bianc\documents\unb-fixmon\library\main.cpp
+1714261655 source:c:\users\bianc\documents\unb-fixmon\library\main.cpp
 	<iostream>
 	"entities.h"
 	"domains.h"
 	"tests.h"
 
-1714256747 c:\users\bianc\documents\unb-fixmon\library\tests.h
+1714262443 c:\users\bianc\documents\unb-fixmon\library\tests.h
 	"domains.h"
 
-1714257183 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
+1714261602 source:c:\users\bianc\documents\unb-fixmon\library\tests.cpp
 	"tests.h"
 	"entities.h"
 

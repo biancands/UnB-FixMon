@@ -79,5 +79,21 @@ int main()
                                break;
     }
 
+    TUNome testeNome;
+    switch(testeNome.run()){
+        case TUNome::SUCESSO: cout << "SUCESSO - NOME"<<endl;
+            break;
+        case TUNome::FALHA: cout<< "FALHA - NOME"<<endl;
+    }
+
+
+    TUSetor testeSetor;
+    switch(testeSetor.run()){
+        case TUSetor::SUCESSO: cout<<"SUCESSO - SETOR"<<endl;
+            break;
+        case TUSetor::FALHA: cout<<"FALHA - SETOR"<<endl;
+            break;
+    }
+
     return 0;
 }

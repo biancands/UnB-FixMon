@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 
 #include "domains.h"
 
@@ -17,16 +16,16 @@ void Dinheiro::setValor(double valor){
 
 void Senha::validar(int senha){
     if (senha <= 100000 || senha > 999999)
-        throw invalid_argument("Senha inv�lida! N�o possui 6 d�gitos.");
+        throw invalid_argument("Senha invalida! Nao possui 6 dgitos.");
 
     string str = to_string(senha);
 
     if (str[0] == '0')
-        throw invalid_argument("Senha inv�lida! O primeiro d�gito n�o � diferente de zero.");
+        throw invalid_argument("Senha invalida! O primeiro digito nao eh diferente de zero.");
     for (int i = 0; i < str.size(); i++) {
         for (int j = i + 1; j < str.size(); j++) {
             if (str[i] == str[j])
-                throw invalid_argument("Senha inv�lida! Possui d�gito duplicado.");
+                throw invalid_argument("Senha invalida! Possui digito duplicado.");
         }
     }
     bool isI = true, isD = true;
@@ -37,7 +36,7 @@ void Senha::validar(int senha){
             isD = false;
     }
     if (isI || isD)
-        throw invalid_argument("Senha inv�lida! Possui d�gitos sequenciais.");
+        throw invalid_argument("Senha invalida! Possui digitos sequenciais.");
 }
 
 void Senha::setValor(int valor){
@@ -45,39 +44,36 @@ void Senha::setValor(int valor){
     this->valor = valor;
 }
 
-//Methods - Codigo
 void Codigo::setCodigo(string codigo){
     validar(codigo);
     this->codigo=codigo;
 }
 
-//Methods - C�digo Pagamento
 void CodigoPagamento::validar(string codigo) const{
 
-    if (codigo.size()!=8){throw length_error("Valor n�o est� no tamanho de caracteres permitidos!");}
+    if (codigo.size()!=8){throw length_error("Valor nao esta no tamanho de caracteres permitidos!");}
 
     int count = 0;
     for (char c : codigo)
     {
         if (!isdigit(c) or (count==0 && c=='0'))
         {
-            throw invalid_argument("Valor inv�lido!");
+            throw invalid_argument("Valor invalido!");
         }
         count++;
     }
 }
 
-//Methods - C�digo Pagamento
 void CodigoTitulo::validar (string codigo) const{
     string codCheck = codigo.substr(0, 3);
     bool verificador = true;
     auto it = find(listaTitulos.begin(), listaTitulos.end(), codCheck);
 
     if(!(codigo.size()
-     ==  11)){ throw length_error("Valor do campo (CodigoTitulo) n�o est� no tamanho permitido!");}
+     ==  11)){ throw length_error("Valor do campo (CodigoTitulo) nao esta no tamanho permitido!");}
 
      else if(it == listaTitulos.end()) {
-        throw invalid_argument("Valor inv�lido! C�digo Titulo invalido. Lista v�lidos: CDB , CRA, CRI, LCA, LCI e DEB.");
+        throw invalid_argument("Valor invalido! Codigo Titulo invalido. Lista validos: CDB , CRA, CRI, LCA, LCI e DEB.");
     }
 
     else{
@@ -91,7 +87,7 @@ void CodigoTitulo::validar (string codigo) const{
             verificador = true;
         }
         else{
-            throw invalid_argument("Valor inv�lido! Cont�m letras minusculas ou simb�lo.");
+            throw invalid_argument("Valor invalido! Contem letras minusculas ou simbolo.");
         }
     }
     }
@@ -114,30 +110,30 @@ void CPF::validar(string cpf){
     int soma2 = 0;
     int peso = 0;
     if(cpf.size() != 14){
-            throw invalid_argument("CPF inv�lida! N�o possui 14 carcteres.");
+            throw invalid_argument("CPF invalida! Nao possui 14 carcteres.");
     }
     if(cpf[3] != '.' || cpf[7] != '.' || cpf[11] != '-'){
-            throw invalid_argument("CPF inv�lida! Pontua��o errada.");
+            throw invalid_argument("CPF invalida! Pontuacao errada.");
     }
     for (int i = 0; i < 14; i++){
         if(i == 3 || i == 7 || i == 11){continue;}
         else{
             if(!isdigit(cpf[i])){
-                throw invalid_argument("CPF inv�lida! N�o � digito.");
+                throw invalid_argument("CPF invalida! Nao e digito.");
         }
             else if(i == 13){
                 digito = cpf[i] - '0';
                 resto = soma2 % 11;
                 if(resto == 10){resto = 0;}
                 if(resto != digito){
-                        throw invalid_argument("CPF inv�lida!");
+                        throw invalid_argument("CPF invalida!");
                 }
             }else if(i == 12){
                 digito = cpf[i] - '0';
                 resto = soma1 % 11;
                 if(resto == 10){resto = 0;}
                 if(resto != digito){
-                        throw invalid_argument("CPF inv�lida!");
+                        throw invalid_argument("CPF invalida!");
                 }
                 else{soma2 = soma2 + digito * peso;}
             }else{
@@ -154,7 +150,7 @@ void CPF::setCPF(string valor){
 
 Data::Data() : dia(0), mes(0), ano(0) {}
 
-Data::Data(const std::string& data) {
+Data::Data(const string& data) {
     validarData(data);
 }
 
@@ -190,41 +186,41 @@ int Data::getAno() const {
 void Data::validarDia(int d, int m) {
     if (d < 1 || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) || (m == 2 && ((ehBissexto(ano) && d > 29) ||
                                                         (!ehBissexto(ano) && d > 28))) || (m != 2 && d > 31)) {
-        throw std::invalid_argument("Erro: Dia invalido");
+        throw invalid_argument("Erro: Dia invalido");
     }
 }
 
 void Data::validarMes(int m) {
     if (m < 1 || m > 12) {
-        throw std::invalid_argument("Erro: Mes invalido");
+        throw invalid_argument("Erro: Mes invalido");
     }
 }
 
 void Data::validarAno(int a) {
     if (a < 2000 || a > 2100) {
-        throw std::invalid_argument("Erro: Ano invalido");
+        throw invalid_argument("Erro: Ano invalido");
     }
 }
 
-void Data::validarFormatoData(const std::string& data){
-    std::stringstream ss(data);
+void Data::validarFormatoData(const string& data){
+    stringstream ss(data);
     char delim;
     ss >> dia >> delim >> mes >> delim >> ano;
     if (ss.fail() || ss.peek() != EOF) {
-        throw std::invalid_argument("Erro: Formato de data invalido");
+        throw invalid_argument("Erro: Formato de data invalido");
         }
 }
 
-void Data::validarData(const std::string& data) {
+void Data::validarData(const string& data) {
     try{
         validarFormatoData(data);
         validarDia(dia, mes);
         validarMes(mes);
         validarAno(ano);
     }
-    catch (const std::invalid_argument& e) {
+    catch (const invalid_argument& e) {
         dia = -1; mes = -1; ano = -1;
-        throw std::invalid_argument("Erro: Data invalida");
+        throw invalid_argument("Erro: Data invalida");
     }
 }
 
@@ -232,7 +228,6 @@ bool Data::ehBissexto(int a) {
     return (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
 }
 
-//Definição de métodos percentual
 void Percentual::setValor(int v) {
     validarValor(v);
     valor = v;
@@ -244,6 +239,81 @@ int Percentual::getValor() const {
 
 void Percentual::validarValor(int v){
     if(v < 0 || v > 100 ){
-        throw std::invalid_argument("Erro: Valor invalido");
+        throw invalid_argument("Erro: Valor invalido");
             }
+}
+
+Nome::Nome(const string& primeiro, const string& segundo) : primeiro_nome(primeiro), sobrenome(segundo){
+    validarTermo(primeiro);
+    validarTermo(segundo);
+}
+
+string Nome::getPrimeiroNome() const{
+    return primeiro_nome;
+}
+
+string Nome::getSobreNome() const{
+    return sobrenome;
+}
+
+bool Nome::validarNome()const{
+    regex padrao("^([A-Z][a-z]{2,9})(\\s([A-Z][a-z]{2,9}))?$");
+    return regex_match(primeiro_nome + ' ' + sobrenome, padrao);
+
+};
+
+void Nome::setPrimeiroNome(const string& primeiro){
+    validarTermo(primeiro);
+    primeiro_nome = primeiro;
+}
+
+void Nome::setSobreNome(const string& segundo){
+    validarTermo(segundo);
+    sobrenome = segundo;
+}
+
+void Nome::validarTermo(const string& termo) const{
+    if (termo.empty()){
+        throw invalid_argument("Não pode ser vazio");
+    }
+
+    if (termo.size() < 3 || termo.size() > 10){
+        throw invalid_argument("O termo deve ter entre 3 e 10 caracteres");
+    }
+
+    if (!isupper(termo[0])) {
+        throw invalid_argument("Todos os caracteres devem ser letras.");
+    }
+}
+
+const unordered_set<string>Setor::setoresValidos = {
+    "Agricultura",
+    "Construção civil",
+    "Energia",
+    "Finanças",
+    "Imobiliário",
+    "Papel e celulose",
+    "Pecuária",
+    "Química e petroquímica",
+    "Metalurgia e siderurgia",
+    "Mineração"
+};
+
+Setor::Setor(const string& setor) : setorNome(setor) {
+    validarSetor();
+}
+
+string Setor::getSetorNome() const {
+    return setorNome;
+};
+
+void Setor::validarSetor() const{
+    if (setoresValidos.count(setorNome) == 0){
+        throw invalid_argument("invalido");
+    }
+}
+
+void Setor::setSetorNome(const string& setor){
+    setorNome = setor;
+    validarSetor();
 }
