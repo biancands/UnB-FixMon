@@ -14,32 +14,34 @@ void Dinheiro::setValor(double valor){
     this->valor = valor;
 }
 
-void Senha::validar(int senha){
-    if (senha <= 100000 || senha > 999999)
-        throw invalid_argument("Senha invalida! Nao possui 6 dgitos.");
+void Senha::validar(const string& senha){
+    if (senha.size() != 6)
+        throw invalid_argument("Senha invalida! Nao possui 6 digitos.");
 
-    string str = to_string(senha);
-
-    if (str[0] == '0')
+    if (senha[0] == '0')
         throw invalid_argument("Senha invalida! O primeiro digito nao eh diferente de zero.");
-    for (int i = 0; i < str.size(); i++) {
-        for (int j = i + 1; j < str.size(); j++) {
-            if (str[i] == str[j])
+
+    for (string::size_type i = 0; i < senha.size(); i++) {
+        if (!isdigit(senha[i]))
+            throw invalid_argument("Senha invalida! Nao eh composta apenas por numeros.");
+        for (string::size_type j = i + 1; j < senha.size(); j++) {
+            if (senha[i] == senha[j])
                 throw invalid_argument("Senha invalida! Possui digito duplicado.");
         }
     }
+
     bool isI = true, isD = true;
-    for (int i = 0; i < str.size() - 1; i++) {
-        if (str[i] >= str[i + 1])
+    for (string::size_type i = 0; i < senha.size() - 1; i++) {
+        if (senha[i] >= senha[i + 1])
             isI = false;
-        if (str[i] <= str[i + 1])
+        if (senha[i] <= senha[i + 1])
             isD = false;
     }
     if (isI || isD)
         throw invalid_argument("Senha invalida! Possui digitos sequenciais.");
 }
 
-void Senha::setValor(int valor){
+void Senha::setValor(const string& valor){
     validar(valor);
     this->valor = valor;
 }

@@ -30,14 +30,14 @@ inline double Dinheiro::getValor() const{
 //231013583
 class Senha {
 private:
-    int valor;
-    void validar(int);
+    string valor;
+    void validar(const string&);
 public:
-    void setValor(int);
-    int getValor() const;
+    void setValor(const string&);
+    string getValor() const;
 };
 
-inline int Senha::getValor() const{
+inline string Senha::getValor() const{
     return valor;
 }
 

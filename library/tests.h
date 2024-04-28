@@ -79,11 +79,11 @@ public:
 //231013583
 class TUSenha {
 private:
-    const static int VALOR_VALIDO   = 102469;
-    const static int VALOR_DUPLICADO = 119843;
-    const static int VALOR_ZERO_INICIO = 012345;
-    const static int VALOR_CRESCENTE = 123456;
-    const static int VALOR_DECRESCENTE = 654321;
+    const string VALOR_VALIDO   = "102469";
+    const string VALOR_DUPLICADO = "119843";
+    const string VALOR_ZERO_INICIO = "012345";
+    const string VALOR_CRESCENTE = "123456";
+    const string VALOR_DECRESCENTE = "654321";
     Senha *senha;
     int estado;
     void setUp();
