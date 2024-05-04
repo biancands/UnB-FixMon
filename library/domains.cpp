@@ -152,10 +152,9 @@ void CPF::setCPF(string valor){
 
 Data::Data() : dia(0), mes(0), ano(0) {}
 
-Data::Data(const string& data) {
+Data::Data(const std::string& data) {
     validarData(data);
 }
-
 
 void Data::setDia(int d, int m) {
     validarDia(d, m);
@@ -185,50 +184,56 @@ int Data::getAno() const {
 }
 
 
+void Data::dataFormatada() {
+    std::cout << getDia() << "-" << getMes() << "-" << getAno();
+}
+
+
 void Data::validarDia(int d, int m) {
     if (d < 1 || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) || (m == 2 && ((ehBissexto(ano) && d > 29) ||
                                                         (!ehBissexto(ano) && d > 28))) || (m != 2 && d > 31)) {
-        throw invalid_argument("Erro: Dia invalido");
+        throw std::invalid_argument("Erro: Dia invalido");
     }
 }
 
 void Data::validarMes(int m) {
     if (m < 1 || m > 12) {
-        throw invalid_argument("Erro: Mes invalido");
+        throw std::invalid_argument("Erro: Mes invalido");
     }
 }
 
 void Data::validarAno(int a) {
     if (a < 2000 || a > 2100) {
-        throw invalid_argument("Erro: Ano invalido");
+        throw std::invalid_argument("Erro: Ano invalido");
     }
 }
 
-void Data::validarFormatoData(const string& data){
-    stringstream ss(data);
+void Data::validarFormatoData(const std::string& data){
+    std::stringstream ss(data);
     char delim;
     ss >> dia >> delim >> mes >> delim >> ano;
     if (ss.fail() || ss.peek() != EOF) {
-        throw invalid_argument("Erro: Formato de data invalido");
+        throw std::invalid_argument("Erro: Formato de data invalido");
         }
 }
 
-void Data::validarData(const string& data) {
+void Data::validarData(const std::string& data) {
     try{
         validarFormatoData(data);
         validarDia(dia, mes);
         validarMes(mes);
         validarAno(ano);
     }
-    catch (const invalid_argument& e) {
+    catch (const std::invalid_argument& e) {
         dia = -1; mes = -1; ano = -1;
-        throw invalid_argument("Erro: Data invalida");
+        throw std::invalid_argument("Erro: Data invalida");
     }
 }
 
 bool Data::ehBissexto(int a) {
     return (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
 }
+
 
 void Percentual::setValor(int v) {
     validarValor(v);

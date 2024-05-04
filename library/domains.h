@@ -103,12 +103,12 @@ private:
     void validarDia(int, int);
     void validarMes(int);
     void validarAno(int);
-    void validarFormatoData(const string&);
+    void validarFormatoData(const std::string&);
 public:
     Data();
-    Data(const string&);
-    void validarData(const string&);
-
+    Data(const std::string&);
+    void validarData(const std::string&);
+    void dataFormatada();
 
     void setDia(int, int);
     void setMes(int);
@@ -118,6 +118,7 @@ public:
     int getMes() const;
     int getAno() const;
 };
+
 
 //200040979
 class Percentual {
