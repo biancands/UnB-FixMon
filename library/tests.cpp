@@ -557,9 +557,47 @@ int TUSetor::run(){
 }
 
 
+//Implementacao de testes de entidade Pagamento
 
+void TUPagamento::setUp(){
+    pagamento = new Pagamento();
+    estadoTest  = SUCESSO;
+}
 
+void TUPagamento::tearDown(){
+    delete pagamento;
+}
 
+void TUPagamento::testarCenarioSucesso(){
+    CodigoPagamento codigo;
+    codigo.setCodigo(codigoPagamentoValido);
+    pagamento->setCodigo(codigo);
 
+    if(pagamento->getCodigo().getCodigo() != codigoPagamentoValido)
+        estadoTest = FALHA;
 
+    Data data(dataValida);
+    pagamento->setData(data);
+    if(pagamento->getData().dataFormatada() != dataValida)
+        estadoTest = FALHA;
 
+    Estado estado;
+    estado.setEstado(estadoValido);
+    pagamento->setEstado(estado);
+
+    if(pagamento->getEstado().getEstado() != estadoValido)
+        estadoTest = FALHA;
+
+    Percentual percentual;
+    percentual.setValor(percentualValido);
+    pagamento->setPercentual(percentual);
+    if(pagamento->getPercentual().getValor() != percentualValido)
+        estadoTest = FALHA;
+}
+
+int TUPagamento::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return estadoTest;
+}
