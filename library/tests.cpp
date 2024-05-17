@@ -1,5 +1,6 @@
 #include "tests.h"
 #include "entities.h"
+#include "domains.h"
 
 void TUDinheiro::setUp(){
     dinheiro = new Dinheiro();
@@ -328,42 +329,40 @@ void TUCPF::testarCenarioFalha2(){
     }
 }
 
-const std::string TUData::DATA_VALIDA = "20-10-2010";
-const std::string TUData::DATA_INVALIDA = "34-16-2599";
+const std::string TUData::DATA_VALIDA = "22-02-2024";
+const std::string TUData::DATA_INVALIDA = "54-02-2599";
 
-void TUData::setUp(){
+void TUData::setUp() {
     data = new Data();
     estado = SUCESSO;
 }
 
-void TUData::tearDown(){
+void TUData::tearDown() {
     delete data;
 }
 
-void TUData::testarCenarioSucesso(){
-    try{
-        data->validarData(DATA_VALIDA);
-        if (data->getDia() != VALOR_DIA_VALIDO || data->getMes() != VALOR_MES_VALIDO || data->getAno() != VALOR_ANO_VALIDO){
+void TUData::testarCenarioSucesso() {
+    try {
+        data->setData(DATA_VALIDA);
+        if (data->getData() != DATA_VALIDA) {
             estado = FALHA;
         }
-    }
-    catch(invalid_argument &excecao){
+    } catch (std::invalid_argument &excecao) {
         estado = FALHA;
     }
 }
 
-
-void TUData::testarCenarioFalha(){
-    try{
-        data->validarData(DATA_INVALIDA);
+void TUData::testarCenarioFalha() {
+    try {
+        data->setData(DATA_INVALIDA);
         estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        if (data->getDia() == VALOR_DIA_INVALIDO && data->getMes() == VALOR_MES_INVALIDO && data->getAno() == VALOR_ANO_INVALIDO){
+    } catch (std::invalid_argument &excecao) {
+        if (data->getData() == DATA_INVALIDA) {
             estado = FALHA;
         }
     }
 }
+
 
 void TUPercentual::setUp(){
     percentual = new Percentual();
@@ -466,6 +465,7 @@ void TUSetor::testarSetorInvalido(){
 }
 
 
+
 int TUDinheiro::run(){
     setUp();
     testarCenarioSucesso();
@@ -555,3 +555,11 @@ int TUSetor::run(){
     teardown();
     return estado;
 }
+
+
+
+
+
+
+
+

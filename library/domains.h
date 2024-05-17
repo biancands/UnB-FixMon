@@ -99,24 +99,19 @@ inline string CPF::getCPF() const{
 class Data {
 private:
     int dia, mes, ano;
-    bool ehBissexto(int);
-    void validarDia(int, int);
-    void validarMes(int);
-    void validarAno(int);
-    void validarFormatoData(const std::string&);
+    bool ehBissexto(int) const;
+    void validarDia(int, int) const;
+    void validarMes(int) const;
+    void validarAno(int) const;
+    void validarFormatoData(const std::string&, int&, int&, int&) const;
+
 public:
     Data();
-    Data(const std::string&);
-    void validarData(const std::string&);
-    void dataFormatada();
+    explicit Data(const std::string&);
 
-    void setDia(int, int);
-    void setMes(int);
-    void setAno(int);
+    void setData(const std::string&);
+    std::string getData() const;
 
-    int getDia() const;
-    int getMes() const;
-    int getAno() const;
 };
 
 

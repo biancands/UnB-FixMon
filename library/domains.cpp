@@ -150,90 +150,62 @@ void CPF::setCPF(string valor){
     this->valor = valor;
 }
 
+
 Data::Data() : dia(0), mes(0), ano(0) {}
 
 Data::Data(const std::string& data) {
-    validarData(data);
+    setData(data);
 }
 
-void Data::setDia(int d, int m) {
+void Data::setData(const std::string& data) {
+    int d, m, a;
+    validarFormatoData(data, d, m, a);
     validarDia(d, m);
-    dia = d;
-}
-
-void Data::setMes(int m) {
     validarMes(m);
-    mes = m;
-}
-
-void Data::setAno(int a) {
     validarAno(a);
+    dia = d;
+    mes = m;
     ano = a;
 }
 
-int Data::getDia() const {
-    return dia;
+std::string Data::getData() const {
+    std::stringstream ss;
+    ss << (dia < 10 ? "0" : "") << dia << "-" << (mes < 10 ? "0" : "") << mes << "-" << ano;
+    return ss.str();
 }
 
-int Data::getMes() const {
-    return mes;
-}
-
-int Data::getAno() const {
-    return ano;
-}
-
-
-void Data::dataFormatada() {
-    std::cout << getDia() << "-" << getMes() << "-" << getAno();
-}
-
-
-void Data::validarDia(int d, int m) {
-    if (d < 1 || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) || (m == 2 && ((ehBissexto(ano) && d > 29) ||
-                                                        (!ehBissexto(ano) && d > 28))) || (m != 2 && d > 31)) {
+void Data::validarDia(int d, int m) const {
+    if (d < 1 || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) ||
+        (m == 2 && ((ehBissexto(ano) && d > 29) || (!ehBissexto(ano) && d > 28))) ||
+        (m != 2 && d > 31)) {
         throw std::invalid_argument("Erro: Dia invalido");
     }
 }
 
-void Data::validarMes(int m) {
+void Data::validarMes(int m) const {
     if (m < 1 || m > 12) {
         throw std::invalid_argument("Erro: Mes invalido");
     }
 }
 
-void Data::validarAno(int a) {
+void Data::validarAno(int a) const {
     if (a < 2000 || a > 2100) {
         throw std::invalid_argument("Erro: Ano invalido");
     }
 }
 
-void Data::validarFormatoData(const std::string& data){
+void Data::validarFormatoData(const std::string& data, int& d, int& m, int& a) const {
     std::stringstream ss(data);
-    char delim;
-    ss >> dia >> delim >> mes >> delim >> ano;
-    if (ss.fail() || ss.peek() != EOF) {
+    char delim1, delim2;
+    ss >> d >> delim1 >> m >> delim2 >> a;
+    if (ss.fail() || ss.peek() != EOF || delim1 != '-' || delim2 != '-') {
         throw std::invalid_argument("Erro: Formato de data invalido");
-        }
-}
-
-void Data::validarData(const std::string& data) {
-    try{
-        validarFormatoData(data);
-        validarDia(dia, mes);
-        validarMes(mes);
-        validarAno(ano);
-    }
-    catch (const std::invalid_argument& e) {
-        dia = -1; mes = -1; ano = -1;
-        throw std::invalid_argument("Erro: Data invalida");
     }
 }
 
-bool Data::ehBissexto(int a) {
+bool Data::ehBissexto(int a) const {
     return (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
 }
-
 
 void Percentual::setValor(int v) {
     validarValor(v);

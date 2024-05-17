@@ -2,6 +2,7 @@
 #define TESTS_H_INCLUDED
 
 #include "domains.h"
+#include "entities.h"
 
 using namespace std;
 
@@ -184,34 +185,23 @@ public:
 //200040979
 class TUData {
 private:
+    static const std::string DATA_VALIDA;
+    static const std::string DATA_INVALIDA;
 
-    const static std::string DATA_VALIDA;
-    const static std::string DATA_INVALIDA;
-
-    const static int VALOR_DIA_VALIDO   = 20;
-    const static int VALOR_DIA_INVALIDO = 34;
-
-    const static int VALOR_MES_VALIDO   = 10;
-    const static int VALOR_MES_INVALIDO = 16;
-
-    const static int VALOR_ANO_VALIDO   = 2010;
-    const static int VALOR_ANO_INVALIDO = 2599;
-
-
-
-    Data *data;
-
+    Data* data;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
 public:
-    const static int SUCESSO =  0;
-    const static int FALHA   = -1;
+    static const int SUCESSO = 0;
+    static const int FALHA = -1;
     int run();
 };
+
 
 //200040979
 class TUPercentual {
@@ -232,5 +222,7 @@ public:
     const static int FALHA   = -1;
     int run();
 };
+
+
 
 #endif // TESTS_H_INCLUDED
