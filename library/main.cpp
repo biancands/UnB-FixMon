@@ -95,5 +95,18 @@ int main()
             break;
     }
 
+    //Testes - ENTIDADES
+
+    TUPagamento testePagamento;
+
+    switch (testePagamento.run())
+    {
+    case TUPagamento::SUCESSO: cout <<"SUCESSO - PAGAMENTO" << endl;
+        break;
+    
+    case TUPagamento::FALHA: cout << "FALHA - PAGAMENTO" << endl;
+        break;
+    }
+
     return 0;
 }

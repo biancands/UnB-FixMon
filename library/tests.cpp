@@ -578,7 +578,7 @@ void TUPagamento::testarCenarioSucesso(){
 
     Data data(dataValida);
     pagamento->setData(data);
-    if(pagamento->getData().dataFormatada() != dataValida)
+    if(pagamento->getData().getData() != dataValida)
         estadoTest = FALHA;
 
     Estado estado;
