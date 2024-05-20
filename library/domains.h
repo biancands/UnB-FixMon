@@ -63,7 +63,7 @@ class CodigoTitulo : public Codigo{
     protected:
         void validar(string) const override;
     public:
-        const vector<string> listaTitulos = {"CDB","CRA","CRI",
+        vector<string> listaTitulos = {"CDB","CRA","CRI",
 "LCA","LCI","DEB"};
 };
 
