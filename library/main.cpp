@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "entities.h"
 #include "domains.h"
@@ -94,6 +95,18 @@ int main()
         case TUSetor::FALHA: cout<<"FALHA - SETOR"<<endl;
             break;
     }
+
+
+    TUConta testeConta;
+    switch(testeConta.run()){
+        case TUConta::SUCESSO: cout << "SUCESSO - CONTA" << endl;
+                                break;
+        case TUConta::FALHA: cout << "FALHA   - CONTA" << endl;
+                                break;
+    }
+
+
+
 
     return 0;
 }
