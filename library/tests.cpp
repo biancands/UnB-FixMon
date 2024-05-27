@@ -557,8 +557,66 @@ int TUSetor::run(){
 }
 
 
+//Implementação de testes Entidade Titulo
+void TUTitulo::setup(){
+    titulo = new Titulo();
+    estadoTest = SUCESSO;
+}
 
+void TUTitulo::teardown(){
+    delete titulo;
+}
 
+void TUTitulo::testarCenarioSucesso(){
+    CodigoTitulo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    titulo ->setCodigo(codigo);
+    if (titulo -> getCodigo().getCodigo() != CODIGO_VALIDO){
+        estadoTest = FALHA;
+    }
+
+    Nome emissor(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
+    titulo -> setEmissor (emissor);
+    if (titulo -> getEmissor(). getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || titulo ->getEmissor().getSobreNome() != SOBRE_NOME_VALIDO) {
+        estadoTest = FALHA;
+    }
+
+    Setor setor(SETOR_VALIDO);
+    titulo -> setSetor(setor);
+    if (titulo -> getSetor(). getSetorNome() != SETOR_VALIDO){
+        estadoTest = FALHA;
+    }
+
+    Data emissao(DATA_VALIDA);
+    titulo ->setEmissao(emissao);
+    if (titulo ->getEmissao().getData() != DATA_VALIDA) {
+        estadoTest = FALHA;
+    }
+    
+    
+
+    Data vencimento;
+    vencimento.setData(DATA_VALIDA);
+    titulo -> setVencimento(vencimento);
+    if (titulo -> getVencimento().getData() != DATA_VALIDA){
+        estadoTest = FALHA;
+    }
+
+    Dinheiro valor;
+
+    valor.setValor(VALOR_VALIDO);
+    titulo -> setValor(valor);
+    if (titulo -> getValor(). getValor() != VALOR_VALIDO){
+        estadoTest = FALHA;
+    }
+}
+
+int TUTitulo::run(){
+    setup();
+    testarCenarioSucesso();
+    teardown();
+    return estadoTest;
+}
 
 
 

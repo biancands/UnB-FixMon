@@ -3,6 +3,7 @@
 
 #include "domains.h"
 #include "entities.h"
+#include <string>
 
 using namespace std;
 
@@ -222,6 +223,30 @@ public:
     const static int FALHA   = -1;
     int run();
 };
+
+//231035105
+//Classe de Teste Entidade Titulo
+
+class TUTitulo{
+private:
+    const string CODIGO_VALIDO = "CDB2E3FTV8X";
+    const string PRIMEIRO_NOME_VALIDO = "Jorge";
+    const string SOBRE_NOME_VALIDO = "Lucas";
+    const string SETOR_VALIDO = "Agricultura";
+    static const string DATA_VALIDA;
+    static const double VALOR_VALIDO;  
+    Titulo *titulo;
+    int estadoTest;
+    void setup();
+    void teardown();
+    void testarCenarioSucesso();
+public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+
+};
+
 
 
 

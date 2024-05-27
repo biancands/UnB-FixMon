@@ -60,12 +60,13 @@ class CodigoPagamento : public Codigo{
 
 //Parra - 211020956
 class CodigoTitulo : public Codigo{
-    protected:
-        void validar(string) const override;
-    public:
-        const vector<string> listaTitulos = {"CDB","CRA","CRI",
-"LCA","LCI","DEB"};
+protected:
+    void validar(string) const override;
+public:
+    static const vector<string> listaTitulos;
 };
+
+const vector<string> CodigoTitulo::listaTitulos = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
 
 //222014142
 class Estado{
@@ -134,7 +135,7 @@ private:
     void validarTermo(const string& termo) const;
 
 public:
-    Nome(const string & primeiro, const string& segundo = "");
+    Nome(const string & primeiro = "", const string& segundo = "");
     string getPrimeiroNome()const;
     string getSobreNome()const;
     bool validarNome() const;
@@ -151,7 +152,7 @@ private:
     string setorNome;
     const static unordered_set<string> setoresValidos;
 public:
-    Setor(const string& setor);
+    Setor(const string& setor = "");
     string getSetorNome() const;
     void setSetorNome(const string& setor);
     void validarSetor() const;

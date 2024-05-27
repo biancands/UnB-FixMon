@@ -95,5 +95,17 @@ int main()
             break;
     }
 
+
+    //Testes -  Entidade Titulo
+
+    TUTitulo testeTitulo;
+    switch (testeTitulo.run())
+    {
+        case TUTitulo::SUCESSO: cout <<"SUCESSO - TITULO" << endl;
+            break;
+        case TUTitulo::FALHA: cout <<"FALHA - TITULO" << endl;
+            break;
+    }
+
     return 0;
 }
