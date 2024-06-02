@@ -223,6 +223,24 @@ public:
     int run();
 };
 
+//200040979
+class TUConta {
+private:
+    static constexpr const char* CPF_VALIDO = "135.773.667-37";
+    const string PRIMEIRO_NOME_VALIDO = "Jorge";
+    const string SOBRE_NOME_VALIDO = "Lucas";
+    const string SENHA_VALIDO = "102469";
 
+    Conta *conta;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+    int run();
+};
 
 #endif // TESTS_H_INCLUDED

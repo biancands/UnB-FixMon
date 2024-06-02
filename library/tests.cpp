@@ -464,6 +464,38 @@ void TUSetor::testarSetorInvalido(){
     }
 }
 
+void TUConta::setUp(){
+    conta = new Conta();
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown(){
+    delete conta;
+}
+
+void TUConta::testarCenarioSucesso() {
+    CPF cpf;
+    cpf.setCPF(CPF_VALIDO);
+    conta->setNumCPF(cpf);
+    if (conta->getNumCPF().getCPF() != CPF_VALIDO) {
+        estado = FALHA;
+    }
+
+    Nome nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
+    conta->setNomeUm(nome);
+    conta->setNomeDois(nome);
+    if (conta->getNomeUm().getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || conta->getNomeDois().getSobreNome() != SOBRE_NOME_VALIDO) {
+        estado = FALHA;
+    }
+
+    Senha senha;
+    senha.setValor(SENHA_VALIDO);
+    conta->setSenha(senha);
+    if (conta->getSenha().getValor() != SENHA_VALIDO) {
+        estado = FALHA;
+    }
+}
+
 
 
 int TUDinheiro::run(){
@@ -556,10 +588,11 @@ int TUSetor::run(){
     return estado;
 }
 
-
-
-
-
-
+int TUConta::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return estado;
+}
 
 
