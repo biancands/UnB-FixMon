@@ -262,4 +262,25 @@ class TUPagamento{
         int run();
 };
 
+//231035105
+class TUTitulo{
+private:
+    const string CODIGO_VALIDO = "CDB2E3FTV8X";
+    const string PRIMEIRO_NOME_VALIDO = "Jorge";
+    const string SOBRE_NOME_VALIDO = "Lucas";
+    const string SETOR_VALIDO = "Agricultura";
+    const string DATA_VALIDA = "03-04-2024";
+    const double VALOR_VALIDO = 500.00;
+    Titulo *titulo;
+    int estadoTest;
+    void setup();
+    void teardown();
+    void testarCenarioSucesso();
+public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+
+};
+
 #endif // TESTS_H_INCLUDED

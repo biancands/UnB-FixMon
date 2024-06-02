@@ -112,4 +112,88 @@ inline Estado Pagamento::getEstado() const {
     return estado;
 }
 
+//231013583
+class Titulo {
+private:
+    CodigoTitulo codigo;
+    Nome emissor_um;
+    Nome emissor_dois;
+    Setor setor;
+    Data emissao;
+    Data vencimento;
+    Dinheiro valor;
+public:
+    Titulo() : emissor_um("Nome", "Valido"), emissor_dois("Nome", "Valido"), setor("Agricultura") {}
+    void setCodigo(const CodigoTitulo&);
+    CodigoTitulo getCodigo() const;
+    void setEmissorUm(const Nome&);
+    Nome getEmissorUm() const;
+    void setEmissorDois(const Nome&);
+    Nome getEmissorDois() const;
+    void setSetor(const Setor&);
+    Setor getSetor() const;
+    void setEmissao(const Data&);
+    Data getEmissao() const;
+    void setVencimento(const Data&);
+    Data getVencimento() const;
+    void setValor(const Dinheiro&);
+    Dinheiro getValor() const;
+};
+
+inline void Titulo::setCodigo(const CodigoTitulo& codigo){
+    this->codigo = codigo;
+}
+
+inline CodigoTitulo Titulo::getCodigo() const {
+    return codigo;
+}
+
+inline void Titulo::setEmissorUm(const Nome& emissor_um){
+    this->emissor_um = emissor_um;
+}
+
+inline Nome Titulo::getEmissorUm() const {
+    return emissor_um;
+}
+
+inline void Titulo::setEmissorDois(const Nome& emissor_dois){
+    this->emissor_dois = emissor_dois;
+}
+
+inline Nome Titulo::getEmissorDois() const {
+    return emissor_dois;
+}
+
+inline void Titulo::setSetor(const Setor& setor){
+    this->setor = setor;
+}
+
+inline Setor Titulo::getSetor() const {
+    return setor;
+}
+
+inline void Titulo::setEmissao(const Data& emissao){
+    this->emissao = emissao;
+}
+
+inline Data Titulo::getEmissao() const {
+    return emissao;
+}
+
+inline void Titulo::setVencimento(const Data& vencimento){
+    this->vencimento = vencimento;
+}
+
+inline Data Titulo::getVencimento() const {
+    return vencimento;
+}
+
+inline void Titulo::setValor(const Dinheiro& valor){
+    this->valor = valor;
+}
+
+inline Dinheiro Titulo::getValor() const {
+    return valor;
+}
+
 #endif
