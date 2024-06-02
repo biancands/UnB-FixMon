@@ -243,4 +243,23 @@ public:
     int run();
 };
 
+//211020956
+class TUPagamento{
+    private:
+
+        const string codigoPagamentoValido = "33213098";
+        const string dataValida = "12-03-2023";
+        const static int percentualValido = 50;
+        const string estadoValido = "Previsto";
+        Pagamento *pagamento;
+        int estadoTest;
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 #endif // TESTS_H_INCLUDED

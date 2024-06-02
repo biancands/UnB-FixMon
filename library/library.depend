@@ -5,7 +5,7 @@
 	<iostream>
 	"domains.h"
 
-1717360512 c:\users\bianc\documents\unb-fixmon\library\domains.h
+1717361704 c:\users\bianc\documents\unb-fixmon\library\domains.h
 	<stdexcept>
 	<string>
 	<vector>
@@ -18,7 +18,7 @@
 1712437433 source:c:\users\bianc\documents\unb-fixmon\library\entities.cpp
 	"entities.h"
 
-1717361592 c:\users\bianc\documents\unb-fixmon\library\entities.h
+1717362031 c:\users\bianc\documents\unb-fixmon\library\entities.h
 	"domains.h"
 	<string>
 
@@ -69,25 +69,35 @@
 1713815281 source:c:\users\danilo\documents\github\unb-fixmon\library\domains.cpp
 	"domains.h"
 
-1713815320 c:\users\danilo\documents\github\unb-fixmon\library\domains.h
+1715022663 c:\users\danilo\documents\github\unb-fixmon\library\domains.h
 	<stdexcept>
 	<string>
+	<vector>
+	<algorithm>
+	<unordered_set>
+	<sstream>
+	<cctype>
+	<regex>
 
 1712703343 source:c:\users\danilo\documents\github\unb-fixmon\library\entities.cpp
 	"entities.h"
 
-1712703343 c:\users\danilo\documents\github\unb-fixmon\library\entities.h
-	<string>
+1715024114 c:\users\danilo\documents\github\unb-fixmon\library\entities.h
 	"domains.h"
+	<string>
 
-1713819008 source:c:\users\danilo\documents\github\unb-fixmon\library\main.cpp
+1714325228 source:c:\users\danilo\documents\github\unb-fixmon\library\main.cpp
 	<iostream>
 	"entities.h"
 	"domains.h"
 	"tests.h"
 
-1713819010 c:\users\danilo\documents\github\unb-fixmon\library\tests.h
+1714325228 c:\users\danilo\documents\github\unb-fixmon\library\tests.h
 	"domains.h"
 
 1713819010 1f2f4c0e284d2eaac3e14582dfa395c129932
+
+1714325228 source:c:\users\danilo\documents\github\unb-fixmon\library\tests.cpp
+	"tests.h"
+	"entities.h"
 
