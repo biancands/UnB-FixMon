@@ -92,12 +92,14 @@ void CodigoTitulo::validar(string codigo) const
     {
         for (char c : codigo)
         {
-            if (isupper(c)) {
+            if (isupper(c))
+            {
                 verificador = true;
             } else if (isdigit(c))
             {
                 verificador = true;
-            } else {
+            } else
+            {
                 throw invalid_argument("Valor invalido! Contem letras minusculas ou simbolo.");
             }
         }
