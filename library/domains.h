@@ -14,7 +14,8 @@ using namespace std;
 
 // Classe Dinheiro
 // 231013583
-class Dinheiro {
+class Dinheiro
+{
 private:
     static constexpr double LIMITE = 1000000.00;
     double valor;
@@ -24,13 +25,15 @@ public:
     double getValor() const;
 };
 
-inline double Dinheiro::getValor() const {
+inline double Dinheiro::getValor() const
+{
     return valor;
 }
 
 // Classe Senha
 // 231013583
-class Senha {
+class Senha
+{
 private:
     string valor;
     void validar(const string&);
@@ -39,13 +42,15 @@ public:
     string getValor() const;
 };
 
-inline string Senha::getValor() const {
+inline string Senha::getValor() const
+{
     return valor;
 }
 
 // Classe Código
 // Parra - 211020956
-class Codigo {
+class Codigo
+{
 private:
     string codigo;
     virtual void validar(string codigo) const = 0;
@@ -56,14 +61,16 @@ public:
 
 // Classe Código Pagamento
 // Parra - 211020956
-class CodigoPagamento : public Codigo {
+class CodigoPagamento : public Codigo
+{
 private:
     void validar(string) const override;
 };
 
 // Classe Código Título
 // Parra - 211020956
-class CodigoTitulo : public Codigo {
+class CodigoTitulo : public Codigo
+{
 protected:
     void validar(string) const override;
 public:
@@ -72,7 +79,8 @@ public:
 
 // Classe Estado
 // 222014142
-class Estado {
+class Estado
+{
 private:
     string valor;
     void validar(string);
@@ -87,7 +95,8 @@ inline string Estado::getEstado() const {
 
 // Classe CPF
 // 222014142
-class CPF {
+class CPF
+{
 private:
     string valor;
     void validar(string);
@@ -96,13 +105,15 @@ public:
     string getCPF() const;
 };
 
-inline string CPF::getCPF() const {
+inline string CPF::getCPF() const
+{
     return valor;
 }
 
 // Classe Data
 // 200040979
-class Data {
+class Data
+{
 private:
     int dia, mes, ano;
     bool ehBissexto(int) const;
@@ -121,7 +132,8 @@ public:
 
 // Classe Percentual
 // 200040979
-class Percentual {
+class Percentual
+{
 private:
     int valor;
     void validarValor(int);
@@ -132,7 +144,8 @@ public:
 
 // Classe Nome
 // 231035105
-class Nome {
+class Nome
+{
 private:
     string primeiro_nome;
     string sobrenome;
@@ -151,7 +164,8 @@ public:
 
 // Classe Setor
 // 231035105
-class Setor {
+class Setor
+{
 private:
     string setorNome;
     const static unordered_set<string> setoresValidos;

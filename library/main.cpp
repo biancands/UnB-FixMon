@@ -5,9 +5,11 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     TUDinheiro testeDinheiro;
-    switch(testeDinheiro.run()) {
+    switch(testeDinheiro.run())
+    {
         case TUDinheiro::SUCESSO:
             cout << "SUCESSO - DINHEIRO" << endl;
             break;
@@ -17,7 +19,8 @@ int main() {
     }
 
     TUSenha testeSenha;
-    switch(testeSenha.run()) {
+    switch(testeSenha.run())
+    {
         case TUSenha::SUCESSO:
             cout << "SUCESSO - SENHA" << endl;
             break;
@@ -27,7 +30,8 @@ int main() {
     }
 
     TUCodigoPagamento testeCodigoPay;
-    switch(testeCodigoPay.run()) {
+    switch(testeCodigoPay.run())
+    {
         case TUCodigoPagamento::SUCESSO:
             cout << "SUCESSO - CODIGO PAGAMENTO" << endl;
             break;
@@ -37,7 +41,8 @@ int main() {
     }
 
     TUCodigoTitulo testeCodigoTitulo;
-    switch(testeCodigoTitulo.run()) {
+    switch(testeCodigoTitulo.run())
+    {
         case TUCodigoTitulo::SUCESSO:
             cout << "SUCESSO - CODIGO TITULO" << endl;
             break;
@@ -47,7 +52,8 @@ int main() {
     }
 
     TUEstado testeEstado;
-    switch(testeEstado.run()) {
+    switch(testeEstado.run())
+    {
         case TUEstado::SUCESSO:
             cout << "SUCESSO - ESTADO" << endl;
             break;
@@ -57,7 +63,8 @@ int main() {
     }
 
     TUCPF testeCPF;
-    switch(testeCPF.run()) {
+    switch(testeCPF.run())
+    {
         case TUCPF::SUCESSO:
             cout << "SUCESSO - CPF" << endl;
             break;
@@ -67,7 +74,8 @@ int main() {
     }
 
     TUData testeA;
-    switch(testeA.run()) {
+    switch(testeA.run())
+    {
         case TUData::SUCESSO:
             cout << "SUCESSO - DATA" << endl;
             break;
@@ -77,7 +85,8 @@ int main() {
     }
 
     TUPercentual testeB;
-    switch(testeB.run()) {
+    switch(testeB.run())
+    {
         case TUPercentual::SUCESSO:
             cout << "SUCESSO - PERCENTUAL" << endl;
             break;
@@ -87,7 +96,8 @@ int main() {
     }
 
     TUNome testeNome;
-    switch(testeNome.run()) {
+    switch(testeNome.run())
+    {
         case TUNome::SUCESSO:
             cout << "SUCESSO - NOME" << endl;
             break;
@@ -97,7 +107,8 @@ int main() {
     }
 
     TUSetor testeSetor;
-    switch(testeSetor.run()) {
+    switch(testeSetor.run())
+    {
         case TUSetor::SUCESSO:
             cout << "SUCESSO - SETOR" << endl;
             break;
@@ -107,7 +118,8 @@ int main() {
     }
 
     TUConta testeConta;
-    switch(testeConta.run()) {
+    switch(testeConta.run())
+    {
         case TUConta::SUCESSO:
             cout << "SUCESSO - CONTA" << endl;
             break;
@@ -117,7 +129,8 @@ int main() {
     }
 
     TUPagamento testePagamento;
-    switch(testePagamento.run()) {
+    switch(testePagamento.run())
+    {
         case TUPagamento::SUCESSO:
             cout << "SUCESSO - PAGAMENTO" << endl;
             break;
@@ -127,7 +140,8 @@ int main() {
     }
 
     TUTitulo testeTitulo;
-    switch(testeTitulo.run()) {
+    switch(testeTitulo.run())
+    {
         case TUTitulo::SUCESSO:
             cout << "SUCESSO - TITULO" << endl;
             break;

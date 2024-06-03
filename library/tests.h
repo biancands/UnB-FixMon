@@ -9,7 +9,8 @@ using namespace std;
 //======================================= TESTES DOMINIO =========================================================
 
 //231035105
-class TUNome{
+class TUNome
+{
 private:
     const string PRIMEIRO_NOME_VALIDO = "Jorge";
     const string SOBRE_NOME_VALIDO = "Lucas";
@@ -36,7 +37,8 @@ public:
 };
 
 //231035105
-class TUSetor{
+class TUSetor
+{
 private:
     const string SETOR_VALIDO = "Agricultura";
     const string SETOR_INVALIDO = "Aviao";
@@ -60,7 +62,8 @@ public:
 };
 
 //231013583
-class TUDinheiro {
+class TUDinheiro
+{
 private:
     constexpr static double VALOR_VALIDO   = 500000.00;
     constexpr static double VALOR_INVALIDO = 1000500.00;
@@ -80,7 +83,8 @@ public:
 };
 
 //231013583
-class TUSenha {
+class TUSenha
+{
 private:
     const string VALOR_VALIDO   = "102469";
     const string VALOR_DUPLICADO = "119843";
@@ -104,8 +108,8 @@ public:
 };
 
 //211020956
-class TUCodigoPagamento {
-
+class TUCodigoPagamento
+{
     private:
         const string CODIGO_VALIDO = "28273456";
         const string CODIGO_TAMANHO_INVALIDO = "0992534"; //PODE SER MAIOR OU MENOR QUE 8
@@ -149,7 +153,8 @@ class TUCodigoTitulo
 };
 
 //222014142
-class TUEstado{
+class TUEstado
+{
 private:
     constexpr static char* VALOR_VALIDO   = "Previsto";
     constexpr static char* VALOR_INVALIDO = "previsto";
@@ -166,7 +171,8 @@ public:
 };
 
 //222014142
-class TUCPF{
+class TUCPF
+{
 private:
     constexpr static char* VALOR_VALIDO   = "135.773.667-37";
     constexpr static char* VALOR_INVALIDO1 = "135.773.667-36";
@@ -185,7 +191,8 @@ public:
 };
 
 //200040979
-class TUData {
+class TUData
+{
 private:
     static const std::string DATA_VALIDA;
     static const std::string DATA_INVALIDA;
@@ -204,9 +211,9 @@ public:
     int run();
 };
 
-
 //200040979
-class TUPercentual {
+class TUPercentual
+{
 private:
     const static int VALOR_VALIDO   = 2;
     const static int VALOR_INVALIDO = 300;
@@ -228,7 +235,8 @@ public:
 //======================================== TESTES ENTIDADES ============================================================
 
 //200040979
-class TUConta {
+class TUConta
+{
 private:
     static constexpr const char* CPF_VALIDO = "135.773.667-37";
     const string PRIMEIRO_NOME_VALIDO = "Jorge";
@@ -248,7 +256,8 @@ public:
 };
 
 //211020956
-class TUPagamento{
+class TUPagamento
+{
     private:
 
         const string codigoPagamentoValido = "33213098";
@@ -267,7 +276,8 @@ class TUPagamento{
 };
 
 //231035105
-class TUTitulo{
+class TUTitulo
+{
 private:
     const string CODIGO_VALIDO = "CDB2E3FTV8X";
     const string PRIMEIRO_NOME_VALIDO = "Jorge";
