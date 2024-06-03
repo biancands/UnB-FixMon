@@ -30,14 +30,7 @@ public:
     Senha getSenha() const;
 };
 
-inline void Conta::setSenha(const Senha& senha) {
-    this->senha = senha;
-}
-
-inline Senha Conta::getSenha() const {
-    return senha;
-}
-
+// Implementações Inline da Classe Conta
 inline void Conta::setNumCPF(const CPF& cpf) {
     this->cpf = cpf;
 }
@@ -62,6 +55,14 @@ inline Nome Conta::getNomeDois() const {
     return nome_dois;
 }
 
+inline void Conta::setSenha(const Senha& senha) {
+    this->senha = senha;
+}
+
+inline Senha Conta::getSenha() const {
+    return senha;
+}
+
 //222014142
 class Pagamento {
 private:
@@ -69,18 +70,23 @@ private:
     Data data;
     Percentual percentual;
     Estado estado;
+
 public:
     void setCodigo(const CodigoPagamento&);
     CodigoPagamento getCodigo() const;
+
     void setData(const Data&);
     Data getData() const;
+
     void setPercentual(const Percentual&);
     Percentual getPercentual() const;
+
     void setEstado(const Estado&);
     Estado getEstado() const;
 };
 
-inline void Pagamento::setCodigo(const CodigoPagamento& codigo){
+// Implementações Inline da Classe Pagamento
+inline void Pagamento::setCodigo(const CodigoPagamento& codigo) {
     this->codigo = codigo;
 }
 
@@ -88,7 +94,7 @@ inline CodigoPagamento Pagamento::getCodigo() const {
     return codigo;
 }
 
-inline void Pagamento::setData(const Data& data){
+inline void Pagamento::setData(const Data& data) {
     this->data = data;
 }
 
@@ -96,7 +102,7 @@ inline Data Pagamento::getData() const {
     return data;
 }
 
-inline void Pagamento::setPercentual(const Percentual& percentual){
+inline void Pagamento::setPercentual(const Percentual& percentual) {
     this->percentual = percentual;
 }
 
@@ -104,7 +110,7 @@ inline Percentual Pagamento::getPercentual() const {
     return percentual;
 }
 
-inline void Pagamento::setEstado(const Estado& estado){
+inline void Pagamento::setEstado(const Estado& estado) {
     this->estado = estado;
 }
 
@@ -122,25 +128,34 @@ private:
     Data emissao;
     Data vencimento;
     Dinheiro valor;
+
 public:
     Titulo() : emissor_um("Nome", "Valido"), emissor_dois("Nome", "Valido"), setor("Agricultura") {}
+
     void setCodigo(const CodigoTitulo&);
     CodigoTitulo getCodigo() const;
+
     void setEmissorUm(const Nome&);
     Nome getEmissorUm() const;
+
     void setEmissorDois(const Nome&);
     Nome getEmissorDois() const;
+
     void setSetor(const Setor&);
     Setor getSetor() const;
+
     void setEmissao(const Data&);
     Data getEmissao() const;
+
     void setVencimento(const Data&);
     Data getVencimento() const;
+
     void setValor(const Dinheiro&);
     Dinheiro getValor() const;
 };
 
-inline void Titulo::setCodigo(const CodigoTitulo& codigo){
+// Implementações Inline da Classe Titulo
+inline void Titulo::setCodigo(const CodigoTitulo& codigo) {
     this->codigo = codigo;
 }
 
@@ -148,7 +163,7 @@ inline CodigoTitulo Titulo::getCodigo() const {
     return codigo;
 }
 
-inline void Titulo::setEmissorUm(const Nome& emissor_um){
+inline void Titulo::setEmissorUm(const Nome& emissor_um) {
     this->emissor_um = emissor_um;
 }
 
@@ -156,7 +171,7 @@ inline Nome Titulo::getEmissorUm() const {
     return emissor_um;
 }
 
-inline void Titulo::setEmissorDois(const Nome& emissor_dois){
+inline void Titulo::setEmissorDois(const Nome& emissor_dois) {
     this->emissor_dois = emissor_dois;
 }
 
@@ -164,7 +179,7 @@ inline Nome Titulo::getEmissorDois() const {
     return emissor_dois;
 }
 
-inline void Titulo::setSetor(const Setor& setor){
+inline void Titulo::setSetor(const Setor& setor) {
     this->setor = setor;
 }
 
@@ -172,7 +187,7 @@ inline Setor Titulo::getSetor() const {
     return setor;
 }
 
-inline void Titulo::setEmissao(const Data& emissao){
+inline void Titulo::setEmissao(const Data& emissao) {
     this->emissao = emissao;
 }
 
@@ -180,7 +195,7 @@ inline Data Titulo::getEmissao() const {
     return emissao;
 }
 
-inline void Titulo::setVencimento(const Data& vencimento){
+inline void Titulo::setVencimento(const Data& vencimento) {
     this->vencimento = vencimento;
 }
 
@@ -188,7 +203,7 @@ inline Data Titulo::getVencimento() const {
     return vencimento;
 }
 
-inline void Titulo::setValor(const Dinheiro& valor){
+inline void Titulo::setValor(const Dinheiro& valor) {
     this->valor = valor;
 }
 
@@ -196,4 +211,4 @@ inline Dinheiro Titulo::getValor() const {
     return valor;
 }
 
-#endif
+#endif // ENTITIES_H_INCLUDED

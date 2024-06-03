@@ -6,6 +6,8 @@
 
 using namespace std;
 
+//======================================= TESTES DOMINIO =========================================================
+
 //231035105
 class TUNome{
 private:
@@ -101,7 +103,7 @@ public:
     int run();
 };
 
-//PARRA - 211020956
+//211020956
 class TUCodigoPagamento {
 
     private:
@@ -121,7 +123,7 @@ class TUCodigoPagamento {
         int run();
 };
 
-//PARRA - 211020956
+//211020956
 class TUCodigoTitulo
 {
     private:
@@ -222,6 +224,8 @@ public:
     const static int FALHA   = -1;
     int run();
 };
+
+//======================================== TESTES ENTIDADES ============================================================
 
 //200040979
 class TUConta {

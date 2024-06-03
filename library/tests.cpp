@@ -2,124 +2,171 @@
 #include "entities.h"
 #include "domains.h"
 
-void TUDinheiro::setUp(){
+//========================== TESTE DOMINIOS ========================================================
+
+//class TUDinheiro
+void TUDinheiro::setUp()
+{
     dinheiro = new Dinheiro();
     estado = SUCESSO;
 }
-
 void TUDinheiro::tearDown(){
     delete dinheiro;
 }
-
-void TUDinheiro::testarCenarioSucesso(){
-    try{
+void TUDinheiro::testarCenarioSucesso()
+{
+    try
+    {
         dinheiro->setValor(VALOR_VALIDO);
         if (dinheiro->getValor() != VALOR_VALIDO)
             estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         estado = FALHA;
     }
 }
-
-void TUDinheiro::testarCenarioFalha(){
-    try{
+void TUDinheiro::testarCenarioFalha()
+{
+    try
+    {
         dinheiro->setValor(VALOR_INVALIDO);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (dinheiro->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
-
-void TUDinheiro::testarCenarioNegativo(){
-    try{
+void TUDinheiro::testarCenarioNegativo()
+{
+    try
+    {
         dinheiro->setValor(VALOR_NEGATIVO);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (dinheiro->getValor() == VALOR_NEGATIVO)
             estado = FALHA;
     }
 }
+int TUDinheiro::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    testarCenarioNegativo();
+    tearDown();
+    return estado;
+}
 
-void TUSenha::setUp(){
+//================================================================================================================================
+
+//class TUSenha
+void TUSenha::setUp()
+{
     senha = new Senha();
     estado = SUCESSO;
 }
-
-void TUSenha::tearDown(){
+void TUSenha::tearDown()
+{
     delete senha;
 }
-
-void TUSenha::testarCenarioSucesso(){
-    try{
+void TUSenha::testarCenarioSucesso()
+{
+    try
+    {
         senha->setValor(VALOR_VALIDO);
         if (senha->getValor() != VALOR_VALIDO)
             estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         estado = FALHA;
     }
 }
-
-void TUSenha::testarCenarioDuplicado(){
-    try{
+void TUSenha::testarCenarioDuplicado()
+{
+    try
+    {
         senha->setValor(VALOR_DUPLICADO);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (senha->getValor() == VALOR_DUPLICADO)
             estado = FALHA;
     }
 }
-
-void TUSenha::testarCenarioZeroInicio(){
-    try{
+void TUSenha::testarCenarioZeroInicio()
+{
+    try
+    {
         senha->setValor(VALOR_ZERO_INICIO);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (senha->getValor() == VALOR_ZERO_INICIO)
             estado = FALHA;
     }
 }
-
-void TUSenha::testarCenarioCrescente(){
-    try{
+void TUSenha::testarCenarioCrescente()
+{
+    try
+    {
         senha->setValor(VALOR_CRESCENTE);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (senha->getValor() == VALOR_CRESCENTE)
             estado = FALHA;
     }
 }
-
-void TUSenha::testarCenarioDecrescente(){
-    try{
+void TUSenha::testarCenarioDecrescente()
+{
+    try
+    {
         senha->setValor(VALOR_DECRESCENTE);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
+    catch(invalid_argument &excecao)
+    {
         if (senha->getValor() == VALOR_DECRESCENTE)
             estado = FALHA;
     }
 }
+int TUSenha::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioDuplicado();
+    testarCenarioZeroInicio();
+    testarCenarioCrescente();
+    testarCenarioDecrescente();
+    tearDown();
+    return estado;
+}
 
-void TUCodigoPagamento::setUp(){
+// =================================================================================================
+
+//class TUCodigoPagamento
+void TUCodigoPagamento::setUp()
+{
     codigo = new CodigoPagamento();
     estado = SUCESSO;
 }
-
-void TUCodigoPagamento::tearDown(){
+void TUCodigoPagamento::tearDown()
+{
     delete codigo;
 }
-
-void TUCodigoPagamento::testCenarioCodValido(){
-
-    try{
+void TUCodigoPagamento::testCenarioCodValido()
+{
+    try
+    {
         codigo->setCodigo(CODIGO_VALIDO);
         if (codigo->getCodigo() != CODIGO_VALIDO)
         {
@@ -132,9 +179,8 @@ void TUCodigoPagamento::testCenarioCodValido(){
         estado = FALHA;
     }
 }
-
-void TUCodigoPagamento::testCenarioCodInvalidoPrimeiroDigito(){
-
+void TUCodigoPagamento::testCenarioCodInvalidoPrimeiroDigito()
+{
     try
     {
         codigo->setCodigo(CODIGO_INVALIDO_PRIMEIRO_DIGITO);
@@ -148,8 +194,8 @@ void TUCodigoPagamento::testCenarioCodInvalidoPrimeiroDigito(){
         }
     }
 }
-
-void TUCodigoPagamento::testCenarioCodTamanhoInvalido(){
+void TUCodigoPagamento::testCenarioCodTamanhoInvalido()
+{
     try
     {
         codigo->setCodigo(CODIGO_TAMANHO_INVALIDO);
@@ -164,18 +210,29 @@ void TUCodigoPagamento::testCenarioCodTamanhoInvalido(){
     }
 
 }
+int TUCodigoPagamento::run()
+{
+    setUp();
+    testCenarioCodValido();
+    testCenarioCodInvalidoPrimeiroDigito();
+    testCenarioCodTamanhoInvalido();
+    return estado;
+}
 
-void TUCodigoTitulo::setUp(){
+//==========================================================================================================================
+
+//class TUCodigoTitulo
+void TUCodigoTitulo::setUp()
+{
     codigo = new CodigoTitulo();
     estado = SUCESSO;
 }
-
-void TUCodigoTitulo::tearDown(){
+void TUCodigoTitulo::tearDown()
+{
     delete codigo;
 }
-
-void TUCodigoTitulo::testCodValido(){
-
+void TUCodigoTitulo::testCodValido()
+{
     try
     {
         codigo->setCodigo(CODIGO_VALIDO);
@@ -190,9 +247,8 @@ void TUCodigoTitulo::testCodValido(){
     }
 
 }
-
-void TUCodigoTitulo::testCodInvalidoMinuscula(){
-
+void TUCodigoTitulo::testCodInvalidoMinuscula()
+{
     try
     {
         codigo->setCodigo(CODIGO_INVALIDO_MINUSCULA);
@@ -205,10 +261,8 @@ void TUCodigoTitulo::testCodInvalidoMinuscula(){
     }
 
 }
-
-
-void TUCodigoTitulo::testCodInvalidoSimbolo(){
-
+void TUCodigoTitulo::testCodInvalidoSimbolo()
+{
     try
     {
         codigo->setCodigo(CODIGO_INVALIDO_SIMBOLO);
@@ -222,9 +276,8 @@ void TUCodigoTitulo::testCodInvalidoSimbolo(){
     }
 
 }
-
-void TUCodigoTitulo::testCodTamanhoInvalido(){
-
+void TUCodigoTitulo::testCodTamanhoInvalido()
+{
     try
     {
         codigo->setCodigo(CODIGO_TAMANHO_INVALIDO);
@@ -238,10 +291,8 @@ void TUCodigoTitulo::testCodTamanhoInvalido(){
     }
 
 }
-
-
-void TUCodigoTitulo::testCodInvalidoTitulo(){
-
+void TUCodigoTitulo::testCodInvalidoTitulo()
+{
     try
     {
         codigo->setCodigo(CODIGO_INVALIDO_TITULO);
@@ -255,279 +306,8 @@ void TUCodigoTitulo::testCodInvalidoTitulo(){
     }
 
 }
-
-void TUEstado::setUp(){
-    status = new Estado();
-    estado = SUCESSO;
-}
-
-void TUEstado::tearDown(){
-    delete status;
-}
-
-void TUEstado::testarCenarioSucesso(){
-    try{
-        status-> setEstado(VALOR_VALIDO);
-        if(status->getEstado() != VALOR_VALIDO)
-            estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        estado = FALHA;
-    }
-}
-
-void TUEstado::testarCenarioFalha(){
-    try{
-        status-> setEstado(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        if (status->getEstado() == VALOR_INVALIDO)
-            estado = FALHA;
-    }
-}
-
-void TUCPF::setUp(){
-    cpf = new CPF();
-    estado = SUCESSO;
-}
-
-void TUCPF::tearDown(){
-    delete cpf;
-}
-
-void TUCPF::testarCenarioSucesso(){
-    try{
-        cpf->setCPF(VALOR_VALIDO);
-        if(cpf->getCPF() != VALOR_VALIDO)
-            estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        estado = FALHA;
-    }
-}
-
-void TUCPF::testarCenarioFalha1(){
-    try{
-        cpf->setCPF(VALOR_INVALIDO1);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        if (cpf->getCPF() == VALOR_INVALIDO1)
-            estado = FALHA;
-    }
-}
-
-void TUCPF::testarCenarioFalha2(){
-    try{
-        cpf->setCPF(VALOR_INVALIDO2);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        if (cpf->getCPF() == VALOR_INVALIDO2)
-            estado = FALHA;
-    }
-}
-
-const std::string TUData::DATA_VALIDA = "22-02-2024";
-const std::string TUData::DATA_INVALIDA = "54-02-2599";
-
-void TUData::setUp() {
-    data = new Data();
-    estado = SUCESSO;
-}
-
-void TUData::tearDown() {
-    delete data;
-}
-
-void TUData::testarCenarioSucesso() {
-    try {
-        data->setData(DATA_VALIDA);
-        if (data->getData() != DATA_VALIDA) {
-            estado = FALHA;
-        }
-    } catch (std::invalid_argument &excecao) {
-        estado = FALHA;
-    }
-}
-
-void TUData::testarCenarioFalha() {
-    try {
-        data->setData(DATA_INVALIDA);
-        estado = FALHA;
-    } catch (std::invalid_argument &excecao) {
-        if (data->getData() == DATA_INVALIDA) {
-            estado = FALHA;
-        }
-    }
-}
-
-
-void TUPercentual::setUp(){
-    percentual = new Percentual();
-    estado = SUCESSO;
-}
-
-void TUPercentual::tearDown(){
-    delete percentual;
-}
-
-void TUPercentual::testarCenarioSucesso(){
-    try{
-        percentual->setValor(VALOR_VALIDO);
-        if (percentual->getValor() != VALOR_VALIDO)
-            estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        estado = FALHA;
-    }
-}
-
-void TUPercentual::testarCenarioFalha(){
-    try{
-        percentual->setValor(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
-        if (percentual->getValor() == VALOR_INVALIDO)
-            estado = FALHA;
-    }
-}
-
-void TUNome::setUp(){
-    nome = new Nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
-    estado = SUCESSO;
-}
-
-void TUNome::tearDown(){
-    delete nome;
-}
-
-void TUNome::testarCenarioSucesso() {
-    try {
-        nome ->setPrimeiroNome(PRIMEIRO_NOME_VALIDO);
-        nome ->setSobreNome(SOBRE_NOME_VALIDO);
-        if(!nome ->validarNome() ||
-        nome ->getPrimeiroNome() != PRIMEIRO_NOME_VALIDO ||
-        nome -> getSobreNome() != SOBRE_NOME_VALIDO){
-            estado = FALHA;
-        }
-    }catch (exception& excecao){
-        estado = FALHA;
-    }
-}
-
-void TUNome::testarCenarioFalhaPrimeiroNome(){
-    try {
-        nome -> setPrimeiroNome(PRIMEIRO_NOME_INVALIDO);
-        estado = FALHA;
-    } catch (invalid_argument& excecao) {
-
-    }
-}
-
-void TUNome::testarCenarioFalhaSobreNome(){
-    try{
-        nome -> setSobreNome(SOBRE_NOME_INVALIDO);
-        estado = FALHA;
-    } catch (invalid_argument& excecao) {
-
-    }
-}
-
-void TUSetor::setUp(){
-    setor = new Setor(SETOR_VALIDO);
-    estado = SUCESSO;
-}
-
-void TUSetor::teardown(){
-    delete setor;
-}
-
-void TUSetor::testarSetorValido(){
-    try{
-        setor ->setSetorNome(SETOR_VALIDO);
-        if (setor->getSetorNome() != SETOR_VALIDO)
-            estado = FALHA;
-    } catch (invalid_argument& excecao){
-        estado = FALHA;
-    }
-}
-
-void TUSetor::testarSetorInvalido(){
-    try{
-        setor ->setSetorNome(SETOR_INVALIDO);
-        estado = FALHA;
-    } catch (invalid_argument& excecao){
-
-    }
-}
-
-void TUConta::setUp(){
-    conta = new Conta();
-    estado = SUCESSO;
-}
-
-void TUConta::tearDown(){
-    delete conta;
-}
-
-void TUConta::testarCenarioSucesso() {
-    CPF cpf;
-    cpf.setCPF(CPF_VALIDO);
-    conta->setNumCPF(cpf);
-    if (conta->getNumCPF().getCPF() != CPF_VALIDO) {
-        estado = FALHA;
-    }
-
-    Nome nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
-    conta->setNomeUm(nome);
-    conta->setNomeDois(nome);
-    if (conta->getNomeUm().getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || conta->getNomeDois().getSobreNome() != SOBRE_NOME_VALIDO) {
-        estado = FALHA;
-    }
-
-    Senha senha;
-    senha.setValor(SENHA_VALIDO);
-    conta->setSenha(senha);
-    if (conta->getSenha().getValor() != SENHA_VALIDO) {
-        estado = FALHA;
-    }
-}
-
-
-
-int TUDinheiro::run(){
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    testarCenarioNegativo();
-    tearDown();
-    return estado;
-}
-
-int TUSenha::run(){
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioDuplicado();
-    testarCenarioZeroInicio();
-    testarCenarioCrescente();
-    testarCenarioDecrescente();
-    tearDown();
-    return estado;
-}
-
-int TUCodigoPagamento::run(){
-    setUp();
-    testCenarioCodValido();
-    testCenarioCodInvalidoPrimeiroDigito();
-    testCenarioCodTamanhoInvalido();
-    return estado;
-}
-
-int TUCodigoTitulo::run(){
-
+int TUCodigoTitulo::run()
+{
     setUp();
     testCodValido();
     testCodInvalidoMinuscula();
@@ -538,7 +318,46 @@ int TUCodigoTitulo::run(){
     return estado;
 }
 
-int TUEstado::run(){
+//================================================================================================================================
+
+//class TUEstado
+void TUEstado::setUp()
+{
+    status = new Estado();
+    estado = SUCESSO;
+}
+void TUEstado::tearDown()
+{
+    delete status;
+}
+void TUEstado::testarCenarioSucesso()
+{
+    try
+    {
+        status-> setEstado(VALOR_VALIDO);
+        if(status->getEstado() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUEstado::testarCenarioFalha()
+{
+    try
+    {
+        status-> setEstado(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if (status->getEstado() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+int TUEstado::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -546,7 +365,59 @@ int TUEstado::run(){
     return estado;
 }
 
-int TUCPF::run(){
+//==================================================================================================================
+
+//class TUCPF
+void TUCPF::setUp()
+{
+    cpf = new CPF();
+    estado = SUCESSO;
+}
+void TUCPF::tearDown()
+{
+    delete cpf;
+}
+void TUCPF::testarCenarioSucesso()
+{
+    try
+    {
+        cpf->setCPF(VALOR_VALIDO);
+        if(cpf->getCPF() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUCPF::testarCenarioFalha1()
+{
+    try
+    {
+        cpf->setCPF(VALOR_INVALIDO1);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if (cpf->getCPF() == VALOR_INVALIDO1)
+            estado = FALHA;
+    }
+}
+void TUCPF::testarCenarioFalha2()
+{
+    try
+    {
+        cpf->setCPF(VALOR_INVALIDO2);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if (cpf->getCPF() == VALOR_INVALIDO2)
+            estado = FALHA;
+    }
+}
+int TUCPF::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha1();
@@ -555,7 +426,51 @@ int TUCPF::run(){
     return estado;
 }
 
-int TUData::run(){
+//=====================================================================================================================
+
+//class TUData
+const std::string TUData::DATA_VALIDA = "22-02-2024";
+const std::string TUData::DATA_INVALIDA = "54-02-2599";
+
+void TUData::setUp()
+{
+    data = new Data();
+    estado = SUCESSO;
+}
+void TUData::tearDown()
+{
+    delete data;
+}
+void TUData::testarCenarioSucesso()
+{
+    try
+    {
+        data->setData(DATA_VALIDA);
+        if (data->getData() != DATA_VALIDA)
+        {
+            estado = FALHA;
+        }
+    } catch (std::invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUData::testarCenarioFalha()
+{
+    try
+    {
+        data->setData(DATA_INVALIDA);
+        estado = FALHA;
+    } catch (std::invalid_argument &excecao)
+    {
+        if (data->getData() == DATA_INVALIDA)
+        {
+            estado = FALHA;
+        }
+    }
+}
+int TUData::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -563,7 +478,46 @@ int TUData::run(){
     return estado;
 }
 
-int TUPercentual::run(){
+//===========================================================================================================================
+
+//class TUPercentual
+void TUPercentual::setUp()
+{
+    percentual = new Percentual();
+    estado = SUCESSO;
+}
+void TUPercentual::tearDown()
+{
+    delete percentual;
+}
+void TUPercentual::testarCenarioSucesso()
+{
+    try
+    {
+        percentual->setValor(VALOR_VALIDO);
+        if (percentual->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUPercentual::testarCenarioFalha()
+{
+    try
+    {
+        percentual->setValor(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao)
+    {
+        if (percentual->getValor() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+int TUPercentual::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -571,7 +525,58 @@ int TUPercentual::run(){
     return estado;
 }
 
-int TUNome::run(){
+//=======================================================================================================================
+
+//class TUNome
+void TUNome::setUp()
+{
+    nome = new Nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
+    estado = SUCESSO;
+}
+void TUNome::tearDown()
+{
+    delete nome;
+}
+void TUNome::testarCenarioSucesso()
+{
+    try
+    {
+        nome ->setPrimeiroNome(PRIMEIRO_NOME_VALIDO);
+        nome ->setSobreNome(SOBRE_NOME_VALIDO);
+        if(!nome ->validarNome() ||
+        nome ->getPrimeiroNome() != PRIMEIRO_NOME_VALIDO ||
+        nome -> getSobreNome() != SOBRE_NOME_VALIDO){
+            estado = FALHA;
+        }
+    }catch (exception& excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUNome::testarCenarioFalhaPrimeiroNome()
+{
+    try
+    {
+        nome -> setPrimeiroNome(PRIMEIRO_NOME_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument& excecao)
+    {
+
+    }
+}
+void TUNome::testarCenarioFalhaSobreNome()
+{
+    try
+    {
+        nome -> setSobreNome(SOBRE_NOME_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument& excecao)
+    {
+
+    }
+}
+int TUNome::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalhaPrimeiroNome();
@@ -580,7 +585,43 @@ int TUNome::run(){
     return estado;
 }
 
-int TUSetor::run(){
+//=========================================================================================================================
+
+//class TUSetor
+void TUSetor::setUp()
+{
+    setor = new Setor(SETOR_VALIDO);
+    estado = SUCESSO;
+}
+void TUSetor::teardown()
+{
+    delete setor;
+}
+void TUSetor::testarSetorValido()
+{
+    try
+    {
+        setor ->setSetorNome(SETOR_VALIDO);
+        if (setor->getSetorNome() != SETOR_VALIDO)
+            estado = FALHA;
+    } catch (invalid_argument& excecao)
+    {
+        estado = FALHA;
+    }
+}
+void TUSetor::testarSetorInvalido()
+{
+    try
+    {
+        setor ->setSetorNome(SETOR_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument& excecao)
+    {
+
+    }
+}
+int TUSetor::run()
+{
     setUp();
     testarSetorValido();
     testarSetorInvalido();
@@ -588,23 +629,66 @@ int TUSetor::run(){
     return estado;
 }
 
-int TUConta::run(){
+//=========================================== TESTE ENTIDADES =============================================================
+
+//class TUConta
+void TUConta::setUp()
+{
+    conta = new Conta();
+    estado = SUCESSO;
+}
+void TUConta::tearDown()
+{
+    delete conta;
+}
+void TUConta::testarCenarioSucesso()
+{
+    CPF cpf;
+    cpf.setCPF(CPF_VALIDO);
+    conta->setNumCPF(cpf);
+    if (conta->getNumCPF().getCPF() != CPF_VALIDO)
+    {
+        estado = FALHA;
+    }
+
+    Nome nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
+    conta->setNomeUm(nome);
+    conta->setNomeDois(nome);
+    if (conta->getNomeUm().getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || conta->getNomeDois().getSobreNome() != SOBRE_NOME_VALIDO)
+    {
+        estado = FALHA;
+    }
+
+    Senha senha;
+    senha.setValor(SENHA_VALIDO);
+    conta->setSenha(senha);
+    if (conta->getSenha().getValor() != SENHA_VALIDO)
+    {
+        estado = FALHA;
+    }
+}
+int TUConta::run()
+{
     setUp();
     testarCenarioSucesso();
     tearDown();
     return estado;
 }
 
-void TUPagamento::setUp(){
+//===============================================================================================================
+
+//class TUPagamento
+void TUPagamento::setUp()
+{
     pagamento = new Pagamento();
     estadoTest  = SUCESSO;
 }
-
-void TUPagamento::tearDown(){
+void TUPagamento::tearDown()
+{
     delete pagamento;
 }
-
-void TUPagamento::testarCenarioSucesso(){
+void TUPagamento::testarCenarioSucesso()
+{
     CodigoPagamento codigo;
     codigo.setCodigo(codigoPagamentoValido);
     pagamento->setCodigo(codigo);
@@ -630,56 +714,63 @@ void TUPagamento::testarCenarioSucesso(){
     if(pagamento->getPercentual().getValor() != percentualValido)
         estadoTest = FALHA;
 }
-
-int TUPagamento::run(){
+int TUPagamento::run()
+{
     setUp();
     testarCenarioSucesso();
     tearDown();
     return estadoTest;
 }
 
-void TUTitulo::setup(){
+//========================================================================================================================
+
+//class TUTitulo
+void TUTitulo::setup()
+{
     titulo = new Titulo();
     estadoTest = SUCESSO;
 }
-
-void TUTitulo::teardown(){
+void TUTitulo::teardown()
+{
     delete titulo;
 }
-
-void TUTitulo::testarCenarioSucesso(){
+void TUTitulo::testarCenarioSucesso()
+{
     CodigoTitulo codigo;
     codigo.setCodigo(CODIGO_VALIDO);
     titulo ->setCodigo(codigo);
-    if (titulo -> getCodigo().getCodigo() != CODIGO_VALIDO){
+    if (titulo -> getCodigo().getCodigo() != CODIGO_VALIDO)
+    {
         estadoTest = FALHA;
     }
 
     Nome nome(PRIMEIRO_NOME_VALIDO, SOBRE_NOME_VALIDO);
     titulo->setEmissorUm(nome);
     titulo->setEmissorDois(nome);
-    if (titulo->getEmissorUm().getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || titulo->getEmissorDois().getSobreNome() != SOBRE_NOME_VALIDO) {
+    if (titulo->getEmissorUm().getPrimeiroNome() != PRIMEIRO_NOME_VALIDO || titulo->getEmissorDois().getSobreNome() != SOBRE_NOME_VALIDO)
+    {
         estadoTest = FALHA;
     }
 
     Setor setor(SETOR_VALIDO);
     titulo -> setSetor(setor);
-    if (titulo -> getSetor(). getSetorNome() != SETOR_VALIDO){
+    if (titulo -> getSetor(). getSetorNome() != SETOR_VALIDO)
+    {
         estadoTest = FALHA;
     }
 
     Data emissao(DATA_VALIDA);
     titulo ->setEmissao(emissao);
-    if (titulo ->getEmissao().getData() != DATA_VALIDA) {
+    if (titulo ->getEmissao().getData() != DATA_VALIDA)
+    {
         estadoTest = FALHA;
     }
-
-
 
     Data vencimento;
     vencimento.setData(DATA_VALIDA);
     titulo -> setVencimento(vencimento);
-    if (titulo -> getVencimento().getData() != DATA_VALIDA){
+    if (titulo -> getVencimento().getData() != DATA_VALIDA)
+    {
         estadoTest = FALHA;
     }
 
@@ -687,12 +778,13 @@ void TUTitulo::testarCenarioSucesso(){
 
     valor.setValor(VALOR_VALIDO);
     titulo -> setValor(valor);
-    if (titulo -> getValor(). getValor() != VALOR_VALIDO){
+    if (titulo -> getValor(). getValor() != VALOR_VALIDO)
+    {
         estadoTest = FALHA;
     }
 }
-
-int TUTitulo::run(){
+int TUTitulo::run()
+{
     setup();
     testarCenarioSucesso();
     teardown();

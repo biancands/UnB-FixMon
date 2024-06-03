@@ -12,7 +12,8 @@
 
 using namespace std;
 
-//231013583
+// Classe Dinheiro
+// 231013583
 class Dinheiro {
 private:
     static constexpr double LIMITE = 1000000.00;
@@ -23,11 +24,12 @@ public:
     double getValor() const;
 };
 
-inline double Dinheiro::getValor() const{
+inline double Dinheiro::getValor() const {
     return valor;
 }
 
-//231013583
+// Classe Senha
+// 231013583
 class Senha {
 private:
     string valor;
@@ -37,38 +39,40 @@ public:
     string getValor() const;
 };
 
-inline string Senha::getValor() const{
+inline string Senha::getValor() const {
     return valor;
 }
 
-//Parra - 211020956
-class Codigo{
-    private:
-        string codigo;
-        virtual void validar(string codigo) const = 0;
-    public:
-        void setCodigo(string);
-        inline string getCodigo(){return codigo;}
+// Classe Código
+// Parra - 211020956
+class Codigo {
+private:
+    string codigo;
+    virtual void validar(string codigo) const = 0;
+public:
+    void setCodigo(string);
+    inline string getCodigo() { return codigo; }
 };
 
-//Parra - 211020956
-class CodigoPagamento : public Codigo{
-    private:
-        void validar(string) const override;
+// Classe Código Pagamento
+// Parra - 211020956
+class CodigoPagamento : public Codigo {
+private:
+    void validar(string) const override;
 };
 
-
-//Parra - 211020956
-class CodigoTitulo : public Codigo{
-    protected:
-        void validar(string) const override;
-    public:
-        vector<string> listaTitulos = {"CDB","CRA","CRI",
-"LCA","LCI","DEB"};
+// Classe Código Título
+// Parra - 211020956
+class CodigoTitulo : public Codigo {
+protected:
+    void validar(string) const override;
+public:
+    vector<string> listaTitulos = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
 };
 
-//222014142
-class Estado{
+// Classe Estado
+// 222014142
+class Estado {
 private:
     string valor;
     void validar(string);
@@ -77,12 +81,13 @@ public:
     string getEstado() const;
 };
 
-inline string Estado::getEstado() const{
+inline string Estado::getEstado() const {
     return valor;
 }
 
-//222014142
-class CPF{
+// Classe CPF
+// 222014142
+class CPF {
 private:
     string valor;
     void validar(string);
@@ -91,11 +96,12 @@ public:
     string getCPF() const;
 };
 
-inline string CPF::getCPF() const{
+inline string CPF::getCPF() const {
     return valor;
 }
 
-//200040979
+// Classe Data
+// 200040979
 class Data {
 private:
     int dia, mes, ano;
@@ -111,11 +117,10 @@ public:
 
     void setData(const std::string&);
     std::string getData() const;
-
 };
 
-
-//200040979
+// Classe Percentual
+// 200040979
 class Percentual {
 private:
     int valor;
@@ -125,8 +130,9 @@ public:
     int getValor() const;
 };
 
-//231035105
-class Nome{
+// Classe Nome
+// 231035105
+class Nome {
 private:
     string primeiro_nome;
     string sobrenome;
@@ -134,19 +140,18 @@ private:
     void validarTermo(const string& termo) const;
 
 public:
-    Nome(const string & primeiro, const string& segundo = "");
-    string getPrimeiroNome()const;
-    string getSobreNome()const;
+    Nome(const string& primeiro, const string& segundo = "");
+    string getPrimeiroNome() const;
+    string getSobreNome() const;
     bool validarNome() const;
 
     void setPrimeiroNome(const string& primeiro);
     void setSobreNome(const string& segundo);
 };
 
-
-
-//231035105
-class Setor{
+// Classe Setor
+// 231035105
+class Setor {
 private:
     string setorNome;
     const static unordered_set<string> setoresValidos;
