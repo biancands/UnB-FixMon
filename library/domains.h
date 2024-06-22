@@ -192,8 +192,8 @@ inline string Estado::getEstado() const {
  * Regras de formato:
  *
  * - O CPF deve seguir o formato XXX.XXX.XXX-CC, onde X é um dígito (0-9)
- * - CC são caracteres de validação calculados
- * - Segundo o algoritmo de validação de CPF.
+ * - CC são caracteres de validação calculados segundo
+ * o algoritmo de validação de CPF.
  *
  */
 // Classe CPF

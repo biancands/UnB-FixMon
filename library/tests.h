@@ -11,11 +11,22 @@
  */
 
  /**
- * @mainpage Projeto UnB-FixMon
+ * @mainpage UnB-FixMon
  *
  * @section intro_sec Introdução
  *
- * Este é o projeto UnB-FixMon.
+ * UnB-FixMon é um projeto para um sistema de monitoramento de pagamentos e datas de vencimento de títulos de renda fixa.
+ *
+ * @section doc_sec Documentação
+ *
+ * Documentação da biblioteca que compõe o sistema.
+ *
+ * @section dev_sec Desenvolvedores:
+ * - BIANCA N. SILVA
+ * - FABIO L. B. PARRA
+ * - DANILO S. SILVA
+ * - MARCELO J. C. ESPINDOLA
+ * - JORGE L. C. A. SILVA
  *
  * @section repo_sec Repositório
  *
