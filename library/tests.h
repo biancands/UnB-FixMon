@@ -1,3 +1,27 @@
+/**
+ * @file tests.h
+ * @brief Definições das classes que representam os testes dos domínios e entidades.
+ *
+ * Desenvolvedores:
+ * - BIANCA N. SILVA
+ * - FABIO L. B. PARRA
+ * - DANILO S. SILVA
+ * - MARCELO J. C. ESPINDOLA
+ * - JORGE L. C. A. SILVA
+ */
+
+ /**
+ * @mainpage Projeto UnB-FixMon
+ *
+ * @section intro_sec Introdução
+ *
+ * Este é o projeto UnB-FixMon.
+ *
+ * @section repo_sec Repositório
+ *
+ * O repositório do projeto pode ser encontrado em: [https://github.com/biancands/UnB-FixMon](https://github.com/biancands/UnB-FixMon)
+ */
+
 #ifndef TESTS_H_INCLUDED
 #define TESTS_H_INCLUDED
 

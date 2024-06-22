@@ -1,3 +1,13 @@
+/**
+ * @file entities.h
+ * @brief Definições das classes que representam as entidades.
+ *
+ * Desenvolvedores:
+ * - BIANCA N. SILVA
+ * - DANILO S. SILVA
+ * - MARCELO J. C. ESPINDOLA
+ */
+
 #ifndef ENTITIES_H_INCLUDED
 #define ENTITIES_H_INCLUDED
 
@@ -6,16 +16,26 @@
 
 using namespace std;
 
+/**
+ * @brief Representa uma conta no sistema.
+ *
+ * A classe Conta contém informações sobre uma conta, incluindo CPF, nomes, e senha.
+ *
+ */
 //200040979
 class Conta
 {
 private:
-    CPF cpf;
-    Nome nome_um;
-    Nome nome_dois;
-    Senha senha;
+    CPF cpf; ///< CPF do titular.
+    Nome nome_um; ///< Primeiro nome do titular.
+    Nome nome_dois; ///< Sobrenome do titular.
+    Senha senha; ///< Senha da conta.
 
 public:
+
+    /**
+     * @brief Construtor padrão que inicializa os nomes com valores válidos.
+     */
     Conta() : nome_um("Nome", "Valido"), nome_dois("Nome", "Valido") {}
 
     void setNumCPF(const CPF&);
@@ -65,14 +85,20 @@ inline Senha Conta::getSenha() const
     return senha;
 }
 
+/**
+ * @brief Representa um pagamento no sistema.
+ *
+ * A classe Pagamento contém informações sobre um pagamento, incluindo código, data, percentual e estado.
+ *
+ */
 //222014142
 class Pagamento
 {
 private:
-    CodigoPagamento codigo;
-    Data data;
-    Percentual percentual;
-    Estado estado;
+    CodigoPagamento codigo; ///< Código do pagamento.
+    Data data; ///< Data do pagamento.
+    Percentual percentual; ///< Percentual do pagamento.
+    Estado estado; ///< Estado do pagamento.
 
 public:
     void setCodigo(const CodigoPagamento&);
@@ -122,17 +148,23 @@ inline Estado Pagamento::getEstado() const
     return estado;
 }
 
+/**
+ * @brief Representa um título no sistema.
+ *
+ * A classe Titulo contém informações sobre um título, incluindo código, emissor, setor, data de emissão, data de vencimento, e valor.
+ *
+ */
 //231013583
 class Titulo
 {
 private:
-    CodigoTitulo codigo;
-    Nome emissor_um;
-    Nome emissor_dois;
-    Setor setor;
-    Data emissao;
-    Data vencimento;
-    Dinheiro valor;
+    CodigoTitulo codigo; ///< Código do título.
+    Nome emissor_um; ///< Primeiro nome do emissor do título.
+    Nome emissor_dois; ///< Sobrenome do emissor do título.
+    Setor setor; ///< Setor do título.
+    Data emissao; ///< Data de emissão do título.
+    Data vencimento; ///< Data de vencimento do título.
+    Dinheiro valor; ///< Valor do título.
 
 public:
     Titulo() : emissor_um("Nome", "Valido"), emissor_dois("Nome", "Valido"), setor("Agricultura") {}
