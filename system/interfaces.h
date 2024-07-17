@@ -7,86 +7,30 @@
 
 using namespace std;
 
-//-----------------------------------------------------------------------------------
-// Interface da camada de serviço para operações de investimento.
-
 /**
- * \class ISInvestimento
- * \brief Interface para operações CRUD em títulos e pagamentos.
+ * \class ISAutenticacao
+ * \brief Interface para operações de autenticação de usuários.
  *
- * Esta interface define o contrato para operações CRUD em títulos e pagamentos,
- * ela é utilizada pelas
- * controladoras da camada de apresentação para intermediar as operações entre
- * o usuário e os dados persistidos.
+ * Esta interface define o contrato para a operação de autenticação de usuários,
+ * ela é utilizada pelas controladoras da camada de apresentação para intermediar
+ * as operações de autenticação entre o usuário e os dados persistidos.
  */
 
- //231013583
-class ISInvestimento {
+//222014142
+class ISAutenticacao {
 public:
-    // Métodos para operações CRUD em títulos.
-
     /**
-     * \brief Cria um novo título no sistema.
-     * \param titulo Objeto Titulo contendo os dados do título a ser criado.
-     * \return bool Retorna verdadeiro se o título foi criado com sucesso.
+     * \brief Autentica um usuário no sistema.
+     * \param cpf String contendo o CPF do usuário.
+     * \param senha String contendo a senha do usuário.
+     * \return bool Retorna verdadeiro se a autenticação foi bem-sucedida.
      */
-    virtual bool criar(const Titulo&) = 0;
-
-    /**
-     * \brief Lê um título existente no sistema.
-     * \param titulo Ponteiro para um objeto Titulo para armazenar os dados lidos.
-     * \return bool Retorna verdadeiro se os dados foram lidos com sucesso.
-     */
-    virtual bool ler(Titulo*) = 0;
-
-    /**
-     * \brief Atualiza um título existente no sistema.
-     * \param titulo Objeto Titulo contendo os novos dados do título.
-     * \return bool Retorna verdadeiro se o título foi atualizado com sucesso.
-     */
-    virtual bool atualizar(const Titulo&) = 0;
-
-    /**
-     * \brief Exclui um título do sistema usando um código de identificação.
-     * \param codigo Objeto CodigoTitulo contendo o identificador do título.
-     * \return bool Retorna verdadeiro se o título foi excluído com sucesso.
-     */
-    virtual bool excluir(const CodigoTitulo&) = 0;
-
-    // Métodos para operações CRUD em pagamentos.
-
-    /**
-     * \brief Cria um novo pagamento no sistema.
-     * \param pagamento Objeto Pagamento contendo os dados do pagamento a ser criado.
-     * \return bool Retorna verdadeiro se o pagamento foi criado com sucesso.
-     */
-    virtual bool criar(const Pagamento&) = 0;
-
-    /**
-     * \brief Lê um pagamento existente no sistema.
-     * \param pagamento Ponteiro para um objeto Pagamento para armazenar os dados lidos.
-     * \return bool Retorna verdadeiro se os dados foram lidos com sucesso.
-     */
-    virtual bool ler(Pagamento*) = 0;
-
-    /**
-     * \brief Atualiza um pagamento existente no sistema.
-     * \param pagamento Objeto Pagamento contendo os novos dados do pagamento.
-     * \return bool Retorna verdadeiro se o pagamento foi atualizado com sucesso.
-     */
-    virtual bool atualizar(const Pagamento&) = 0;
-
-    /**
-     * \brief Exclui um pagamento do sistema usando um código de identificação.
-     * \param codigo Objeto CodigoPagamento contendo o identificador do pagamento.
-     * \return bool Retorna verdadeiro se o pagamento foi excluído com sucesso.
-     */
-    virtual bool excluir(const CodigoPagamento&) = 0;
+    virtual bool autenticar(const string& CPF, const string& Senha) = 0;
 
     /**
      * \brief Destrutor virtual.
      */
-    virtual ~ISInvestimento(){}
+    virtual ~ISAutenticacao() {}
 };
 
 #endif // INTERFACES_H_INCLUDED
