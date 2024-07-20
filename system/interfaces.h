@@ -48,7 +48,7 @@ public:
      * identificada pelo CPF fornecido. O código de retorno indica o sucesso ou
      * falha da operação.
      */
-    virtual int executar(const CPF) = 0;
+    virtual int executar(const CPF&) = 0;
 
     /**
      * \brief Estabelece a ligação com a controladora da camada de serviço.
@@ -86,7 +86,7 @@ public:
      * \param senha String contendo a senha do usuário.
      * \return bool Retorna verdadeiro se a autenticação foi bem-sucedida.
      */
-    virtual bool autenticar(const string CPF, const string Senha) = 0;
+    virtual bool autenticar(const string& CPF, const string& Senha) = 0;
 
     /**
      * \brief Destrutor virtual.
@@ -113,7 +113,7 @@ public:
      * \param conta Objeto Conta contendo os dados da conta a ser criada.
      * \return bool Retorna verdadeiro se a conta foi criada com sucesso.
      */
-    virtual bool criar(const Conta) = 0;
+    virtual bool criar(const Conta&) = 0;
     /**
      * \brief Lê uma conta existente no sistema.
      * \param conta Ponteiro para um objeto Conta para armazenar os dados lidos.
@@ -125,13 +125,13 @@ public:
      * \param conta Objeto Conta contendo os novos dados da conta.
      * \return bool Retorna verdadeiro se a conta foi atualizada com sucesso.
      */
-    virtual bool atualizar(const Conta) = 0;
+    virtual bool atualizar(const Conta&) = 0;
     /**
      * \brief Exclui um CPF do sistema usando um código de identificação.
      * \param cpf Objeto CPF contendo o CPF da conta.
      * \return bool Retorna verdadeiro se o CPF foi excluido com sucesso.
      */
-    virtual bool excluir(const CPF) = 0;
+    virtual bool excluir(const CPF&) = 0;
 
 };
 
@@ -156,7 +156,7 @@ public:
      * \param titulo Objeto Titulo contendo os dados do título a ser criado.
      * \return bool Retorna verdadeiro se o título foi criado com sucesso.
      */
-    virtual bool criar(const Titulo) = 0;
+    virtual bool criar(const Titulo&) = 0;
 
     /**
      * \brief Lê um título existente no sistema.
@@ -170,14 +170,14 @@ public:
      * \param titulo Objeto Titulo contendo os novos dados do título.
      * \return bool Retorna verdadeiro se o título foi atualizado com sucesso.
      */
-    virtual bool atualizar(const Titulo) = 0;
+    virtual bool atualizar(const Titulo&) = 0;
 
     /**
      * \brief Exclui um título do sistema usando um código de identificação.
      * \param codigo Objeto CodigoTitulo contendo o identificador do título.
      * \return bool Retorna verdadeiro se o título foi excluído com sucesso.
      */
-    virtual bool excluir(const CodigoTitulo) = 0;
+    virtual bool excluir(const CodigoTitulo&) = 0;
 
     // Métodos para operações CRUD em pagamentos.
 
@@ -186,7 +186,7 @@ public:
      * \param pagamento Objeto Pagamento contendo os dados do pagamento a ser criado.
      * \return bool Retorna verdadeiro se o pagamento foi criado com sucesso.
      */
-    virtual bool criar(const Pagamento) = 0;
+    virtual bool criar(const Pagamento&) = 0;
 
     /**
      * \brief Lê um pagamento existente no sistema.
@@ -200,14 +200,14 @@ public:
      * \param pagamento Objeto Pagamento contendo os novos dados do pagamento.
      * \return bool Retorna verdadeiro se o pagamento foi atualizado com sucesso.
      */
-    virtual bool atualizar(const Pagamento) = 0;
+    virtual bool atualizar(const Pagamento&) = 0;
 
     /**
      * \brief Exclui um pagamento do sistema usando um código de identificação.
      * \param codigo Objeto CodigoPagamento contendo o identificador do pagamento.
      * \return bool Retorna verdadeiro se o pagamento foi excluído com sucesso.
      */
-    virtual bool excluir(const CodigoPagamento) = 0;
+    virtual bool excluir(const CodigoPagamento&) = 0;
 
     /**
      * \brief Destrutor virtual.
