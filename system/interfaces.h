@@ -30,7 +30,7 @@ public:
      * \param titulo Objeto Titulo contendo os dados do título a ser criado.
      * \return bool Retorna verdadeiro se o título foi criado com sucesso.
      */
-    virtual bool criar(const Titulo&) = 0;
+    virtual bool criar(const Titulo) = 0;
 
     /**
      * \brief Lê um título existente no sistema.
@@ -44,14 +44,14 @@ public:
      * \param titulo Objeto Titulo contendo os novos dados do título.
      * \return bool Retorna verdadeiro se o título foi atualizado com sucesso.
      */
-    virtual bool atualizar(const Titulo&) = 0;
+    virtual bool atualizar(const Titulo) = 0;
 
     /**
      * \brief Exclui um título do sistema usando um código de identificação.
      * \param codigo Objeto CodigoTitulo contendo o identificador do título.
      * \return bool Retorna verdadeiro se o título foi excluído com sucesso.
      */
-    virtual bool excluir(const CodigoTitulo&) = 0;
+    virtual bool excluir(const CodigoTitulo) = 0;
 
     // Métodos para operações CRUD em pagamentos.
 
@@ -60,7 +60,7 @@ public:
      * \param pagamento Objeto Pagamento contendo os dados do pagamento a ser criado.
      * \return bool Retorna verdadeiro se o pagamento foi criado com sucesso.
      */
-    virtual bool criar(const Pagamento&) = 0;
+    virtual bool criar(const Pagamento) = 0;
 
     /**
      * \brief Lê um pagamento existente no sistema.
@@ -74,14 +74,14 @@ public:
      * \param pagamento Objeto Pagamento contendo os novos dados do pagamento.
      * \return bool Retorna verdadeiro se o pagamento foi atualizado com sucesso.
      */
-    virtual bool atualizar(const Pagamento&) = 0;
+    virtual bool atualizar(const Pagamento) = 0;
 
     /**
      * \brief Exclui um pagamento do sistema usando um código de identificação.
      * \param codigo Objeto CodigoPagamento contendo o identificador do pagamento.
      * \return bool Retorna verdadeiro se o pagamento foi excluído com sucesso.
      */
-    virtual bool excluir(const CodigoPagamento&) = 0;
+    virtual bool excluir(const CodigoPagamento) = 0;
 
     /**
      * \brief Destrutor virtual.
