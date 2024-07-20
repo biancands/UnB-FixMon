@@ -5,7 +5,8 @@
 #include "../library/domains.h"
 #include "../library/entities.h"
 #include "interfaces.h"
-#include "controladoras.h"
+#include "ctrl_apresentacao.h"
+#include "ctrl_servico.h"
 #include "stubs.h"
 
 using namespace std;

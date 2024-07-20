@@ -1,5 +1,5 @@
-#ifndef CONTROLADORAS_H_INCLUDED
-#define CONTROLADORAS_H_INCLUDED
+#ifndef CTRL_SERVICO_H_INCLUDED
+#define CTRL_SERVICO_H_INCLUDED
 
 #include "interfaces.h"
 #include "../library/domains.h"
@@ -10,4 +10,5 @@
 
 using namespace std;
 
-#endif // CONTROLADORAS_H_INCLUDED
+
+#endif // CTRL_SERVICO_H_INCLUDED

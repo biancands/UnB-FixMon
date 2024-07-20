@@ -38,12 +38,10 @@
 		<Unit filename="comandos.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="controladoras.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="controladoras.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="ctrl_apresentacao.cpp" />
+		<Unit filename="ctrl_apresentacao.h" />
+		<Unit filename="ctrl_servico.cpp" />
+		<Unit filename="ctrl_servico.h" />
 		<Unit filename="interfaces.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
