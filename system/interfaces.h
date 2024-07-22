@@ -18,6 +18,47 @@ class ISInvestimento;
 // Declaração de interface da camada de apresentação.
 
 /**
+ * \class IAAutenticacao
+ * \brief Interface para operações de autenticação de usuários.
+ *
+ * Esta interface define o contrato para operações de autenticação de usuários,
+ * utilizando CPF e senha como identificadores. É implementada pela controladora
+ * CntrIAAutenticacao, que então delega o serviço para a interface de serviço ISAutenticacao.
+ */
+
+//200040979
+class IAAutenticacao {
+public:
+    // Métodos para apresentação de ISAutenticacao.
+
+    /**
+     * \brief Autentica um usuário no sistema.
+     * \param cpf Objeto CPF contendo o identificador do usuário.
+     * \param senha Objeto Senha contendo a senha do usuário.
+     * \return bool Indicador de sucesso ou falha da autenticação.
+     *
+     * Este método deve ser chamado para iniciar o processo de autenticação de um usuário
+     * no sistema. Ele é responsável por coletar as informações passadas pelo usuário
+     * e enviar os dados para a camada de serviço.
+     */
+    virtual bool autenticar(CPF*, Senha*) = 0;
+
+    /**
+     * \brief Estabelece a ligação com a controladora da camada de serviço.
+     * \param cntrISAutenticacao Ponteiro para a controladora da camada de serviço.
+     *
+     * Este método deve ser chamado para estabelecer a ligação entre a camada de
+     * apresentação e a camada de serviço, permitindo a comunicação entre elas.
+     */
+    virtual void setCntrISAutenticacao(ISAutenticacao*) = 0;
+
+    /**
+     * \brief Método destrutor virtual (IAAutenticacao).
+     */
+    virtual ~IAAutenticacao() {}
+};
+
+/**
  * \class IAConta
  * \brief Interface para operações de criação e execução em contas.
  *
@@ -65,6 +106,46 @@ public:
     virtual ~IAConta(){};
 };
 
+/**
+ * \class IAInvestimento
+ * \brief Interface para operações de execução relacionadas a investimentos.
+ *
+ * Esta interface define o contrato para a execução de operações relacionadas a investimentos,
+ * utilizando o CPF como identificador. É implementada pela controladora CntrIAInvestimento, que então
+ * delega o serviço para a interface de serviço correspondente.
+ */
+
+//231013583
+class IAInvestimento {
+public:
+    /**
+     * \brief Executa ações relacionadas a uma conta de investimentos existente.
+     * \param cpf Objeto CPF contendo o identificador da conta.
+     *
+     * Este método deve ser chamado para executar ações em uma conta de investimentos existente,
+     * identificada pelo CPF fornecido. A implementação desse método deve definir as operações
+     * específicas a serem realizadas.
+     */
+    virtual void executar(const CPF&) = 0;
+
+    /**
+     * \brief Estabelece a ligação com a controladora da camada de serviço.
+     * \param CntrISInvestimento Ponteiro para a controladora da camada de serviço.
+     *
+     * Este método deve ser chamado para estabelecer a ligação entre a camada de
+     * apresentação e a camada de serviço, permitindo a comunicação entre elas.
+     */
+    virtual void setCntrISInvestimento(ISInvestimento*) = 0;
+
+    /**
+     * \brief Destrutor virtual.
+     *
+     * O destrutor virtual garante que os recursos alocados pela classe derivada sejam
+     * corretamente liberados quando a interface for destruída.
+     */
+    virtual ~IAInvestimento() {}
+};
+
 //-----------------------------------------------------------------------------------
 // Interface da camada de serviço para operações de investimento.
 
@@ -78,6 +159,7 @@ public:
  */
 
 //222014142
+//200040979
 class ISAutenticacao {
 public:
     /**
