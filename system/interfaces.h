@@ -8,95 +8,95 @@
 using namespace std;
 
 //-----------------------------------------------------------------------------------
-// Declarações adiantadas (forward declaration).
+// Declaraï¿½ï¿½es adiantadas (forward declaration).
 
 class ISAutenticacao;
 class ISConta;
 class ISInvestimento;
 
 //-----------------------------------------------------------------------------------
-// Declaração de interface da camada de apresentação.
+// Declaraï¿½ï¿½o de interface da camada de apresentaï¿½ï¿½o.
 
 /**
  * \class IAAutenticacao
- * \brief Interface para operações de autenticação de usuários.
+ * \brief Interface para operaï¿½ï¿½es de autenticaï¿½ï¿½o de usuï¿½rios.
  *
- * Esta interface define o contrato para operações de autenticação de usuários,
- * utilizando CPF e senha como identificadores. É implementada pela controladora
- * CntrIAAutenticacao, que então delega o serviço para a interface de serviço ISAutenticacao.
+ * Esta interface define o contrato para operaï¿½ï¿½es de autenticaï¿½ï¿½o de usuï¿½rios,
+ * utilizando CPF e senha como identificadores. ï¿½ implementada pela controladora
+ * CntrIAAutenticacao, que entï¿½o delega o serviï¿½o para a interface de serviï¿½o ISAutenticacao.
  */
 
 //200040979
 class IAAutenticacao {
 public:
-    // Métodos para apresentação de ISAutenticacao.
+    // Mï¿½todos para apresentaï¿½ï¿½o de ISAutenticacao.
 
     /**
-     * \brief Autentica um usuário no sistema.
-     * \param cpf Objeto CPF contendo o identificador do usuário.
-     * \param senha Objeto Senha contendo a senha do usuário.
-     * \return bool Indicador de sucesso ou falha da autenticação.
+     * \brief Autentica um usuï¿½rio no sistema.
+     * \param cpf Objeto CPF contendo o identificador do usuï¿½rio.
+     * \param senha Objeto Senha contendo a senha do usuï¿½rio.
+     * \return bool Indicador de sucesso ou falha da autenticaï¿½ï¿½o.
      *
-     * Este método deve ser chamado para iniciar o processo de autenticação de um usuário
-     * no sistema. Ele é responsável por coletar as informações passadas pelo usuário
-     * e enviar os dados para a camada de serviço.
+     * Este mï¿½todo deve ser chamado para iniciar o processo de autenticaï¿½ï¿½o de um usuï¿½rio
+     * no sistema. Ele ï¿½ responsï¿½vel por coletar as informaï¿½ï¿½es passadas pelo usuï¿½rio
+     * e enviar os dados para a camada de serviï¿½o.
      */
     virtual bool autenticar(CPF*, Senha*) = 0;
 
     /**
-     * \brief Estabelece a ligação com a controladora da camada de serviço.
-     * \param cntrISAutenticacao Ponteiro para a controladora da camada de serviço.
+     * \brief Estabelece a ligaï¿½ï¿½o com a controladora da camada de serviï¿½o.
+     * \param cntrISAutenticacao Ponteiro para a controladora da camada de serviï¿½o.
      *
-     * Este método deve ser chamado para estabelecer a ligação entre a camada de
-     * apresentação e a camada de serviço, permitindo a comunicação entre elas.
+     * Este mï¿½todo deve ser chamado para estabelecer a ligaï¿½ï¿½o entre a camada de
+     * apresentaï¿½ï¿½o e a camada de serviï¿½o, permitindo a comunicaï¿½ï¿½o entre elas.
      */
     virtual void setCntrISAutenticacao(ISAutenticacao*) = 0;
 
     /**
-     * \brief Método destrutor virtual (IAAutenticacao).
+     * \brief Mï¿½todo destrutor virtual (IAAutenticacao).
      */
     virtual ~IAAutenticacao() {}
 };
 
 /**
  * \class IAConta
- * \brief Interface para operações de criação e execução em contas.
+ * \brief Interface para operaï¿½ï¿½es de criaï¿½ï¿½o e execuï¿½ï¿½o em contas.
  *
- * Esta interface define o contrato para operações de criação de contas e execução
- * de ações relacionadas a contas, utilizando o CPF como identificador. É
- * implementada pela controladora CntrIAConta, que então
- * delega o serviço para a interface de serviço ISConta.
+ * Esta interface define o contrato para operaï¿½ï¿½es de criaï¿½ï¿½o de contas e execuï¿½ï¿½o
+ * de aï¿½ï¿½es relacionadas a contas, utilizando o CPF como identificador. ï¿½
+ * implementada pela controladora CntrIAConta, que entï¿½o
+ * delega o serviï¿½o para a interface de serviï¿½o ISConta.
  */
 
  //211020956
 class IAConta {
 public:
-    // Métodos para apresentação de ISConta.
+    // Mï¿½todos para apresentaï¿½ï¿½o de ISConta.
     /**
      * \brief Cria uma nova conta no sistema.
      *
-     * Este método deve ser chamado para iniciar o processo de criação de uma nova
-     * conta no sistema. Ele é responsável por coletar as informações passadas pelo usuário
-     * e enviar os dados para a camada de serviço.
+     * Este mï¿½todo deve ser chamado para iniciar o processo de criaï¿½ï¿½o de uma nova
+     * conta no sistema. Ele ï¿½ responsï¿½vel por coletar as informaï¿½ï¿½es passadas pelo usuï¿½rio
+     * e enviar os dados para a camada de serviï¿½o.
      */
     virtual void criar();
     /**
-     * \brief Executa ações relacionadas a uma conta existente.
+     * \brief Executa aï¿½ï¿½es relacionadas a uma conta existente.
      * \param cpf Objeto CPF contendo o identificador da conta.
-     * \return int Código de retorno indicando o resultado da operação.
+     * \return int Cï¿½digo de retorno indicando o resultado da operaï¿½ï¿½o.
      *
-     * Este método deve ser chamado para executar ações em uma conta existente,
-     * identificada pelo CPF fornecido. O código de retorno indica o sucesso ou
-     * falha da operação.
+     * Este mï¿½todo deve ser chamado para executar aï¿½ï¿½es em uma conta existente,
+     * identificada pelo CPF fornecido. O cï¿½digo de retorno indica o sucesso ou
+     * falha da operaï¿½ï¿½o.
      */
     virtual int executar(const CPF&) = 0;
 
     /**
-     * \brief Estabelece a ligação com a controladora da camada de serviço.
-     * \param cntrISConta Ponteiro para a controladora da camada de serviço.
+     * \brief Estabelece a ligaï¿½ï¿½o com a controladora da camada de serviï¿½o.
+     * \param cntrISConta Ponteiro para a controladora da camada de serviï¿½o.
      *
-     * Este método deve ser chamado para estabelecer a ligação entre a camada de
-     * apresentação e a camada de serviço, permitindo a comunicação entre elas.
+     * Este mï¿½todo deve ser chamado para estabelecer a ligaï¿½ï¿½o entre a camada de
+     * apresentaï¿½ï¿½o e a camada de serviï¿½o, permitindo a comunicaï¿½ï¿½o entre elas.
      */
     virtual void setCntrISConta(ISConta*) = 0;
 
@@ -108,32 +108,32 @@ public:
 
 /**
  * \class IAInvestimento
- * \brief Interface para operações de execução relacionadas a investimentos.
+ * \brief Interface para operaï¿½ï¿½es de execuï¿½ï¿½o relacionadas a investimentos.
  *
- * Esta interface define o contrato para a execução de operações relacionadas a investimentos,
- * utilizando o CPF como identificador. É implementada pela controladora CntrIAInvestimento, que então
- * delega o serviço para a interface de serviço correspondente.
+ * Esta interface define o contrato para a execuï¿½ï¿½o de operaï¿½ï¿½es relacionadas a investimentos,
+ * utilizando o CPF como identificador. ï¿½ implementada pela controladora CntrIAInvestimento, que entï¿½o
+ * delega o serviï¿½o para a interface de serviï¿½o correspondente.
  */
 
 //231013583
 class IAInvestimento {
 public:
     /**
-     * \brief Executa ações relacionadas a uma conta de investimentos existente.
+     * \brief Executa aï¿½ï¿½es relacionadas a uma conta de investimentos existente.
      * \param cpf Objeto CPF contendo o identificador da conta.
      *
-     * Este método deve ser chamado para executar ações em uma conta de investimentos existente,
-     * identificada pelo CPF fornecido. A implementação desse método deve definir as operações
-     * específicas a serem realizadas.
+     * Este mï¿½todo deve ser chamado para executar aï¿½ï¿½es em uma conta de investimentos existente,
+     * identificada pelo CPF fornecido. A implementaï¿½ï¿½o desse mï¿½todo deve definir as operaï¿½ï¿½es
+     * especï¿½ficas a serem realizadas.
      */
     virtual void executar(const CPF&) = 0;
 
     /**
-     * \brief Estabelece a ligação com a controladora da camada de serviço.
-     * \param CntrISInvestimento Ponteiro para a controladora da camada de serviço.
+     * \brief Estabelece a ligaï¿½ï¿½o com a controladora da camada de serviï¿½o.
+     * \param CntrISInvestimento Ponteiro para a controladora da camada de serviï¿½o.
      *
-     * Este método deve ser chamado para estabelecer a ligação entre a camada de
-     * apresentação e a camada de serviço, permitindo a comunicação entre elas.
+     * Este mï¿½todo deve ser chamado para estabelecer a ligaï¿½ï¿½o entre a camada de
+     * apresentaï¿½ï¿½o e a camada de serviï¿½o, permitindo a comunicaï¿½ï¿½o entre elas.
      */
     virtual void setCntrISInvestimento(ISInvestimento*) = 0;
 
@@ -141,21 +141,21 @@ public:
      * \brief Destrutor virtual.
      *
      * O destrutor virtual garante que os recursos alocados pela classe derivada sejam
-     * corretamente liberados quando a interface for destruída.
+     * corretamente liberados quando a interface for destruï¿½da.
      */
     virtual ~IAInvestimento() {}
 };
 
 //-----------------------------------------------------------------------------------
-// Interface da camada de serviço para operações de investimento.
+// Interface da camada de serviï¿½o para operaï¿½ï¿½es de investimento.
 
 /**
  * \class ISAutenticacao
- * \brief Interface para operações de autenticação de usuários.
+ * \brief Interface para operaï¿½ï¿½es de autenticaï¿½ï¿½o de usuï¿½rios.
  *
- * Esta interface define o contrato para a operação de autenticação de usuários,
- * ela é utilizada pelas controladoras da camada de apresentação para intermediar
- * as operações de autenticação entre o usuário e os dados persistidos.
+ * Esta interface define o contrato para a operaï¿½ï¿½o de autenticaï¿½ï¿½o de usuï¿½rios,
+ * ela ï¿½ utilizada pelas controladoras da camada de apresentaï¿½ï¿½o para intermediar
+ * as operaï¿½ï¿½es de autenticaï¿½ï¿½o entre o usuï¿½rio e os dados persistidos.
  */
 
 //222014142
@@ -163,10 +163,10 @@ public:
 class ISAutenticacao {
 public:
     /**
-     * \brief Autentica um usuário no sistema.
-     * \param cpf String contendo o CPF do usuário.
-     * \param senha String contendo a senha do usuário.
-     * \return bool Retorna verdadeiro se a autenticação foi bem-sucedida.
+     * \brief Autentica um usuï¿½rio no sistema.
+     * \param cpf String contendo o CPF do usuï¿½rio.
+     * \param senha String contendo a senha do usuï¿½rio.
+     * \return bool Retorna verdadeiro se a autenticaï¿½ï¿½o foi bem-sucedida.
      */
     virtual bool autenticar(const string& CPF, const string& Senha) = 0;
 
@@ -178,18 +178,18 @@ public:
 
 /**
  * \class ISConta
- * \brief Interface para operações CRUD em contas.
+ * \brief Interface para operaï¿½ï¿½es CRUD em contas.
  *
- * Esta interface define o contrato para operações CRUD em contas,
- * ela é utilizada pelas
- * controladoras da camada de apresentação para intermediar as operações entre
- * o usuário e os dados persistidos.
+ * Esta interface define o contrato para operaï¿½ï¿½es CRUD em contas,
+ * ela ï¿½ utilizada pelas
+ * controladoras da camada de apresentaï¿½ï¿½o para intermediar as operaï¿½ï¿½es entre
+ * o usuï¿½rio e os dados persistidos.
  */
 
 //231035105
 class ISConta{
 public:
-    // Métodos para operações CRUD em contas
+    // Mï¿½todos para operaï¿½ï¿½es CRUD em contas
     /**
      * \brief Cria uma nova conta no sistema
      * \param conta Objeto Conta contendo os dados da conta a ser criada.
@@ -197,7 +197,7 @@ public:
      */
     virtual bool criar(const Conta&) = 0;
     /**
-     * \brief Lê uma conta existente no sistema.
+     * \brief Lï¿½ uma conta existente no sistema.
      * \param conta Ponteiro para um objeto Conta para armazenar os dados lidos.
      * \return bool Retorna verdadeiro se os dados foram lidos com sucesso.
      */
@@ -209,59 +209,65 @@ public:
      */
     virtual bool atualizar(const Conta&) = 0;
     /**
-     * \brief Exclui um CPF do sistema usando um código de identificação.
+     * \brief Exclui um CPF do sistema usando um cï¿½digo de identificaï¿½ï¿½o.
      * \param cpf Objeto CPF contendo o CPF da conta.
      * \return bool Retorna verdadeiro se o CPF foi excluido com sucesso.
      */
     virtual bool excluir(const CPF&) = 0;
+    
+    /**
+     * \brief Destrutor virtual.
+     */
+    virtual ~ISConta() = default;
+    
 
 };
 
 
 /**
  * \class ISInvestimento
- * \brief Interface para operações CRUD em títulos e pagamentos.
+ * \brief Interface para operaï¿½ï¿½es CRUD em tï¿½tulos e pagamentos.
  *
- * Esta interface define o contrato para operações CRUD em títulos e pagamentos,
- * ela é utilizada pelas
- * controladoras da camada de apresentação para intermediar as operações entre
- * o usuário e os dados persistidos.
+ * Esta interface define o contrato para operaï¿½ï¿½es CRUD em tï¿½tulos e pagamentos,
+ * ela ï¿½ utilizada pelas
+ * controladoras da camada de apresentaï¿½ï¿½o para intermediar as operaï¿½ï¿½es entre
+ * o usuï¿½rio e os dados persistidos.
  */
 
  //231013583
 class ISInvestimento {
 public:
-    // Métodos para operações CRUD em títulos.
+    // Mï¿½todos para operaï¿½ï¿½es CRUD em tï¿½tulos.
 
     /**
-     * \brief Cria um novo título no sistema.
-     * \param titulo Objeto Titulo contendo os dados do título a ser criado.
-     * \return bool Retorna verdadeiro se o título foi criado com sucesso.
+     * \brief Cria um novo tï¿½tulo no sistema.
+     * \param titulo Objeto Titulo contendo os dados do tï¿½tulo a ser criado.
+     * \return bool Retorna verdadeiro se o tï¿½tulo foi criado com sucesso.
      */
     virtual bool criar(const Titulo&) = 0;
 
     /**
-     * \brief Lê um título existente no sistema.
+     * \brief Lï¿½ um tï¿½tulo existente no sistema.
      * \param titulo Ponteiro para um objeto Titulo para armazenar os dados lidos.
      * \return bool Retorna verdadeiro se os dados foram lidos com sucesso.
      */
     virtual bool ler(Titulo*) = 0;
 
     /**
-     * \brief Atualiza um título existente no sistema.
-     * \param titulo Objeto Titulo contendo os novos dados do título.
-     * \return bool Retorna verdadeiro se o título foi atualizado com sucesso.
+     * \brief Atualiza um tï¿½tulo existente no sistema.
+     * \param titulo Objeto Titulo contendo os novos dados do tï¿½tulo.
+     * \return bool Retorna verdadeiro se o tï¿½tulo foi atualizado com sucesso.
      */
     virtual bool atualizar(const Titulo&) = 0;
 
     /**
-     * \brief Exclui um título do sistema usando um código de identificação.
-     * \param codigo Objeto CodigoTitulo contendo o identificador do título.
-     * \return bool Retorna verdadeiro se o título foi excluído com sucesso.
+     * \brief Exclui um tï¿½tulo do sistema usando um cï¿½digo de identificaï¿½ï¿½o.
+     * \param codigo Objeto CodigoTitulo contendo o identificador do tï¿½tulo.
+     * \return bool Retorna verdadeiro se o tï¿½tulo foi excluï¿½do com sucesso.
      */
     virtual bool excluir(const CodigoTitulo&) = 0;
 
-    // Métodos para operações CRUD em pagamentos.
+    // Mï¿½todos para operaï¿½ï¿½es CRUD em pagamentos.
 
     /**
      * \brief Cria um novo pagamento no sistema.
@@ -271,7 +277,7 @@ public:
     virtual bool criar(const Pagamento&) = 0;
 
     /**
-     * \brief Lê um pagamento existente no sistema.
+     * \brief Lï¿½ um pagamento existente no sistema.
      * \param pagamento Ponteiro para um objeto Pagamento para armazenar os dados lidos.
      * \return bool Retorna verdadeiro se os dados foram lidos com sucesso.
      */
@@ -285,9 +291,9 @@ public:
     virtual bool atualizar(const Pagamento&) = 0;
 
     /**
-     * \brief Exclui um pagamento do sistema usando um código de identificação.
+     * \brief Exclui um pagamento do sistema usando um cï¿½digo de identificaï¿½ï¿½o.
      * \param codigo Objeto CodigoPagamento contendo o identificador do pagamento.
-     * \return bool Retorna verdadeiro se o pagamento foi excluído com sucesso.
+     * \return bool Retorna verdadeiro se o pagamento foi excluï¿½do com sucesso.
      */
     virtual bool excluir(const CodigoPagamento&) = 0;
 

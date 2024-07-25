@@ -10,4 +10,19 @@
 
 using namespace std;
 
+class CntrIAConta : public IAConta{
+private:
+    ISConta *cntrISConta;
+public:
+    bool criar();
+    bool ler(Conta);
+    bool atualizar(Conta);
+    bool excluir(const CPF&);
+    void setCntrISConta(ISConta);
+};
+
+void inline CntrIAConta::setCntrISConta(ISConta *cntrISConta){
+    this -> cntrISConta = cntrISConta;
+}
+
 #endif // CTRL_APRESENTACAO_H_INCLUDED
