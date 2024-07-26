@@ -14,7 +14,7 @@ class CntrIAConta : public IAConta{
 private:
     ISConta *cntrISConta;
 public:
-    bool criar();
+    bool criar(Conta);
     bool ler(Conta);
     bool atualizar(Conta);
     bool excluir(const CPF&);

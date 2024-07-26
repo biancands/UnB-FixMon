@@ -20,6 +20,3 @@ bool CntrIAConta::atualizar(Conta* conta){
 bool CntrIAConta::excluir(CPF* cpf){
     return cntrISConta -> excluir(cpf);
 }
- 
-
- 
