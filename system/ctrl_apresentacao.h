@@ -10,4 +10,15 @@
 
 using namespace std;
 
-#endif // CTRL_APRESENTACAO_H_INCLUDED
+class CntrIAAutenticacao : public IAAutenticacao {
+private:
+    ISAutenticacao *cntrISAutenticacao;
+public:
+    bool autenticar(CPF*, Senha*);
+    void setCntrISAutenticacao(ISAutenticacao*);
+};
+
+void inline CntrIAAutenticacao::setCntrISAutenticacao(ISAutenticacao *cntrISAutenticacao){
+    this->cntrISAutenticacao = cntrISAutenticacao;
+}
+#endif

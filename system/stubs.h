@@ -7,4 +7,12 @@
 
 using namespace std;
 
+class StubISAutenticacao : public ISAutenticacao {
+public:
+    const static int TRIGGER_FALHA = 67890;
+    const static int TRIGGER_ERRO_SISTEMA = 78901;
+
+    bool autenticar(const string&, const string&);
+};
+
 #endif // STUBS_H_INCLUDED
