@@ -1,0 +1,12 @@
+#ignorar arquivos
+*.o
+*.a
+*.so
+*.exe
+
+# Ignorar arquivos gerados pelo editor/IDE
+.vscode/
+.idea/
+*.swp
+*~
+*.log
