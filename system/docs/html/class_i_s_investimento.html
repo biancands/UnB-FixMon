@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UnBFixMon: Referência da Classe ISInvestimento</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UnBFixMon
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="class_i_s_investimento-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência da Classe ISInvestimento<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface para operações CRUD em títulos e pagamentos.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="interfaces_8h_source.html">interfaces.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a66fabdd92003797c3c9e48ec5ee130f5" id="r_a66fabdd92003797c3c9e48ec5ee130f5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66fabdd92003797c3c9e48ec5ee130f5">criar</a> (const Titulo &amp;)=0</td></tr>
+<tr class="memdesc:a66fabdd92003797c3c9e48ec5ee130f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo título no sistema.  <br /></td></tr>
+<tr class="separator:a66fabdd92003797c3c9e48ec5ee130f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6930d4628938995b175138da93a41d5d" id="r_a6930d4628938995b175138da93a41d5d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6930d4628938995b175138da93a41d5d">ler</a> (Titulo *)=0</td></tr>
+<tr class="memdesc:a6930d4628938995b175138da93a41d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um título existente no sistema.  <br /></td></tr>
+<tr class="separator:a6930d4628938995b175138da93a41d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae647337ff3a95bbc586a9c664e75aa4b" id="r_ae647337ff3a95bbc586a9c664e75aa4b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae647337ff3a95bbc586a9c664e75aa4b">atualizar</a> (const Titulo &amp;)=0</td></tr>
+<tr class="memdesc:ae647337ff3a95bbc586a9c664e75aa4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza um título existente no sistema.  <br /></td></tr>
+<tr class="separator:ae647337ff3a95bbc586a9c664e75aa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6dabec51d5b9c493d2038b229f793f7" id="r_af6dabec51d5b9c493d2038b229f793f7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6dabec51d5b9c493d2038b229f793f7">excluir</a> (const CodigoTitulo &amp;)=0</td></tr>
+<tr class="memdesc:af6dabec51d5b9c493d2038b229f793f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclui um título do sistema usando um código de identificação.  <br /></td></tr>
+<tr class="separator:af6dabec51d5b9c493d2038b229f793f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a4ac7424ed32a6530c6bdf67093da1" id="r_a89a4ac7424ed32a6530c6bdf67093da1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a4ac7424ed32a6530c6bdf67093da1">criar</a> (const Pagamento &amp;)=0</td></tr>
+<tr class="memdesc:a89a4ac7424ed32a6530c6bdf67093da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo pagamento no sistema.  <br /></td></tr>
+<tr class="separator:a89a4ac7424ed32a6530c6bdf67093da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004a8bc30a86352a7954b1e49817d6a1" id="r_a004a8bc30a86352a7954b1e49817d6a1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a004a8bc30a86352a7954b1e49817d6a1">ler</a> (Pagamento *)=0</td></tr>
+<tr class="memdesc:a004a8bc30a86352a7954b1e49817d6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um pagamento existente no sistema.  <br /></td></tr>
+<tr class="separator:a004a8bc30a86352a7954b1e49817d6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae28d820b7c39c4af469446379e62de" id="r_a6ae28d820b7c39c4af469446379e62de"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ae28d820b7c39c4af469446379e62de">atualizar</a> (const Pagamento &amp;)=0</td></tr>
+<tr class="memdesc:a6ae28d820b7c39c4af469446379e62de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza um pagamento existente no sistema.  <br /></td></tr>
+<tr class="separator:a6ae28d820b7c39c4af469446379e62de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f94635d12768830edf388c058a8f79a" id="r_a7f94635d12768830edf388c058a8f79a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f94635d12768830edf388c058a8f79a">excluir</a> (const CodigoPagamento &amp;)=0</td></tr>
+<tr class="memdesc:a7f94635d12768830edf388c058a8f79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclui um pagamento do sistema usando um código de identificação.  <br /></td></tr>
+<tr class="separator:a7f94635d12768830edf388c058a8f79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd9f2ae008088c23efc601e8f285c35" id="r_abbd9f2ae008088c23efc601e8f285c35"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbd9f2ae008088c23efc601e8f285c35">~ISInvestimento</a> ()</td></tr>
+<tr class="memdesc:abbd9f2ae008088c23efc601e8f285c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual.  <br /></td></tr>
+<tr class="separator:abbd9f2ae008088c23efc601e8f285c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Interface para operações CRUD em títulos e pagamentos. </p>
+<p>Esta interface define o contrato para operações CRUD em títulos e pagamentos, ela é utilizada pelas controladoras da camada de apresentação para intermediar as operações entre o usuário e os dados persistidos. </p>
+
+<p class="definition">Definição na linha <a class="el" href="interfaces_8h_source.html#l00232">232</a> do arquivo <a class="el" href="interfaces_8h_source.html">interfaces.h</a>.</p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
+<a id="abbd9f2ae008088c23efc601e8f285c35" name="abbd9f2ae008088c23efc601e8f285c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd9f2ae008088c23efc601e8f285c35">&#9670;&#160;</a></span>~ISInvestimento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ISInvestimento::~ISInvestimento </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor virtual. </p>
+
+<p class="definition">Definição na linha <a class="el" href="interfaces_8h_source.html#l00297">297</a> do arquivo <a class="el" href="interfaces_8h_source.html">interfaces.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a6ae28d820b7c39c4af469446379e62de" name="a6ae28d820b7c39c4af469446379e62de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae28d820b7c39c4af469446379e62de">&#9670;&#160;</a></span>atualizar() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::atualizar </td>
+          <td>(</td>
+          <td class="paramtype">const Pagamento &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atualiza um pagamento existente no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pagamento</td><td>Objeto Pagamento contendo os novos dados do pagamento. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o pagamento foi atualizado com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="ae647337ff3a95bbc586a9c664e75aa4b" name="ae647337ff3a95bbc586a9c664e75aa4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae647337ff3a95bbc586a9c664e75aa4b">&#9670;&#160;</a></span>atualizar() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::atualizar </td>
+          <td>(</td>
+          <td class="paramtype">const Titulo &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atualiza um título existente no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">titulo</td><td>Objeto Titulo contendo os novos dados do título. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o título foi atualizado com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a89a4ac7424ed32a6530c6bdf67093da1" name="a89a4ac7424ed32a6530c6bdf67093da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a4ac7424ed32a6530c6bdf67093da1">&#9670;&#160;</a></span>criar() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::criar </td>
+          <td>(</td>
+          <td class="paramtype">const Pagamento &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cria um novo pagamento no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pagamento</td><td>Objeto Pagamento contendo os dados do pagamento a ser criado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o pagamento foi criado com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a66fabdd92003797c3c9e48ec5ee130f5" name="a66fabdd92003797c3c9e48ec5ee130f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66fabdd92003797c3c9e48ec5ee130f5">&#9670;&#160;</a></span>criar() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::criar </td>
+          <td>(</td>
+          <td class="paramtype">const Titulo &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cria um novo título no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">titulo</td><td>Objeto Titulo contendo os dados do título a ser criado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o título foi criado com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a7f94635d12768830edf388c058a8f79a" name="a7f94635d12768830edf388c058a8f79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f94635d12768830edf388c058a8f79a">&#9670;&#160;</a></span>excluir() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::excluir </td>
+          <td>(</td>
+          <td class="paramtype">const CodigoPagamento &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exclui um pagamento do sistema usando um código de identificação. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Objeto CodigoPagamento contendo o identificador do pagamento. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o pagamento foi excluído com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="af6dabec51d5b9c493d2038b229f793f7" name="af6dabec51d5b9c493d2038b229f793f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6dabec51d5b9c493d2038b229f793f7">&#9670;&#160;</a></span>excluir() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::excluir </td>
+          <td>(</td>
+          <td class="paramtype">const CodigoTitulo &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exclui um título do sistema usando um código de identificação. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Objeto CodigoTitulo contendo o identificador do título. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se o título foi excluído com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a004a8bc30a86352a7954b1e49817d6a1" name="a004a8bc30a86352a7954b1e49817d6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004a8bc30a86352a7954b1e49817d6a1">&#9670;&#160;</a></span>ler() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::ler </td>
+          <td>(</td>
+          <td class="paramtype">Pagamento *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê um pagamento existente no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pagamento</td><td>Ponteiro para um objeto Pagamento para armazenar os dados lidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se os dados foram lidos com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a6930d4628938995b175138da93a41d5d" name="a6930d4628938995b175138da93a41d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6930d4628938995b175138da93a41d5d">&#9670;&#160;</a></span>ler() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ISInvestimento::ler </td>
+          <td>(</td>
+          <td class="paramtype">Titulo *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lê um título existente no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">titulo</td><td>Ponteiro para um objeto Titulo para armazenar os dados lidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se os dados foram lidos com sucesso. </dd></dl>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="interfaces_8h_source.html">interfaces.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

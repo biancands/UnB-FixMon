@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UnBFixMon: Código-Fonte de interfaces.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UnBFixMon
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interfaces.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interfaces_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef INTERFACES_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define INTERFACES_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../library/domains.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../library/entities.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//-----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Declarações adiantadas (forward declaration).</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_autenticacao.html">ISAutenticacao</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_conta.html">ISConta</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_investimento.html">ISInvestimento</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//-----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Declaração de interface da camada de apresentação.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//200040979</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_i_a_autenticacao.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_a_autenticacao.html">IAAutenticacao</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Métodos para apresentação de ISAutenticacao.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_i_a_autenticacao.html#a8a8f29dd228548c5a3dd7a7f80bb9750">   44</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_a_autenticacao.html#a8a8f29dd228548c5a3dd7a7f80bb9750">autenticar</a>(CPF*, Senha*) = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_i_a_autenticacao.html#afb29890996db2da07a0cbbe3c4b6f972">   53</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_a_autenticacao.html#afb29890996db2da07a0cbbe3c4b6f972">setCntrISAutenticacao</a>(<a class="code hl_class" href="class_i_s_autenticacao.html">ISAutenticacao</a>*) = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_i_a_autenticacao.html#a3db80f26e7a5b45937270f74a818c715">   58</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_a_autenticacao.html#a3db80f26e7a5b45937270f74a818c715">~IAAutenticacao</a>() {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> <span class="comment">//211020956</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_i_a_conta.html">   72</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_a_conta.html">IAConta</a> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// Métodos para apresentação de ISConta.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_i_a_conta.html#a1c182a3d35a0a9ecbebfc07e74f7d811">   82</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_a_conta.html#a1c182a3d35a0a9ecbebfc07e74f7d811">criar</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_i_a_conta.html#a263c90414b38c57fea8d34e7ea41c74b">   92</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_i_a_conta.html#a263c90414b38c57fea8d34e7ea41c74b">executar</a>(<span class="keyword">const</span> CPF&amp;) = 0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_i_a_conta.html#a5811ba19ad6eed1dc3b38412af9eab67">  101</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_a_conta.html#a5811ba19ad6eed1dc3b38412af9eab67">setCntrISConta</a>(<a class="code hl_class" href="class_i_s_conta.html">ISConta</a>*) = 0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_i_a_conta.html#a552ee04daa4400610cce35a4f8ba1702">  106</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_a_conta.html#a552ee04daa4400610cce35a4f8ba1702">~IAConta</a>(){};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">//231013583</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="};">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_i_a_investimento.html">  119</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_a_investimento.html">IAInvestimento</a> {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_i_a_investimento.html#ad97e5284b13d44ba419cca36d258c63f">  129</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_a_investimento.html#ad97e5284b13d44ba419cca36d258c63f">executar</a>(<span class="keyword">const</span> CPF&amp;) = 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_i_a_investimento.html#a4f43235dbe3ceebfa5e8e3efa491c48d">  138</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_a_investimento.html#a4f43235dbe3ceebfa5e8e3efa491c48d">setCntrISInvestimento</a>(<a class="code hl_class" href="class_i_s_investimento.html">ISInvestimento</a>*) = 0;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_i_a_investimento.html#af69667010d65c1fa2e20797f3e299d86">  146</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_a_investimento.html#af69667010d65c1fa2e20797f3e299d86">~IAInvestimento</a>() {}</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">//-----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">// Interface da camada de serviço para operações de investimento.</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">//222014142</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">//200040979</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="};">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_i_s_autenticacao.html">  163</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_autenticacao.html">ISAutenticacao</a> {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_i_s_autenticacao.html#ae9a4821c24142db789aee69bc8bd5c8e">  171</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_autenticacao.html#ae9a4821c24142db789aee69bc8bd5c8e">autenticar</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; CPF, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Senha) = 0;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_i_s_autenticacao.html#af0b6fd5cc2afd985070db8991b3da3a9">  176</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_s_autenticacao.html#af0b6fd5cc2afd985070db8991b3da3a9">~ISAutenticacao</a>() {}</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>};</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">//231035105</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="};">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_i_s_conta.html">  190</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_conta.html">ISConta</a>{</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">// Métodos para operações CRUD em contas</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="class_i_s_conta.html#a2c6bc239008dd3ec37449241bdc206a7">  198</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_conta.html#a2c6bc239008dd3ec37449241bdc206a7">criar</a>(<span class="keyword">const</span> Conta&amp;) = 0;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="class_i_s_conta.html#a0b31dd63f7c8fc1e5bfae6b066321d90">  204</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_conta.html#a0b31dd63f7c8fc1e5bfae6b066321d90">ler</a>(Conta*) = 0;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="class_i_s_conta.html#a2a591eb0f63e1ef13d6e5ed344f528d2">  210</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_conta.html#a2a591eb0f63e1ef13d6e5ed344f528d2">atualizar</a>(<span class="keyword">const</span> Conta&amp;) = 0;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="class_i_s_conta.html#a92d832cf931ead3d3d4c0ee6a6435a5d">  216</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_conta.html#a92d832cf931ead3d3d4c0ee6a6435a5d">excluir</a>(<span class="keyword">const</span> CPF&amp;) = 0;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>};</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> <span class="comment">//231013583</span></div>
+<div class="foldopen" id="foldopen00232" data-start="{" data-end="};">
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html">  232</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_s_investimento.html">ISInvestimento</a> {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="comment">// Métodos para operações CRUD em títulos.</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a66fabdd92003797c3c9e48ec5ee130f5">  241</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a66fabdd92003797c3c9e48ec5ee130f5">criar</a>(<span class="keyword">const</span> Titulo&amp;) = 0;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a6930d4628938995b175138da93a41d5d">  248</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a6930d4628938995b175138da93a41d5d">ler</a>(Titulo*) = 0;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#ae647337ff3a95bbc586a9c664e75aa4b">  255</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#ae647337ff3a95bbc586a9c664e75aa4b">atualizar</a>(<span class="keyword">const</span> Titulo&amp;) = 0;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#af6dabec51d5b9c493d2038b229f793f7">  262</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#af6dabec51d5b9c493d2038b229f793f7">excluir</a>(<span class="keyword">const</span> CodigoTitulo&amp;) = 0;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="comment">// Métodos para operações CRUD em pagamentos.</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a89a4ac7424ed32a6530c6bdf67093da1">  271</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a89a4ac7424ed32a6530c6bdf67093da1">criar</a>(<span class="keyword">const</span> Pagamento&amp;) = 0;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a004a8bc30a86352a7954b1e49817d6a1">  278</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a004a8bc30a86352a7954b1e49817d6a1">ler</a>(Pagamento*) = 0;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a6ae28d820b7c39c4af469446379e62de">  285</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a6ae28d820b7c39c4af469446379e62de">atualizar</a>(<span class="keyword">const</span> Pagamento&amp;) = 0;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#a7f94635d12768830edf388c058a8f79a">  292</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_s_investimento.html#a7f94635d12768830edf388c058a8f79a">excluir</a>(<span class="keyword">const</span> CodigoPagamento&amp;) = 0;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="class_i_s_investimento.html#abbd9f2ae008088c23efc601e8f285c35">  297</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_s_investimento.html#abbd9f2ae008088c23efc601e8f285c35">~ISInvestimento</a>(){}</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>};</div>
+</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif </span><span class="comment">// INTERFACES_H_INCLUDED</span></div>
+<div class="ttc" id="aclass_i_a_autenticacao_html"><div class="ttname"><a href="class_i_a_autenticacao.html">IAAutenticacao</a></div><div class="ttdoc">Interface para operações de autenticação de usuários.</div><div class="ttdef"><b>Definição</b> <a href="#l00030">interfaces.h:30</a></div></div>
+<div class="ttc" id="aclass_i_a_autenticacao_html_a3db80f26e7a5b45937270f74a818c715"><div class="ttname"><a href="class_i_a_autenticacao.html#a3db80f26e7a5b45937270f74a818c715">IAAutenticacao::~IAAutenticacao</a></div><div class="ttdeci">virtual ~IAAutenticacao()</div><div class="ttdoc">Método destrutor virtual (IAAutenticacao).</div><div class="ttdef"><b>Definição</b> <a href="#l00058">interfaces.h:58</a></div></div>
+<div class="ttc" id="aclass_i_a_autenticacao_html_a8a8f29dd228548c5a3dd7a7f80bb9750"><div class="ttname"><a href="class_i_a_autenticacao.html#a8a8f29dd228548c5a3dd7a7f80bb9750">IAAutenticacao::autenticar</a></div><div class="ttdeci">virtual bool autenticar(CPF *, Senha *)=0</div><div class="ttdoc">Autentica um usuário no sistema.</div></div>
+<div class="ttc" id="aclass_i_a_autenticacao_html_afb29890996db2da07a0cbbe3c4b6f972"><div class="ttname"><a href="class_i_a_autenticacao.html#afb29890996db2da07a0cbbe3c4b6f972">IAAutenticacao::setCntrISAutenticacao</a></div><div class="ttdeci">virtual void setCntrISAutenticacao(ISAutenticacao *)=0</div><div class="ttdoc">Estabelece a ligação com a controladora da camada de serviço.</div></div>
+<div class="ttc" id="aclass_i_a_conta_html"><div class="ttname"><a href="class_i_a_conta.html">IAConta</a></div><div class="ttdoc">Interface para operações de criação e execução em contas.</div><div class="ttdef"><b>Definição</b> <a href="#l00072">interfaces.h:72</a></div></div>
+<div class="ttc" id="aclass_i_a_conta_html_a1c182a3d35a0a9ecbebfc07e74f7d811"><div class="ttname"><a href="class_i_a_conta.html#a1c182a3d35a0a9ecbebfc07e74f7d811">IAConta::criar</a></div><div class="ttdeci">virtual void criar()</div><div class="ttdoc">Cria uma nova conta no sistema.</div></div>
+<div class="ttc" id="aclass_i_a_conta_html_a263c90414b38c57fea8d34e7ea41c74b"><div class="ttname"><a href="class_i_a_conta.html#a263c90414b38c57fea8d34e7ea41c74b">IAConta::executar</a></div><div class="ttdeci">virtual int executar(const CPF &amp;)=0</div><div class="ttdoc">Executa ações relacionadas a uma conta existente.</div></div>
+<div class="ttc" id="aclass_i_a_conta_html_a552ee04daa4400610cce35a4f8ba1702"><div class="ttname"><a href="class_i_a_conta.html#a552ee04daa4400610cce35a4f8ba1702">IAConta::~IAConta</a></div><div class="ttdeci">virtual ~IAConta()</div><div class="ttdoc">Metodo Destrutor virtual (IAConta).</div><div class="ttdef"><b>Definição</b> <a href="#l00106">interfaces.h:106</a></div></div>
+<div class="ttc" id="aclass_i_a_conta_html_a5811ba19ad6eed1dc3b38412af9eab67"><div class="ttname"><a href="class_i_a_conta.html#a5811ba19ad6eed1dc3b38412af9eab67">IAConta::setCntrISConta</a></div><div class="ttdeci">virtual void setCntrISConta(ISConta *)=0</div><div class="ttdoc">Estabelece a ligação com a controladora da camada de serviço.</div></div>
+<div class="ttc" id="aclass_i_a_investimento_html"><div class="ttname"><a href="class_i_a_investimento.html">IAInvestimento</a></div><div class="ttdoc">Interface para operações de execução relacionadas a investimentos.</div><div class="ttdef"><b>Definição</b> <a href="#l00119">interfaces.h:119</a></div></div>
+<div class="ttc" id="aclass_i_a_investimento_html_a4f43235dbe3ceebfa5e8e3efa491c48d"><div class="ttname"><a href="class_i_a_investimento.html#a4f43235dbe3ceebfa5e8e3efa491c48d">IAInvestimento::setCntrISInvestimento</a></div><div class="ttdeci">virtual void setCntrISInvestimento(ISInvestimento *)=0</div><div class="ttdoc">Estabelece a ligação com a controladora da camada de serviço.</div></div>
+<div class="ttc" id="aclass_i_a_investimento_html_ad97e5284b13d44ba419cca36d258c63f"><div class="ttname"><a href="class_i_a_investimento.html#ad97e5284b13d44ba419cca36d258c63f">IAInvestimento::executar</a></div><div class="ttdeci">virtual void executar(const CPF &amp;)=0</div><div class="ttdoc">Executa ações relacionadas a uma conta de investimentos existente.</div></div>
+<div class="ttc" id="aclass_i_a_investimento_html_af69667010d65c1fa2e20797f3e299d86"><div class="ttname"><a href="class_i_a_investimento.html#af69667010d65c1fa2e20797f3e299d86">IAInvestimento::~IAInvestimento</a></div><div class="ttdeci">virtual ~IAInvestimento()</div><div class="ttdoc">Destrutor virtual.</div><div class="ttdef"><b>Definição</b> <a href="#l00146">interfaces.h:146</a></div></div>
+<div class="ttc" id="aclass_i_s_autenticacao_html"><div class="ttname"><a href="class_i_s_autenticacao.html">ISAutenticacao</a></div><div class="ttdoc">Interface para operações de autenticação de usuários.</div><div class="ttdef"><b>Definição</b> <a href="#l00163">interfaces.h:163</a></div></div>
+<div class="ttc" id="aclass_i_s_autenticacao_html_ae9a4821c24142db789aee69bc8bd5c8e"><div class="ttname"><a href="class_i_s_autenticacao.html#ae9a4821c24142db789aee69bc8bd5c8e">ISAutenticacao::autenticar</a></div><div class="ttdeci">virtual bool autenticar(const string &amp;CPF, const string &amp;Senha)=0</div><div class="ttdoc">Autentica um usuário no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_autenticacao_html_af0b6fd5cc2afd985070db8991b3da3a9"><div class="ttname"><a href="class_i_s_autenticacao.html#af0b6fd5cc2afd985070db8991b3da3a9">ISAutenticacao::~ISAutenticacao</a></div><div class="ttdeci">virtual ~ISAutenticacao()</div><div class="ttdoc">Destrutor virtual.</div><div class="ttdef"><b>Definição</b> <a href="#l00176">interfaces.h:176</a></div></div>
+<div class="ttc" id="aclass_i_s_conta_html"><div class="ttname"><a href="class_i_s_conta.html">ISConta</a></div><div class="ttdoc">Interface para operações CRUD em contas.</div><div class="ttdef"><b>Definição</b> <a href="#l00190">interfaces.h:190</a></div></div>
+<div class="ttc" id="aclass_i_s_conta_html_a0b31dd63f7c8fc1e5bfae6b066321d90"><div class="ttname"><a href="class_i_s_conta.html#a0b31dd63f7c8fc1e5bfae6b066321d90">ISConta::ler</a></div><div class="ttdeci">virtual bool ler(Conta *)=0</div><div class="ttdoc">Lê uma conta existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_conta_html_a2a591eb0f63e1ef13d6e5ed344f528d2"><div class="ttname"><a href="class_i_s_conta.html#a2a591eb0f63e1ef13d6e5ed344f528d2">ISConta::atualizar</a></div><div class="ttdeci">virtual bool atualizar(const Conta &amp;)=0</div><div class="ttdoc">Atualiza uma conta existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_conta_html_a2c6bc239008dd3ec37449241bdc206a7"><div class="ttname"><a href="class_i_s_conta.html#a2c6bc239008dd3ec37449241bdc206a7">ISConta::criar</a></div><div class="ttdeci">virtual bool criar(const Conta &amp;)=0</div><div class="ttdoc">Cria uma nova conta no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_conta_html_a92d832cf931ead3d3d4c0ee6a6435a5d"><div class="ttname"><a href="class_i_s_conta.html#a92d832cf931ead3d3d4c0ee6a6435a5d">ISConta::excluir</a></div><div class="ttdeci">virtual bool excluir(const CPF &amp;)=0</div><div class="ttdoc">Exclui um CPF do sistema usando um código de identificação.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html"><div class="ttname"><a href="class_i_s_investimento.html">ISInvestimento</a></div><div class="ttdoc">Interface para operações CRUD em títulos e pagamentos.</div><div class="ttdef"><b>Definição</b> <a href="#l00232">interfaces.h:232</a></div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a004a8bc30a86352a7954b1e49817d6a1"><div class="ttname"><a href="class_i_s_investimento.html#a004a8bc30a86352a7954b1e49817d6a1">ISInvestimento::ler</a></div><div class="ttdeci">virtual bool ler(Pagamento *)=0</div><div class="ttdoc">Lê um pagamento existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a66fabdd92003797c3c9e48ec5ee130f5"><div class="ttname"><a href="class_i_s_investimento.html#a66fabdd92003797c3c9e48ec5ee130f5">ISInvestimento::criar</a></div><div class="ttdeci">virtual bool criar(const Titulo &amp;)=0</div><div class="ttdoc">Cria um novo título no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a6930d4628938995b175138da93a41d5d"><div class="ttname"><a href="class_i_s_investimento.html#a6930d4628938995b175138da93a41d5d">ISInvestimento::ler</a></div><div class="ttdeci">virtual bool ler(Titulo *)=0</div><div class="ttdoc">Lê um título existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a6ae28d820b7c39c4af469446379e62de"><div class="ttname"><a href="class_i_s_investimento.html#a6ae28d820b7c39c4af469446379e62de">ISInvestimento::atualizar</a></div><div class="ttdeci">virtual bool atualizar(const Pagamento &amp;)=0</div><div class="ttdoc">Atualiza um pagamento existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a7f94635d12768830edf388c058a8f79a"><div class="ttname"><a href="class_i_s_investimento.html#a7f94635d12768830edf388c058a8f79a">ISInvestimento::excluir</a></div><div class="ttdeci">virtual bool excluir(const CodigoPagamento &amp;)=0</div><div class="ttdoc">Exclui um pagamento do sistema usando um código de identificação.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_a89a4ac7424ed32a6530c6bdf67093da1"><div class="ttname"><a href="class_i_s_investimento.html#a89a4ac7424ed32a6530c6bdf67093da1">ISInvestimento::criar</a></div><div class="ttdeci">virtual bool criar(const Pagamento &amp;)=0</div><div class="ttdoc">Cria um novo pagamento no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_abbd9f2ae008088c23efc601e8f285c35"><div class="ttname"><a href="class_i_s_investimento.html#abbd9f2ae008088c23efc601e8f285c35">ISInvestimento::~ISInvestimento</a></div><div class="ttdeci">virtual ~ISInvestimento()</div><div class="ttdoc">Destrutor virtual.</div><div class="ttdef"><b>Definição</b> <a href="#l00297">interfaces.h:297</a></div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_ae647337ff3a95bbc586a9c664e75aa4b"><div class="ttname"><a href="class_i_s_investimento.html#ae647337ff3a95bbc586a9c664e75aa4b">ISInvestimento::atualizar</a></div><div class="ttdeci">virtual bool atualizar(const Titulo &amp;)=0</div><div class="ttdoc">Atualiza um título existente no sistema.</div></div>
+<div class="ttc" id="aclass_i_s_investimento_html_af6dabec51d5b9c493d2038b229f793f7"><div class="ttname"><a href="class_i_s_investimento.html#af6dabec51d5b9c493d2038b229f793f7">ISInvestimento::excluir</a></div><div class="ttdeci">virtual bool excluir(const CodigoTitulo &amp;)=0</div><div class="ttdoc">Exclui um título do sistema usando um código de identificação.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
