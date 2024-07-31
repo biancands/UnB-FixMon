@@ -42,6 +42,10 @@
 		<Unit filename="ctrl_apresentacao.h" />
 		<Unit filename="ctrl_servico.cpp" />
 		<Unit filename="ctrl_servico.h" />
+		<Unit filename="domains.cpp" />
+		<Unit filename="domains.h" />
+		<Unit filename="entities.cpp" />
+		<Unit filename="entities.h" />
 		<Unit filename="interfaces.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
