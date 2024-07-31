@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1717383700 source:c:\users\bianc\documents\unb-fixmon\system\domains.cpp
+	<iostream>
+	"domains.h"
+
+1719096215 c:\users\bianc\documents\unb-fixmon\system\domains.h
+	<stdexcept>
+	<string>
+	<vector>
+	<algorithm>
+	<unordered_set>
+	<sstream>
+	<cctype>
+	<regex>
+
+1712437433 source:c:\users\bianc\documents\unb-fixmon\system\entities.cpp
+	"entities.h"
+
+1719088370 c:\users\bianc\documents\unb-fixmon\system\entities.h
+	"domains.h"
+	<string>
+

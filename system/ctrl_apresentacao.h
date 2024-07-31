@@ -2,7 +2,7 @@
 #define CTRL_APRESENTACAO_H_INCLUDED
 
 #include "interfaces.h"
-#include "../library/domains.h"
+#include "domains.h"
 
 #include <stdexcept>
 #include <iostream>

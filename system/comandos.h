@@ -2,8 +2,8 @@
 #define COMANDOS_H_INCLUDED
 
 #include "interfaces.h"
-#include "../library/domains.h"
-#include "../library/entities.h"
+#include "domains.h"
+#include "entities.h"
 
 #include <stdexcept>
 #include <iostream>
