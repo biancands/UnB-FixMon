@@ -18,11 +18,11 @@ public:
     bool ler(Conta);
     bool atualizar(Conta);
     bool excluir(const CPF&);
-    void setCntrISConta(ISConta);
+    void setCntrISConta(ISConta* cntrISConta);
 };
 
-void inline CntrIAConta::setCntrISConta(ISConta *cntrISConta){
-    this -> cntrISConta = cntrISConta;
-}
+//void CntrIAConta::setCntrISConta(ISConta* cntrISConta){
+//    this -> cntrISConta = cntrISConta;
+//}
 
 #endif // CTRL_APRESENTACAO_H_INCLUDED

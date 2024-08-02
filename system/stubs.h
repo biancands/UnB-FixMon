@@ -15,10 +15,10 @@ public:
     const static int TRIGGER_ERRO_SISTEMA = 20000 ;
 
     //Declaração de metodos da interface.
-    bool criar(const Conta&);
-    bool ler(const Conta&);
-    bool atualizar(const Conta&);
-    bool excluir(const CPF)
+    bool criar(const Conta&) override;
+    bool ler(Conta*) override;
+    bool atualizar(const Conta&) override;
+    bool excluir(const CPF&) override;
 
 };
 #endif // STUBS_H_INCLUDED
