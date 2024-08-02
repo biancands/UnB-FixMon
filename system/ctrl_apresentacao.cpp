@@ -61,7 +61,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
                 double valorDouble;
 
-                cout << "Digite o código do título: ";
+                cout << "Digite o codigo do titulo: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 titulo.setCodigo(codigo);
@@ -76,7 +76,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 setor.setSetorNome(setorStr);
                 titulo.setSetor(setor);
 
-                cout << "Digite a data de emissão (DD-MM-AAAA): ";
+                cout << "Digite a data de emissao (DD-MM-AAAA): ";
                 cin >> emissaoStr;
                 emissao.setData(emissaoStr);
                 titulo.setEmissao(emissao);
@@ -93,9 +93,9 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
 
                 resultado = cntrISInvestimento->criar(titulo);
                 if (resultado) {
-                    cout << "Título criado com sucesso!" << endl;
+                    cout << "Titulo criado com sucesso!" << endl;
                 } else {
-                    cout << "Falha ao criar título." << endl;
+                    cout << "Falha ao criar titulo." << endl;
                 }
                 break;
             }
@@ -105,17 +105,17 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr;
                 Titulo titulo;
 
-                cout << "Digite o código do título: ";
+                cout << "Digite o codigo do titulo: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 titulo.setCodigo(codigo);
 
                 resultado = cntrISInvestimento->ler(&titulo);
                 if (resultado) {
-                    cout << "Título lido com sucesso!" << endl;
+                    cout << "Titulo lido com sucesso!" << endl;
                     // Exibir os dados do título
                 } else {
-                    cout << "Falha ao ler título." << endl;
+                    cout << "Falha ao ler titulo." << endl;
                 }
                 break;
             }
@@ -131,7 +131,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
                 double valorDouble;
 
-                cout << "Digite o código do título: ";
+                cout << "Digite o codigo do titulo: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 titulo.setCodigo(codigo);
@@ -146,7 +146,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 setor.setSetorNome(setorStr);
                 titulo.setSetor(setor);
 
-                cout << "Digite a data de emissão (DD-MM-AAAA): ";
+                cout << "Digite a data de emissao (DD-MM-AAAA): ";
                 cin >> emissaoStr;
                 emissao.setData(emissaoStr);
                 titulo.setEmissao(emissao);
@@ -163,9 +163,9 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
 
                 resultado = cntrISInvestimento->atualizar(titulo);
                 if (resultado) {
-                    cout << "Título atualizado com sucesso!" << endl;
+                    cout << "Titulo atualizado com sucesso!" << endl;
                 } else {
-                    cout << "Falha ao atualizar título." << endl;
+                    cout << "Falha ao atualizar titulo." << endl;
                 }
                 break;
             }
@@ -174,15 +174,15 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 CodigoTitulo codigo;
                 string codigoStr;
 
-                cout << "Digite o código do título: ";
+                cout << "Digite o codigo do titulo: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
 
                 resultado = cntrISInvestimento->excluir(codigo);
                 if (resultado) {
-                    cout << "Título excluído com sucesso!" << endl;
+                    cout << "Titulo excluido com sucesso!" << endl;
                 } else {
-                    cout << "Falha ao excluir título." << endl;
+                    cout << "Falha ao excluir titulo." << endl;
                 }
                 break;
             }
@@ -197,7 +197,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr, dataStr, estadoStr;
                 int percentualInt;
 
-                cout << "Digite o código do pagamento: ";
+                cout << "Digite o codigo do pagamento: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 pagamento.setCodigo(codigo);
@@ -231,7 +231,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr;
                 Pagamento pagamento;
 
-                cout << "Digite o código do pagamento: ";
+                cout << "Digite o codigo do pagamento: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 pagamento.setCodigo(codigo);
@@ -256,7 +256,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 string codigoStr, dataStr, estadoStr;
                 int percentualInt;
 
-                cout << "Digite o código do pagamento: ";
+                cout << "Digite o codigo do pagamento: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
                 pagamento.setCodigo(codigo);
@@ -289,13 +289,13 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 CodigoPagamento codigo;
                 string codigoStr;
 
-                cout << "Digite o código do pagamento: ";
+                cout << "Digite o codigo do pagamento: ";
                 cin >> codigoStr;
                 codigo.setCodigo(codigoStr);
 
                 resultado = cntrISInvestimento->excluir(codigo);
                 if (resultado) {
-                    cout << "Pagamento excluído com sucesso!" << endl;
+                    cout << "Pagamento excluido com sucesso!" << endl;
                 } else {
                     cout << "Falha ao excluir pagamento." << endl;
                 }

@@ -15,17 +15,17 @@ public:
     bool autenticar(const string&, const string&);
 };
 
-// Declaração do StubISInvestimento
+//231013583
 class StubISInvestimento : public ISInvestimento {
 public:
-    bool criar(const Titulo&) override;
-    bool ler(Titulo*) override;
-    bool atualizar(const Titulo&) override;
-    bool excluir(const CodigoTitulo&) override;
-    bool criar(const Pagamento&) override;
-    bool ler(Pagamento*) override;
-    bool atualizar(const Pagamento&) override;
-    bool excluir(const CodigoPagamento&) override;
+    bool criar(const Titulo&);
+    bool ler(Titulo*);
+    bool atualizar(const Titulo&);
+    bool excluir(const CodigoTitulo&);
+    bool criar(const Pagamento&);
+    bool ler(Pagamento*);
+    bool atualizar(const Pagamento&);
+    bool excluir(const CodigoPagamento&);
 };
 
 #endif // STUBS_H_INCLUDED

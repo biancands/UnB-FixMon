@@ -23,7 +23,7 @@ void inline CntrIAAutenticacao::setCntrISAutenticacao(ISAutenticacao *cntrISAute
     this->cntrISAutenticacao = cntrISAutenticacao;
 }
 
-// Declaração da controladora CntrIAInvestimento
+//231013583
 class CntrIAInvestimento : public IAInvestimento {
 private:
     ISInvestimento *cntrISInvestimento;

@@ -8,6 +8,7 @@
 #include "ctrl_apresentacao.h"
 #include "ctrl_servico.h"
 #include "stubs.h"
+#include "containers.h"
 
 using namespace std;
 
@@ -55,13 +56,13 @@ int main() {
 
                         case 2: {
                             CntrIAInvestimento *cntrIAInvestimento = new CntrIAInvestimento();
-                            ISInvestimento *stubISInvestimento = new StubISInvestimento();
-                            cntrIAInvestimento->setCntrISInvestimento(stubISInvestimento);
+                            ISInvestimento *cntrISInvestimento = new CntrISInvestimento();
+                            cntrIAInvestimento->setCntrISInvestimento(cntrISInvestimento);
 
                             cntrIAInvestimento->executar(cpf);
 
                             delete cntrIAInvestimento;
-                            delete stubISInvestimento;
+                            delete cntrISInvestimento;
                             break;
                         }
 
