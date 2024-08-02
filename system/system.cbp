@@ -32,12 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="comandos.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="comandos.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="comandos.cpp" />
+		<Unit filename="comandos.h" />
 		<Unit filename="ctrl_apresentacao.cpp" />
 		<Unit filename="ctrl_apresentacao.h" />
 		<Unit filename="ctrl_servico.cpp" />
@@ -46,16 +42,10 @@
 		<Unit filename="domains.h" />
 		<Unit filename="entities.cpp" />
 		<Unit filename="entities.h" />
-		<Unit filename="interfaces.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="interfaces.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="stubs.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="stubs.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="stubs.cpp" />
+		<Unit filename="stubs.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

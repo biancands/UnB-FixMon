@@ -3,6 +3,7 @@
 
 #include "interfaces.h"
 #include "domains.h"
+#include "entities.h"
 
 #include <stdexcept>
 #include <iostream>
@@ -20,5 +21,18 @@ public:
 
 void inline CntrIAAutenticacao::setCntrISAutenticacao(ISAutenticacao *cntrISAutenticacao){
     this->cntrISAutenticacao = cntrISAutenticacao;
+}
+
+// Declaração da controladora CntrIAInvestimento
+class CntrIAInvestimento : public IAInvestimento {
+private:
+    ISInvestimento *cntrISInvestimento;
+public:
+    void executar(const CPF&) override;
+    void setCntrISInvestimento(ISInvestimento*) override;
+};
+
+void inline CntrIAInvestimento::setCntrISInvestimento(ISInvestimento *cntrISInvestimento) {
+    this->cntrISInvestimento = cntrISInvestimento;
 }
 #endif

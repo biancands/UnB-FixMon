@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1722556995 source:c:\users\bianc\unb-fixmon\system\comandos.cpp
+	"comandos.h"
+
+1722556995 c:\users\bianc\unb-fixmon\system\comandos.h
+	"interfaces.h"
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722556995 c:\users\bianc\unb-fixmon\system\interfaces.h
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+
+1722561161 c:\users\bianc\unb-fixmon\system\domains.h
+	<stdexcept>
+	<string>
+	<vector>
+	<algorithm>
+	<unordered_set>
+	<sstream>
+	<cctype>
+	<regex>
+
+1722559944 c:\users\bianc\unb-fixmon\system\entities.h
+	"domains.h"
+	<string>
+
+1722556995 source:c:\users\bianc\unb-fixmon\system\ctrl_servico.cpp
+	"ctrl_servico.h"
+	"comandos.h"
+
+1722558826 c:\users\bianc\unb-fixmon\system\ctrl_servico.h
+	"interfaces.h"
+	"domains.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722556995 source:c:\users\bianc\unb-fixmon\system\domains.cpp
+	<iostream>
+	"domains.h"
+
+1722556995 source:c:\users\bianc\unb-fixmon\system\entities.cpp
+	"entities.h"
+
+1722570986 source:c:\users\bianc\unb-fixmon\system\ctrl_apresentacao.cpp
+	"ctrl_apresentacao.h"
+	"comandos.h"
+
+1722561097 c:\users\bianc\unb-fixmon\system\ctrl_apresentacao.h
+	"interfaces.h"
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722560858 source:c:\users\bianc\unb-fixmon\system\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	"domains.h"
+	"entities.h"
+	"interfaces.h"
+	"ctrl_apresentacao.h"
+	"ctrl_servico.h"
+	"stubs.h"
+
+1722560903 c:\users\bianc\unb-fixmon\system\stubs.h
+	"interfaces.h"
+	<stdexcept>
+	<iostream>
+
+1722560937 source:c:\users\bianc\unb-fixmon\system\stubs.cpp
+	"stubs.h"
+

@@ -53,9 +53,17 @@ int main() {
                             cout << endl << "Aqui vai a parte de contas!" << endl;
                             break;
 
-                        case 2:
-                            cout << endl << "Aqui vai a parte de titulos!" << endl;
+                        case 2: {
+                            CntrIAInvestimento *cntrIAInvestimento = new CntrIAInvestimento();
+                            ISInvestimento *stubISInvestimento = new StubISInvestimento();
+                            cntrIAInvestimento->setCntrISInvestimento(stubISInvestimento);
+
+                            cntrIAInvestimento->executar(cpf);
+
+                            delete cntrIAInvestimento;
+                            delete stubISInvestimento;
                             break;
+                        }
 
                         case 3:
                             cout << endl << "Aqui vai a parte de Pagamentos!" << endl;
