@@ -21,4 +21,21 @@ public:
 void inline CntrIAAutenticacao::setCntrISAutenticacao(ISAutenticacao *cntrISAutenticacao){
     this->cntrISAutenticacao = cntrISAutenticacao;
 }
+
+
+//231035105
+class CntrIAConta : public IAConta{
+private:
+    ISConta *cntrISConta;
+public:
+    bool criar(Conta);
+    bool ler(Conta);
+    bool atualizar(Conta);
+    bool excluir(const CPF&);
+    void setCntrISConta(ISConta* cntrISConta);
+};
+
+//void CntrIAConta::setCntrISConta(ISConta* cntrISConta){
+//    this -> cntrISConta = cntrISConta;
+//}
 #endif

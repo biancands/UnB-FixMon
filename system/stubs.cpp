@@ -17,3 +17,20 @@ bool StubISAutenticacao::autenticar(const string &cpf, const string &senha) {
 
     return resultado;
 }
+
+bool StubISConta::criar(const Conta& conta){
+    cout << "StubISConta: criar chamado" << endl;
+    return true;
+}
+bool StubISConta::ler(Conta* conta){
+    cout << "StubISConta: ler chamado." << endl;
+    return true;
+};
+bool StubISConta::atualizar(const Conta& conta){
+    cout << "StubISConta: atualizar chamado." << endl;
+    return true;
+}
+bool StubISConta::excluir(const CPF& cpf){
+    cout << "StubISConta: excluir chamado." << endl;
+    return true;
+}
