@@ -36,4 +36,18 @@ public:
     bool atualizar(Pagamento);
 };
 
+class ContainerConta {
+private:
+    map<string, Conta> container;
+    static ContainerConta *instancia;
+    ContainerConta() {}
+public:
+    static ContainerConta* getInstancia();
+    bool incluir(Conta);
+    bool remover(CPF);
+    bool pesquisar(Conta*);
+    bool atualizar(Conta);
+};
+
+
 #endif // CONTAINERS_H_INCLUDED

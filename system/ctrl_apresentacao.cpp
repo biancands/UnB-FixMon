@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//200040979
 bool CntrIAAutenticacao::autenticar(CPF *cpf, Senha *senha) {
     bool resultado;
     std::string entradaCPF;
@@ -28,6 +29,154 @@ bool CntrIAAutenticacao::autenticar(CPF *cpf, Senha *senha) {
     resultado = cntrISAutenticacao->autenticar(cpf->getCPF(), senha->getValor());
 
     return resultado;
+}
+
+void CntrIAConta::criar() {
+    string entrada;
+    Conta conta;
+
+    CPF cpf;
+    Nome nome_um("Valido", "Nome");
+    Nome nome_dois("Valido", "Nome");
+    Senha senha;
+
+    cout << "Digite o CPF: ";
+    cin >> entrada;
+    cpf.setCPF(entrada);
+
+    cout << "Digite o primeiro nome: ";
+    while (true) {
+        try {
+            cin >> entrada;
+            nome_um.setPrimeiroNome(entrada);
+            break;
+        } catch (const std::invalid_argument &exp) {
+            cout << "Primeiro nome invalido! " << exp.what() << ". Tente novamente: ";
+        }
+    }
+
+    cout << "Digite o sobrenome: ";
+    while (true) {
+        try {
+            cin >> entrada;
+            nome_dois.setSobreNome(entrada);
+            break;
+        } catch (const std::invalid_argument &exp) {
+            cout << "Sobrenome invalido! " << exp.what() << ". Tente novamente: ";
+        }
+    }
+
+    cout << "Digite a senha: ";
+    while (true) {
+        try {
+            cin >> entrada;
+            senha.setValor(entrada);
+            break;
+        } catch (const std::invalid_argument &exp) {
+            cout << "Senha invalida! " << exp.what() << ". Tente novamente: ";
+        }
+    }
+
+    conta.setNumCPF(cpf);
+    conta.setNomeUm(nome_um);
+    conta.setNomeDois(nome_dois);
+    conta.setSenha(senha);
+
+    if (cntrISConta->criar(conta)) {
+        cout << "Conta criada com sucesso!" << endl;
+    } else {
+        cout << "Falha na criação da conta." << endl;
+    }
+}
+
+int CntrIAConta::executar(const CPF &cpf) {
+    Conta conta;
+    conta.setNumCPF(cpf);
+
+    if (!cntrISConta->ler(&conta)) {
+        cout << "Conta nao encontrada." << endl;
+        return 0;
+    }
+
+    int opcao;
+    string entrada;
+    Nome nome_um("Valido", "Nome");
+    Nome nome_dois("Valido", "Nome");
+    Senha senha;
+
+    cout << "1. Ver Conta" << endl;
+    cout << "2. Atualizar Conta" << endl;
+    cout << "3. Excluir Conta" << endl;
+    cout << "Selecione uma opcao: ";
+
+    cin >> opcao;
+
+    switch (opcao) {
+        case 1:
+            cout << "CPF: " << conta.getNumCPF().getCPF() << endl;
+            cout << "Primeiro Nome: " << conta.getNomeUm().getPrimeiroNome() << endl;
+            cout << "Sobrenome: " << conta.getNomeDois().getSobreNome() << endl;
+            cout << "Senha: " << conta.getSenha().getValor() << endl;
+            break;
+
+        case 2:
+            cout << "Digite o novo primeiro nome: ";
+            while (true) {
+                try {
+                    cin >> entrada;
+                    nome_um.setPrimeiroNome(entrada);
+                    conta.setNomeUm(nome_um);
+                    break;
+                } catch (const std::invalid_argument &exp) {
+                    cout << "Primeiro nome invalido! " << exp.what() << ". Tente novamente: ";
+                }
+            }
+
+            cout << "Digite o novo sobrenome: ";
+            while (true) {
+                try {
+                    cin >> entrada;
+                    nome_dois.setSobreNome(entrada);
+                    conta.setNomeDois(nome_dois);
+                    break;
+                } catch (const std::invalid_argument &exp) {
+                    cout << "Sobrenome invalido! " << exp.what() << ". Tente novamente: ";
+                }
+            }
+
+            cout << "Digite a nova senha: ";
+            while (true) {
+                try {
+                    cin >> entrada;
+                    senha.setValor(entrada);
+                    conta.setSenha(senha);
+                    break;
+                } catch (const std::invalid_argument &exp) {
+                    cout << "Senha invalida! " << exp.what() << ". Tente novamente: ";
+                }
+            }
+
+            if (cntrISConta->atualizar(conta)) {
+                cout << "Conta atualizada com sucesso!" << endl;
+            } else {
+                cout << "Falha na atualização da conta." << endl;
+            }
+            break;
+
+        case 3:
+            if (cntrISConta->excluir(cpf)) {
+                cout << "Conta excluida com sucesso!" << endl;
+            } else {
+                cout << "Falha na exclusao da conta." << endl;
+            }
+            break;
+
+        default:
+            cout << "Opção invalida." << endl;
+            break;
+    }
+
+    return 0;
 }
 
 void CntrIAInvestimento::executar(const CPF& cpf) {
