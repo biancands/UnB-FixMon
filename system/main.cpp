@@ -42,8 +42,7 @@ int main() {
                     cout << endl << "Autenticado!" << endl;
                     cout << endl << "#######################################################################################################################" << endl;
                     cout << "1. Contas" << endl;
-                    cout << "2. Titulos" << endl;
-                    cout << "3. Pagamentos" << endl;
+                    cout << "2. Titulos e Pagamentos" << endl;
                     cout << "4. Sair" << endl;
                     cout << "Selecione uma opcao: ";
 
@@ -65,12 +64,7 @@ int main() {
                             delete cntrISInvestimento;
                             break;
                         }
-
                         case 3:
-                            cout << endl << "Aqui vai a parte de Pagamentos!" << endl;
-                            break;
-
-                        case 4:
                             cout << endl << "SAINDO!" << endl;
                             return 0;
 

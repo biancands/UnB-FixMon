@@ -33,160 +33,199 @@ bool CntrIAAutenticacao::autenticar(CPF *cpf, Senha *senha) {
 void CntrIAInvestimento::executar(const CPF& cpf) {
     int opcao;
     bool resultado;
+    string textotitulo;
 
-    while (true) {
+    while(true) {
         cout << endl << "Menu de Investimentos" << endl;
-        cout << "1. Criar Titulo" << endl;
-        cout << "2. Ler Titulo" << endl;
-        cout << "3. Atualizar Titulo" << endl;
-        cout << "4. Excluir Titulo" << endl;
-        cout << "5. Criar Pagamento" << endl;
-        cout << "6. Ler Pagamento" << endl;
-        cout << "7. Atualizar Pagamento" << endl;
-        cout << "8. Excluir Pagamento" << endl;
-        cout << "9. Sair" << endl;
+        cout << "1. Titulos" << endl;
+        cout << "2. Pagamentos" << endl;
+        cout << "3. Sair" << endl;
         cout << "Selecione uma opcao: ";
         cin >> opcao;
-
         switch (opcao) {
             case 1: {
-                // Criar Titulo
-                Titulo titulo;
-                CodigoTitulo codigo;
-                Nome emissor("Nome", "Valido");
-                Setor setor("Agricultura");
-                Data emissao, vencimento;
-                Dinheiro valor;
+                while(true){
+                cout << endl << "Menu de Titulos" << endl;
+                cout << "1. Criar Titulo" << endl;
+                cout << "2. Ler Titulo" << endl;
+                cout << "3. Atualizar Titulo" << endl;
+                cout << "4. Excluir Titulo" << endl;
+                cout << "5. Sair" << endl;
+                cout << "Selecione uma opcao: ";
+                cin >> opcao;
+                switch(opcao){
+                    case 1: {
+                    // Criar Titulo
+                    Titulo titulo;
+                    CodigoTitulo codigo;
+                    Nome emissor("Nome", "Valido");
+                    Setor setor("Agricultura");
+                    Data emissao, vencimento;
+                    Dinheiro valor;
 
-                string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
-                double valorDouble;
+                    string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
+                    double valorDouble;
 
-                cout << "Digite o codigo do titulo: ";
-                cin >> codigoStr;
-                codigo.setCodigo(codigoStr);
-                titulo.setCodigo(codigo);
+                    cout << "Digite o codigo do titulo: ";
+                    cin >> codigoStr;
+                    codigo.setCodigo(codigoStr);
+                    titulo.setCodigo(codigo);
 
-                cout << "Digite o nome do emissor: ";
-                cin >> emissorStr;
-                emissor.setPrimeiroNome(emissorStr);
-                titulo.setEmissorUm(emissor);
+                    cout << "Digite o primeiro nome do emissor: ";
+                    cin >> emissorStr;
+                    emissor.setPrimeiroNome(emissorStr);
 
-                cout << "Digite o setor: ";
-                cin >> setorStr;
-                setor.setSetorNome(setorStr);
-                titulo.setSetor(setor);
+                    cout << "Digite o segundo nome do emissor: ";
+                    cin >> emissorStr;
+                    emissor.setSobreNome(emissorStr);
+                    titulo.setEmissorUm(emissor);
 
-                cout << "Digite a data de emissao (DD-MM-AAAA): ";
-                cin >> emissaoStr;
-                emissao.setData(emissaoStr);
-                titulo.setEmissao(emissao);
+                    cout << "Digite o setor: ";
+                    cin >> setorStr;
+                    setor.setSetorNome(setorStr);
+                    titulo.setSetor(setor);
 
-                cout << "Digite a data de vencimento (DD-MM-AAAA): ";
-                cin >> vencimentoStr;
-                vencimento.setData(vencimentoStr);
-                titulo.setVencimento(vencimento);
+                    cout << "Digite a data de emissao (DD-MM-AAAA): ";
+                    cin >> emissaoStr;
+                    emissao.setData(emissaoStr);
+                    titulo.setEmissao(emissao);
 
-                cout << "Digite o valor: ";
-                cin >> valorDouble;
-                valor.setValor(valorDouble);
-                titulo.setValor(valor);
+                    cout << "Digite a data de vencimento (DD-MM-AAAA): ";
+                    cin >> vencimentoStr;
+                    vencimento.setData(vencimentoStr);
+                    titulo.setVencimento(vencimento);
 
-                resultado = cntrISInvestimento->criar(titulo);
-                if (resultado) {
-                    cout << "Titulo criado com sucesso!" << endl;
-                } else {
-                    cout << "Falha ao criar titulo." << endl;
-                }
-                break;
+                    cout << "Digite o valor: ";
+                    cin >> valorDouble;
+                    valor.setValor(valorDouble);
+                    titulo.setValor(valor);
+
+                    resultado = cntrISInvestimento->criar(titulo);
+                    if (resultado) {
+                        cout << "Titulo criado com sucesso!" << endl;
+                    } else {
+                        cout << "Falha ao criar titulo." << endl;
+                    }
+                    break;
+                    }
+                    case 2: {
+                    // Ler Titulo
+                    CodigoTitulo codigo;
+                    string codigoStr;
+                    Titulo titulo;
+
+                    cout << "Digite o codigo do titulo: ";
+                    cin >> codigoStr;
+                    codigo.setCodigo(codigoStr);
+                    titulo.setCodigo(codigo);
+
+                    resultado = cntrISInvestimento->ler(&titulo);
+                    if (resultado) {
+                        cout << "Titulo lido com sucesso!" << endl;
+                        //cout << "Codigo: " << titulo.getCodigo().getCodigo << endl;
+                        //cout << "Nome: " << titulo.getEmissorUm.getPrimeiroNome << " " << titulo.getEmissorUm.getSobreNome << endl;
+                        //cout << "Setor: " << titulo.getSetor.getSetorNome << endl;
+                        //cout << "Data de Emissao: " << titulo.getEmissao.getData << endl;
+                        //cout << "Data de Vencimento: " << titulo.getVencimento.getData << endl;
+                        //cout << "Valor: " << titulo.getValor.getValor << endl;
+                    } else {
+                        cout << "Falha ao ler titulo." << endl;
+                    }
+                    break;
+                    }
+                    case 3: {
+                    // Atualizar Titulo
+                    Titulo titulo;
+                    CodigoTitulo codigo;
+                    Nome emissor("Nome", "Valido");
+                    Setor setor("Agricultura");
+                    Data emissao, vencimento;
+                    Dinheiro valor;
+
+                    string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
+                    double valorDouble;
+
+                    cout << "Digite o codigo do titulo: ";
+                    cin >> codigoStr;
+                    codigo.setCodigo(codigoStr);
+                    titulo.setCodigo(codigo);
+
+                    cout << "Digite o primeiro nome do emissor: ";
+                    cin >> emissorStr;
+                    emissor.setPrimeiroNome(emissorStr);
+
+                    cout << "Digite o segundo nome do emissor: ";
+                    cin >> emissorStr;
+                    emissor.setSobreNome(emissorStr);
+
+                    titulo.setEmissorUm(emissor);
+
+                    cout << "Digite o setor: ";
+                    cin >> setorStr;
+                    setor.setSetorNome(setorStr);
+                    titulo.setSetor(setor);
+
+                    cout << "Digite a data de emissao (DD-MM-AAAA): ";
+                    cin >> emissaoStr;
+                    emissao.setData(emissaoStr);
+                    titulo.setEmissao(emissao);
+
+                    cout << "Digite a data de vencimento (DD-MM-AAAA): ";
+                    cin >> vencimentoStr;
+                    vencimento.setData(vencimentoStr);
+                    titulo.setVencimento(vencimento);
+
+                    cout << "Digite o valor: ";
+                    cin >> valorDouble;
+                    valor.setValor(valorDouble);
+                    titulo.setValor(valor);
+
+                    resultado = cntrISInvestimento->atualizar(titulo);
+                    if (resultado) {
+                        cout << "Titulo atualizado com sucesso!" << endl;
+                    } else {
+                        cout << "Falha ao atualizar titulo." << endl;
+                    }
+                    break;
+                    }
+                    case 4: {
+                    // Excluir Titulo
+                    CodigoTitulo codigo;
+                    string codigoStr;
+
+                    cout << "Digite o codigo do titulo: ";
+                    cin >> codigoStr;
+                    codigo.setCodigo(codigoStr);
+
+                    resultado = cntrISInvestimento->excluir(codigo);
+                    if (resultado) {
+                        cout << "Titulo excluido com sucesso!" << endl;
+                    } else {
+                        cout << "Falha ao excluir titulo." << endl;
+                    }
+                    break;
+
+                    }
+                    case 5:
+                    cout << "Saindo do menu de investimentos" << endl;
+                    return;
+                    default:
+                    cout << "Opcao invalida!" << endl;
+                    break;
+                    }
             }
             case 2: {
-                // Ler Titulo
-                CodigoTitulo codigo;
-                string codigoStr;
-                Titulo titulo;
-
-                cout << "Digite o codigo do titulo: ";
-                cin >> codigoStr;
-                codigo.setCodigo(codigoStr);
-                titulo.setCodigo(codigo);
-
-                resultado = cntrISInvestimento->ler(&titulo);
-                if (resultado) {
-                    cout << "Titulo lido com sucesso!" << endl;
-                    // Exibir os dados do título
-                } else {
-                    cout << "Falha ao ler titulo." << endl;
-                }
-                break;
-            }
-            case 3: {
-                // Atualizar Titulo
-                Titulo titulo;
-                CodigoTitulo codigo;
-                Nome emissor("Nome", "Valido");
-                Setor setor("Agricultura");
-                Data emissao, vencimento;
-                Dinheiro valor;
-
-                string codigoStr, emissorStr, setorStr, emissaoStr, vencimentoStr;
-                double valorDouble;
-
-                cout << "Digite o codigo do titulo: ";
-                cin >> codigoStr;
-                codigo.setCodigo(codigoStr);
-                titulo.setCodigo(codigo);
-
-                cout << "Digite o nome do emissor: ";
-                cin >> emissorStr;
-                emissor.setPrimeiroNome(emissorStr);
-                titulo.setEmissorUm(emissor);
-
-                cout << "Digite o setor: ";
-                cin >> setorStr;
-                setor.setSetorNome(setorStr);
-                titulo.setSetor(setor);
-
-                cout << "Digite a data de emissao (DD-MM-AAAA): ";
-                cin >> emissaoStr;
-                emissao.setData(emissaoStr);
-                titulo.setEmissao(emissao);
-
-                cout << "Digite a data de vencimento (DD-MM-AAAA): ";
-                cin >> vencimentoStr;
-                vencimento.setData(vencimentoStr);
-                titulo.setVencimento(vencimento);
-
-                cout << "Digite o valor: ";
-                cin >> valorDouble;
-                valor.setValor(valorDouble);
-                titulo.setValor(valor);
-
-                resultado = cntrISInvestimento->atualizar(titulo);
-                if (resultado) {
-                    cout << "Titulo atualizado com sucesso!" << endl;
-                } else {
-                    cout << "Falha ao atualizar titulo." << endl;
-                }
-                break;
-            }
-            case 4: {
-                // Excluir Titulo
-                CodigoTitulo codigo;
-                string codigoStr;
-
-                cout << "Digite o codigo do titulo: ";
-                cin >> codigoStr;
-                codigo.setCodigo(codigoStr);
-
-                resultado = cntrISInvestimento->excluir(codigo);
-                if (resultado) {
-                    cout << "Titulo excluido com sucesso!" << endl;
-                } else {
-                    cout << "Falha ao excluir titulo." << endl;
-                }
-                break;
-            }
-            case 5: {
+                while(true){
+                cout << endl << "Menu de Pagamentos" << endl;
+                cout << "1. Criar Pagamento" << endl;
+                cout << "2. Ler Pagamento" << endl;
+                cout << "3. Atualizar Pagamento" << endl;
+                cout << "4. Excluir Pagamento" << endl;
+                cout << "5. Sair" << endl;
+                cout << "Selecione uma opcao: ";
+                cin >> opcao;
+                switch(opcao){
+                case 1: {
                 // Criar Pagamento
                 Pagamento pagamento;
                 CodigoPagamento codigo;
@@ -224,8 +263,8 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                     cout << "Falha ao criar pagamento." << endl;
                 }
                 break;
-            }
-            case 6: {
+                }
+                case 2: {
                 // Ler Pagamento
                 CodigoPagamento codigo;
                 string codigoStr;
@@ -239,13 +278,17 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                 resultado = cntrISInvestimento->ler(&pagamento);
                 if (resultado) {
                     cout << "Pagamento lido com sucesso!" << endl;
+                    //cout << "Codigo: " << pagamento.getCodigo.getCodigo << endl;
+                    //cout << "Data: " << pagamento.getData.getData << endl;
+                    //cout << "Percentual: " << pagamento.getPercentual.getValor << endl;
+                    //cout << "Estado: " << pagamento.getEstado.getEstado << endl;
                     // Exibir os dados do pagamento
                 } else {
                     cout << "Falha ao ler pagamento." << endl;
                 }
                 break;
-            }
-            case 7: {
+                }
+                case 3: {
                 // Atualizar Pagamento
                 Pagamento pagamento;
                 CodigoPagamento codigo;
@@ -283,8 +326,8 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                     cout << "Falha ao atualizar pagamento." << endl;
                 }
                 break;
-            }
-            case 8: {
+                }
+                case 4: {
                 // Excluir Pagamento
                 CodigoPagamento codigo;
                 string codigoStr;
@@ -300,13 +343,49 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                     cout << "Falha ao excluir pagamento." << endl;
                 }
                 break;
-            }
-            case 9:
+                }
+                case 5:
                 cout << "Saindo do menu de investimentos" << endl;
                 return;
-            default:
+                default:
                 cout << "Opcao invalida!" << endl;
                 break;
+
+                }
+                }
+                break;
+            }
+            case 3: {
+            cout << "Saindo do menu de investimentos" << endl;
+            return;
+            default:
+            cout << "Opcao invalida!" << endl;
+            break;
+            }
+
+        }
+    }
+
+
+
+    while (true) {
+        cout << endl << "Menu de Investimentos" << endl;
+        cout << "1. Criar Titulo" << endl;
+        cout << "2. Ler Titulo" << endl;
+        cout << "3. Atualizar Titulo" << endl;
+        cout << "4. Excluir Titulo" << endl;
+        cout << "5. Criar Pagamento" << endl;
+        cout << "6. Ler Pagamento" << endl;
+        cout << "7. Atualizar Pagamento" << endl;
+        cout << "8. Excluir Pagamento" << endl;
+        cout << "9. Sair" << endl;
+        cout << "Selecione uma opcao: ";
+        cin >> opcao;
+
+        switch (opcao) {
+
+            }
+
         }
     }
 }

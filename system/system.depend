@@ -89,3 +89,93 @@
 1722560937 source:c:\users\bianc\unb-fixmon\system\stubs.cpp
 	"stubs.h"
 
+1722698349 source:c:\users\pessoal\documents\github\unb-fixmon\system\comandos.cpp
+	"comandos.h"
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\comandos.h
+	"interfaces.h"
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\interfaces.h
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\domains.h
+	<stdexcept>
+	<string>
+	<vector>
+	<algorithm>
+	<unordered_set>
+	<sstream>
+	<cctype>
+	<regex>
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\entities.h
+	"domains.h"
+	<string>
+
+1722699433 source:c:\users\pessoal\documents\github\unb-fixmon\system\containers.cpp
+	"containers.h"
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\containers.h
+	"domains.h"
+	"entities.h"
+	<map>
+
+1722699433 source:c:\users\pessoal\documents\github\unb-fixmon\system\ctrl_servico.cpp
+	"ctrl_servico.h"
+	"comandos.h"
+	"containers.h"
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\ctrl_servico.h
+	"interfaces.h"
+	"domains.h"
+	"containers.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722699433 source:c:\users\pessoal\documents\github\unb-fixmon\system\domains.cpp
+	<iostream>
+	"domains.h"
+
+1722699433 source:c:\users\pessoal\documents\github\unb-fixmon\system\entities.cpp
+	"entities.h"
+
+1722731883 source:c:\users\pessoal\documents\github\unb-fixmon\system\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	"domains.h"
+	"entities.h"
+	"interfaces.h"
+	"ctrl_apresentacao.h"
+	"ctrl_servico.h"
+	"stubs.h"
+	"containers.h"
+
+1722699433 c:\users\pessoal\documents\github\unb-fixmon\system\ctrl_apresentacao.h
+	"interfaces.h"
+	"domains.h"
+	"entities.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1722737794 c:\users\pessoal\documents\github\unb-fixmon\system\stubs.h
+	"interfaces.h"
+	<stdexcept>
+	<iostream>
+
+1722699433 source:c:\users\pessoal\documents\github\unb-fixmon\system\stubs.cpp
+	"stubs.h"
+
+1722737754 source:c:\users\pessoal\documents\github\unb-fixmon\system\ctrl_apresentacao.cpp
+	"ctrl_apresentacao.h"
+	"comandos.h"
+
