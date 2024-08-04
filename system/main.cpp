@@ -56,6 +56,7 @@ int main() {
                         cout << "#########################################" << endl;
                         cout << "#              Menu Principal           #" << endl;
                         cout << "#########################################" << endl;
+                        cout << endl;
                         cout << "1. Contas" << endl;
                         cout << "2. Investimentos" << endl;
                         cout << "3. Sair" << endl;

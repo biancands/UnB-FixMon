@@ -39,7 +39,11 @@ void CntrIAConta::criar() {
     Nome nome_um("Valido", "Nome");
     Nome nome_dois("Valido", "Nome");
     Senha senha;
-
+    cout << endl;
+    cout << "#########################################" << endl;
+    cout << "#              Menu Conta               #" << endl;
+    cout << "#########################################" << endl;
+    cout << endl;
     cout << "Digite o CPF: ";
     cin >> entrada;
     cpf.setCPF(entrada);
@@ -103,7 +107,11 @@ int CntrIAConta::executar(const CPF &cpf) {
     Nome nome_um("Valido", "Nome");
     Nome nome_dois("Valido", "Nome");
     Senha senha;
-
+    cout << endl;
+    cout << "#########################################" << endl;
+    cout << "#              Menu Conta               #" << endl;
+    cout << "#########################################" << endl;
+    cout << endl;
     cout << "1. Ver Conta" << endl;
     cout << "2. Atualizar Conta" << endl;
     cout << "3. Excluir Conta" << endl;
@@ -184,7 +192,11 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
     bool resultado;
 
     while (true) {
-        cout << endl << "Menu de Investimentos" << endl;
+        cout << endl;
+        cout << "#############################################" << endl;
+        cout << "#              Menu Investimentos           #" << endl;
+        cout << "#############################################" << endl;
+        cout << endl;
         cout << "1. Titulos" << endl;
         cout << "2. Pagamentos" << endl;
         cout << "3. Sair" << endl;
@@ -195,7 +207,11 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
             case 1: {
                 bool exitTitulosMenu = false;
                 while (!exitTitulosMenu) {
-                    cout << endl << "Menu de Titulos" << endl;
+                    cout << endl;
+                    cout << "#########################################" << endl;
+                    cout << "#              Menu Titulos           #" << endl;
+                    cout << "#########################################" << endl;
+                    cout << endl;
                     cout << "1. Criar Titulo" << endl;
                     cout << "2. Ler Titulo" << endl;
                     cout << "3. Atualizar Titulo" << endl;
@@ -280,6 +296,7 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
 
                                 resultado = cntrISInvestimento->ler(&titulo);
                                 if (resultado) {
+                                    cout << endl;
                                     cout << "Título lido com sucesso!" << endl;
                                     cout << "Código: " << titulo.getCodigo().getCodigo() << endl;
                                     cout << "Emissor: " << titulo.getEmissorUm().getPrimeiroNome() << " " << titulo.getEmissorDois().getSobreNome() << endl;
@@ -390,7 +407,11 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
             case 2: {
                 bool exitPagamentosMenu = false;
                 while (!exitPagamentosMenu) {
-                    cout << endl << "Menu de Pagamentos" << endl;
+                    cout << endl;
+                    cout << "##########################################" << endl;
+                    cout << "#              Menu Pagamentos           #" << endl;
+                    cout << "##########################################" << endl;
+                    cout << endl;
                     cout << "1. Criar Pagamento" << endl;
                     cout << "2. Ler Pagamento" << endl;
                     cout << "3. Atualizar Pagamento" << endl;
