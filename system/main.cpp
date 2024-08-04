@@ -7,18 +7,17 @@
 #include "interfaces.h"
 #include "ctrl_apresentacao.h"
 #include "ctrl_servico.h"
-#include "stubs.h"
 
 using namespace std;
 
 int main() {
-    IAAutenticacao *cntrIAAutenticacao;
-    cntrIAAutenticacao = new CntrIAAutenticacao();
+    IAAutenticacao *cntrIAAutenticacao = new CntrIAAutenticacao();
+    ISAutenticacao *cntrISAutenticacao = new CntrServicoAutenticacao();
+    cntrIAAutenticacao->setCntrISAutenticacao(cntrISAutenticacao);
 
-    ISAutenticacao *stubISAutenticacao;
-    stubISAutenticacao = new StubISAutenticacao();
-
-    cntrIAAutenticacao->setCntrISAutenticacao(stubISAutenticacao);
+    IAConta *cntrIAConta = new CntrIAConta();
+    ISConta *cntrISConta = new CntrServicoConta();
+    cntrIAConta->setCntrISConta(cntrISConta);
 
     bool resultado;
     CPF cpf;
@@ -39,7 +38,6 @@ int main() {
                 resultado = cntrIAAutenticacao->autenticar(&cpf, &senha);
                 if (resultado) {
                     cout << endl << "Autenticado!" << endl;
-                    cout << endl << "#######################################################################################################################" << endl;
                     cout << "1. Contas" << endl;
                     cout << "2. Titulos" << endl;
                     cout << "3. Pagamentos" << endl;
@@ -50,46 +48,52 @@ int main() {
 
                     switch (opcao) {
                         case 1:
-                            cout << endl << "Aqui vai a parte de contas!" << endl;
+                            cntrIAConta->executar(cpf);
                             break;
-
                         case 2:
-                            cout << endl << "Aqui vai a parte de titulos!" << endl;
+                            cout << "Funcionalidade de Titulos não implementada." << endl;
                             break;
-
                         case 3:
-                            cout << endl << "Aqui vai a parte de Pagamentos!" << endl;
+                            cout << "Funcionalidade de Pagamentos não implementada." << endl;
                             break;
-
                         case 4:
-                            cout << endl << "SAINDO!" << endl;
+                            cout << "Saindo." << endl;
+                            delete cntrIAAutenticacao;
+                            delete cntrISAutenticacao;
+                            delete cntrIAConta;
+                            delete cntrISConta;
                             return 0;
-
                         default:
-                            cout << "Opcao invalida!" << endl;
+                            cout << "Opção inválida." << endl;
                             break;
                     }
                 } else {
-                    cout << endl << "Falha na autenticacao." << endl;
+                    cout << "Falha na autenticação." << endl;
                 }
                 break;
 
             case 2:
-                cout << "Aqui vai a parte de criar conta!" << endl;
+                cntrIAConta->criar();
                 break;
 
             case 3:
                 cout << "Saindo" << endl;
+                delete cntrIAAutenticacao;
+                delete cntrISAutenticacao;
+                delete cntrIAConta;
+                delete cntrISConta;
                 return 0;
 
             default:
-                cout << "Opcao invalida!" << endl;
+                cout << "Opção inválida." << endl;
                 break;
         }
     }
 
     delete cntrIAAutenticacao;
-    delete stubISAutenticacao;
+    delete cntrISAutenticacao;
+    delete cntrIAConta;
+    delete cntrISConta;
 
     return 0;
 }
