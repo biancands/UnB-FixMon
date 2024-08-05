@@ -121,6 +121,7 @@ int CntrIAConta::executar(const CPF &cpf) {
 
     switch (opcao) {
         case 1:
+            cout << endl;
             cout << "CPF: " << conta.getNumCPF().getCPF() << endl;
             cout << "Primeiro Nome: " << conta.getNomeUm().getPrimeiroNome() << endl;
             cout << "Sobrenome: " << conta.getNomeDois().getSobreNome() << endl;
@@ -174,6 +175,7 @@ int CntrIAConta::executar(const CPF &cpf) {
         case 3:
             if (cntrISConta->excluir(cpf)) {
                 cout << "Conta excluida com sucesso!" << endl;
+                return -1; // Indica que a conta foi excluída
             } else {
                 cout << "Falha na exclusao da conta." << endl;
             }
@@ -297,15 +299,16 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                                 resultado = cntrISInvestimento->ler(&titulo);
                                 if (resultado) {
                                     cout << endl;
-                                    cout << "Título lido com sucesso!" << endl;
-                                    cout << "Código: " << titulo.getCodigo().getCodigo() << endl;
+                                    cout << "Titulo lido com sucesso!" << endl;
+                                    cout << endl;
+                                    cout << "Codigo: " << titulo.getCodigo().getCodigo() << endl;
                                     cout << "Emissor: " << titulo.getEmissorUm().getPrimeiroNome() << " " << titulo.getEmissorDois().getSobreNome() << endl;
                                     cout << "Setor: " << titulo.getSetor().getSetorNome() << endl;
-                                    cout << "Data de Emissão: " << titulo.getEmissao().getData() << endl;
+                                    cout << "Data de Emissao: " << titulo.getEmissao().getData() << endl;
                                     cout << "Data de Vencimento: " << titulo.getVencimento().getData() << endl;
                                     cout << "Valor: " << titulo.getValor().getValor() << endl;
                                 } else {
-                                    cout << "Falha ao ler título." << endl;
+                                    cout << "Falha ao ler titulo." << endl;
                                 }
                             } catch (const std::invalid_argument &exp) {
                                 cout << "Erro: " << exp.what() << endl;
@@ -479,7 +482,8 @@ void CntrIAInvestimento::executar(const CPF& cpf) {
                                 resultado = cntrISInvestimento->ler(&pagamento);
                                 if (resultado) {
                                     cout << "Pagamento lido com sucesso!" << endl;
-                                    cout << "Código: " << pagamento.getCodigo().getCodigo() << endl;
+                                    cout << endl;
+                                    cout << "Codigo: " << pagamento.getCodigo().getCodigo() << endl;
                                     cout << "Data: " << pagamento.getData().getData() << endl;
                                     cout << "Percentual: " << pagamento.getPercentual().getValor() << endl;
                                     cout << "Estado: " << pagamento.getEstado().getEstado() << endl;

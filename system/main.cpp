@@ -65,9 +65,13 @@ int main() {
                         cin >> opcao;
 
                         switch (opcao) {
-                            case 1:
-                                cntrIAConta->executar(cpf);
+                            case 1: {
+                                int contaResultado = cntrIAConta->executar(cpf);
+                                if (contaResultado == -1) {
+                                    exitMenu = true; // Sai para o menu inicial
+                                }
                                 break;
+                            }
 
                             case 2: {
                                 CntrIAInvestimento *cntrIAInvestimento = new CntrIAInvestimento();
