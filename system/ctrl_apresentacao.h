@@ -27,6 +27,7 @@ inline void CntrIAAutenticacao::setCntrISAutenticacao(ISAutenticacao *cntrISAute
     this->cntrISAutenticacao = cntrISAutenticacao;
 }
 
+//231035105
 class CntrIAConta : public IAConta {
 private:
     ISConta *cntrISConta;
